@@ -21,4 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "CokeZet_Android"
 include(":app")
- 
+include(":presentation")
+include(":data")
+include(":common")
+include(":domain")
