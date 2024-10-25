@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.drawable.StateListDrawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.widget.CompoundButton.OnCheckedChangeListener
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
@@ -29,11 +30,30 @@ class LogoButton @JvmOverloads constructor(
             binding.logoButtonBody.background = stateList
         }
 
+    var isChecked: Boolean = false
+        set(isChecked) {
+            field = isChecked
+            binding.logoButtonBody.isChecked = isChecked
+        }
+        get() = binding.logoButtonBody.isChecked
+
+    var checkedChangedListener: OnCheckedChangeListener? = null
+        set(checkedChangedListener) {
+            field = checkedChangedListener
+            binding.logoButtonBody.setOnCheckedChangeListener(checkedChangedListener)
+        }
+
     companion object {
-        @BindingAdapter("brand")
         @JvmStatic
+        @BindingAdapter("brand")
         fun setDefaultResourceId(logoButton: LogoButton, brandName: BrandName) {
             logoButton.brandName = brandName
+        }
+
+        @JvmStatic
+        @BindingAdapter("onCheckChangedListener")
+        fun setOnCheckChangedListener(logoButton: LogoButton, onCheckedChangeListener: OnCheckedChangeListener) {
+            logoButton.checkedChangedListener = onCheckedChangeListener
         }
     }
 

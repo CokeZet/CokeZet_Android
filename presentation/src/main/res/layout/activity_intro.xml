@@ -16,8 +16,9 @@
         tools:context=".IntroActivity">
 
         <buy.coke.zet.common.designsystem.statebutton.LogoButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:id="@+id/logo_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:brand="@{BrandName.BC}"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
