@@ -11,11 +11,11 @@
     <color name="red_300">#FF9D9C</color>
     <color name="red_400">#F4706E</color>
     <color name="red_500">#F34E4B</color>
-    <color name="red_500_2">#FF9D9C</color>
-    <color name="red_600">#E91613</color>
-    <color name="red_700">#DF1A17</color>
-    <color name="red_800">#CD110E</color>
-    <color name="red_900">#C4100E</color>
+    <color name="red_600">#FF9D9C</color>
+    <color name="red_700">#E91613</color>
+    <color name="red_800">#DF1A17</color>
+    <color name="red_900">#CD110E</color>
+    <color name="red">#C4100E</color>
 
     <!-- Purple(Sub) -->
     <color name="purple_50">#F5F6FF</color>
@@ -24,11 +24,11 @@
     <color name="purple_300">#B4BAF0</color>
     <color name="purple_400">#A2AAEF</color>
     <color name="purple_500">#8C96F1</color>
-    <color name="purple_500_2">#7B87F0</color>
-    <color name="purple_600">#6573F3</color>
-    <color name="purple_700">#4859F4</color>
-    <color name="purple_800">#3948D2</color>
-    <color name="purple_900">#2C39B1</color>
+    <color name="purple_600">#7B87F0</color>
+    <color name="purple_700">#6573F3</color>
+    <color name="purple_800">#4859F4</color>
+    <color name="purple_900">#3948D2</color>
+    <color name="purple">#2C39B1</color>
 
     <!-- Gray -->
     <color name="white">#FFFFFF</color>
