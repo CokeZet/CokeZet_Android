@@ -3,4 +3,55 @@
     <color name="red600">#EE2D2B</color>
     <color name="gray500">#868686</color>
     <color name="pure_white">#FFFFFF</color>
+
+    <!-- Red(Primary) -->
+    <color name="red_50">#FFF1F1</color>
+    <color name="red_100">#FFDEDE</color>
+    <color name="red_200">#FFBBBA</color>
+    <color name="red_300">#FF9D9C</color>
+    <color name="red_400">#F4706E</color>
+    <color name="red_500">#F34E4B</color>
+    <color name="red_600">#FF9D9C</color>
+    <color name="red_700">#E91613</color>
+    <color name="red_800">#DF1A17</color>
+    <color name="red_900">#CD110E</color>
+    <color name="red">#C4100E</color>
+
+    <!-- Purple(Sub) -->
+    <color name="purple_50">#F5F6FF</color>
+    <color name="purple_100">#E8EAFA</color>
+    <color name="purple_200">#CDD1F5</color>
+    <color name="purple_300">#B4BAF0</color>
+    <color name="purple_400">#A2AAEF</color>
+    <color name="purple_500">#8C96F1</color>
+    <color name="purple_600">#7B87F0</color>
+    <color name="purple_700">#6573F3</color>
+    <color name="purple_800">#4859F4</color>
+    <color name="purple_900">#3948D2</color>
+    <color name="purple">#2C39B1</color>
+
+    <!-- Gray -->
+    <color name="white">#FFFFFF</color>
+    <color name="gray_100">#F0ECEC</color>
+    <color name="gray_200">#E4E3E3</color>
+    <color name="gray_300">#D3D2D2</color>
+    <color name="gray_400">#B7B6B6</color>
+    <color name="gray_500">#989797</color>
+    <color name="gray_600">#6B6666</color>
+    <color name="gray_700">#494848</color>
+    <color name="gray_800">#2B2727</color>
+    <color name="gray_900">#121212</color>
+    <color name="black">#0E0D0D</color>
+
+    <!-- Text Color -->
+    <color name="basic_title">#222222</color>
+    <color name="basic_body_1">#444444</color>
+    <color name="basic_body_2">#666666</color>
+    <color name="basic_caption">#888888</color>
+
+    <color name="primary_highlight">#296DEA</color>
+
+    <color name="additional_positive">#296DEA</color>
+    <color name="additional_error">#DE0000</color>
+
 </resources>
