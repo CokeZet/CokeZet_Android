@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="red600">#EE2D2B</color>
-    <color name="gray500">#868686</color>
-    <color name="pure_white">#FFFFFF</color>
-
     <!-- Red(Primary) -->
     <color name="red_50">#FFF1F1</color>
     <color name="red_100">#FFDEDE</color>
@@ -11,7 +7,7 @@
     <color name="red_300">#FF9D9C</color>
     <color name="red_400">#F4706E</color>
     <color name="red_500">#F34E4B</color>
-    <color name="red_600">#FF9D9C</color>
+    <color name="red_600">#EE2D2B</color>
     <color name="red_700">#E91613</color>
     <color name="red_800">#DF1A17</color>
     <color name="red_900">#CD110E</color>
