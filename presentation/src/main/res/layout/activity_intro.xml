@@ -7,6 +7,7 @@
 
         <import type="buy.coke.zet.common.designsystem.statebutton.LogoButton.BrandName" />
         <import type="buy.coke.zet.common.designsystem.topbar.TopBar.Image"/>
+        <import type="buy.coke.zet.common.designsystem.normalbutton.RectangleButton.Color"/>
 
     </data>
 
@@ -45,6 +46,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/logo_button"/>
+
+        <buy.coke.zet.common.designsystem.normalbutton.RectangleButton
+            android:id="@+id/rectangle_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="10dp"
+            app:mainColor="@{Color.RED}"
+            app:buttonText="@{@string/button}"
+            app:layout_constraintTop_toBottomOf="@id/switch_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
