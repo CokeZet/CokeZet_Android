@@ -6,6 +6,7 @@
     <data>
 
         <import type="buy.coke.zet.common.designsystem.statebutton.LogoButton.BrandName" />
+        <import type="buy.coke.zet.common.designsystem.topbar.TopBar.Image"/>
 
     </data>
 
@@ -19,6 +20,11 @@
             android:id="@+id/topbar"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            app:leftIconImage="@{Image.LOGO}"
+            app:leftText="@{@string/text}"
+            app:rightFirstIconImage="@{Image.NOTIFICATION}"
+            app:rightSecondIconImage="@{Image.GRAPH}"
+            app:rightThirdIconImage="@{Image.PERSON}"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <buy.coke.zet.common.designsystem.statebutton.LogoButton

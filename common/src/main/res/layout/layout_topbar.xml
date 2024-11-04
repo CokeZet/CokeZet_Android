@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -8,93 +9,65 @@
         android:background="@color/gray_800">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/zet_logo"
+            android:id="@+id/left_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:src="@drawable/logo_topbar"
+            tools:src="@drawable/logo_topbar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/back_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
-            android:src="@drawable/back_topbar"
-            android:visibility="invisible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/title_text"/>
-
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/title_text"
+            android:id="@+id/left_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="19dp"
             android:layout_marginBottom="19dp"
-            android:text="@string/title_topbar"
+            tools:text="@string/title_topbar"
             android:textColor="@color/white"
-            android:visibility="invisible"
-            app:layout_constraintStart_toEndOf="@+id/back_icon"
+            app:layout_constraintStart_toEndOf="@+id/left_icon"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/notification_icon"
+            android:id="@+id/right_first_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp"
-            android:src="@drawable/notification_topbar"
+            tools:src="@drawable/notification_topbar"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/graph_icon"/>
+            app:layout_constraintEnd_toStartOf="@id/right_second_icon"/>
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/graph_icon"
+            android:id="@+id/right_second_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp"
-            android:src="@drawable/graph_topbar"
-            app:layout_constraintStart_toEndOf="@id/notification_icon"
-            app:layout_constraintEnd_toStartOf="@id/person_icon"
+            tools:src="@drawable/graph_topbar"
+            app:layout_constraintStart_toEndOf="@id/right_first_icon"
+            app:layout_constraintEnd_toStartOf="@id/right_third_icon"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/person_icon"
+            android:id="@+id/right_third_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp"
-            android:src="@drawable/person_topbar"
-            app:layout_constraintStart_toEndOf="@id/graph_icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/exit_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
-            android:layout_marginEnd="20dp"
-            android:src="@drawable/exit_topbar"
-            android:visibility="invisible"
+            tools:src="@drawable/person_topbar"
+            app:layout_constraintStart_toEndOf="@id/right_second_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
