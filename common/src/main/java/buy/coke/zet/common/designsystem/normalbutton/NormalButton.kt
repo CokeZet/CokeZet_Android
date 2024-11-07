@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
-import buy.coke.zet.common.R
 import buy.coke.zet.common.databinding.LayoutNormalButtonBinding
 import buy.coke.zet.common.designsystem.NormalButtonStyle
 
@@ -30,14 +29,13 @@ class NormalButton @JvmOverloads constructor(
             binding.normalButtonBody.background = ContextCompat.getDrawable(context, value.drawableId)
         }
 
-    var buttonStyle: NormalButtonStyle.Color? = null
+    var buttonStyle: NormalButtonStyle.Color = NormalButtonStyle.Color.LIGHT_RED
         set(value) {
             field = value
-            val pair = value?.let { getColorIdPair(it) } ?: Pair(R.color.red_600, R.color.white)
 
             binding.normalButtonBody.backgroundTintList =
-                ColorStateList.valueOf(ContextCompat.getColor(context, pair.first))
-            binding.normalButtonBody.setTextColor(ContextCompat.getColor(context, pair.second))
+                ColorStateList.valueOf(ContextCompat.getColor(context, value.backgroundColor))
+            binding.normalButtonBody.setTextColor(ContextCompat.getColor(context, value.textColor))
         }
 
     var buttonText: String = ""
@@ -45,16 +43,6 @@ class NormalButton @JvmOverloads constructor(
             field = value
             binding.normalButtonBody.text = value
         }
-
-    private fun getColorIdPair(color: NormalButtonStyle.Color): Pair<Int, Int> {
-        return when(color) {
-            NormalButtonStyle.Color.LIGHT_RED -> Pair(R.color.red_600, R.color.white)
-            NormalButtonStyle.Color.RED -> Pair(R.color.red_700, R.color.white)
-            NormalButtonStyle.Color.WHITE -> Pair(R.color.red_50, R.color.black)
-            NormalButtonStyle.Color.GRAY -> Pair(R.color.gray_500, R.color.white)
-            NormalButtonStyle.Color.BLACK -> Pair(R.color.gray_700, R.color.gray_500)
-        }
-    }
 
     companion object {
         @JvmStatic

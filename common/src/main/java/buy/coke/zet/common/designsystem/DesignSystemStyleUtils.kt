@@ -3,8 +3,12 @@ package buy.coke.zet.common.designsystem
 import buy.coke.zet.common.R
 
 object NormalButtonStyle {
-    enum class Color {
-        LIGHT_RED, RED, WHITE, GRAY, BLACK
+    enum class Color(val backgroundColor: Int, val textColor: Int) {
+        LIGHT_RED(R.color.red_600, R.color.white),
+        RED(R.color.red_700, R.color.white),
+        WHITE(R.color.red_50, R.color.black),
+        GRAY(R.color.gray_500, R.color.white),
+        BLACK(R.color.gray_700, R.color.gray_500)
     }
 
     enum class Shape(val drawableId: Int) {
