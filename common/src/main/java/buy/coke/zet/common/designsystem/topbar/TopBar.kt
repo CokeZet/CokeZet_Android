@@ -20,7 +20,7 @@ class TopBar @JvmOverloads constructor(
     var leftIconImage: TopBarStyle.Image? = null
         set(value) {
             field = value
-            value?.let { binding.leftIcon.setImageResource(getImageId(it)) }
+            value?.let { binding.leftIcon.setImageResource(it.imageId) }
         }
 
     var leftText: String = ""
@@ -32,19 +32,19 @@ class TopBar @JvmOverloads constructor(
     var rightFirstIconImage: TopBarStyle.Image? = null
         set(value) {
             field = value
-            value?.let { binding.rightFirstIcon.setImageResource(getImageId(it)) }
+            value?.let { binding.rightFirstIcon.setImageResource(it.imageId) }
         }
 
     var rightSecondIconImage: TopBarStyle.Image? = null
         set(value) {
             field = value
-            value?.let { binding.rightSecondIcon.setImageResource(getImageId(it)) }
+            value?.let { binding.rightSecondIcon.setImageResource(it.imageId) }
         }
 
     var rightThirdIconImage: TopBarStyle.Image? = null
         set(value) {
             field = value
-            value?.let { binding.rightThirdIcon.setImageResource(getImageId(it)) }
+            value?.let { binding.rightThirdIcon.setImageResource(it.imageId) }
         }
 
     var leftIconClickListener: OnClickListener? = null
@@ -70,17 +70,6 @@ class TopBar @JvmOverloads constructor(
             field = value
             binding.rightThirdIcon.setOnClickListener(value)
         }
-
-    private fun getImageId(image: TopBarStyle.Image): Int {
-        return when(image) {
-            TopBarStyle.Image.LOGO -> R.drawable.logo_topbar
-            TopBarStyle.Image.BACK -> R.drawable.back_topbar
-            TopBarStyle.Image.NOTIFICATION -> R.drawable.notification_topbar
-            TopBarStyle.Image.GRAPH -> R.drawable.graph_topbar
-            TopBarStyle.Image.PERSON -> R.drawable.person_topbar
-            TopBarStyle.Image.EXIT -> R.drawable.exit_topbar
-        }
-    }
 
     companion object {
         @JvmStatic

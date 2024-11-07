@@ -14,8 +14,13 @@ object NormalButtonStyle {
 }
 
 object TopBarStyle {
-    enum class Image {
-        LOGO, BACK, NOTIFICATION, GRAPH, PERSON, EXIT
+    enum class Image(val imageId: Int) {
+        LOGO(R.drawable.logo_topbar),
+        BACK(R.drawable.back_topbar),
+        NOTIFICATION(R.drawable.notification_topbar),
+        GRAPH(R.drawable.graph_topbar),
+        PERSON(R.drawable.person_topbar),
+        EXIT(R.drawable.exit_topbar)
     }
 
 }
