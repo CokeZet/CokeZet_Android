@@ -7,9 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import buy.coke.zet.common.designsystem.normalbutton.NormalButton
 import buy.coke.zet.presentation.databinding.ActivityIntroBinding
-import kotlinx.coroutines.flow.count
 import kotlinx.coroutines.launch
 
 class IntroActivity : AppCompatActivity() {
@@ -30,13 +28,13 @@ class IntroActivity : AppCompatActivity() {
         }
     }
 
-    private fun setButtonStyle(count: Int): NormalButton.Color {
+    private fun setButtonStyle(count: Int): buy.coke.zet.common.designsystem.NormalButtonStyle.Color {
         return when(count) {
-            0 -> NormalButton.Color.LIGHT_RED
-            1 -> NormalButton.Color.RED
-            2 -> NormalButton.Color.WHITE
-            3 -> NormalButton.Color.GRAY
-            else -> NormalButton.Color.BLACK
+            0 -> buy.coke.zet.common.designsystem.NormalButtonStyle.Color.LIGHT_RED
+            1 -> buy.coke.zet.common.designsystem.NormalButtonStyle.Color.RED
+            2 -> buy.coke.zet.common.designsystem.NormalButtonStyle.Color.WHITE
+            3 -> buy.coke.zet.common.designsystem.NormalButtonStyle.Color.GRAY
+            else -> buy.coke.zet.common.designsystem.NormalButtonStyle.Color.BLACK
         }
     }
 

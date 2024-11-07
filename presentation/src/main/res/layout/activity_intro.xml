@@ -5,10 +5,10 @@
 
     <data>
 
-        <import type="buy.coke.zet.common.designsystem.statebutton.LogoButton.BrandName" />
-        <import type="buy.coke.zet.common.designsystem.topbar.TopBar.Image"/>
-        <import type="buy.coke.zet.common.designsystem.normalbutton.NormalButton.Color"/>
-        <import type="buy.coke.zet.common.designsystem.normalbutton.NormalButton.Shape"/>
+        <import type="buy.coke.zet.common.designsystem.LogoButtonStyle.BrandName" />
+        <import type="buy.coke.zet.common.designsystem.TopBarStyle.Image"/>
+        <import type="buy.coke.zet.common.designsystem.NormalButtonStyle.Color"/>
+        <import type="buy.coke.zet.common.designsystem.NormalButtonStyle.Shape"/>
 
         <variable
             name="viewModel"
