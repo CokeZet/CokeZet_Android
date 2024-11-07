@@ -18,20 +18,26 @@ class NormalButton @JvmOverloads constructor(
     private val binding: LayoutNormalButtonBinding =
         LayoutNormalButtonBinding.inflate(LayoutInflater.from(context), this, true)
 
+    var buttonShape: Shape = Shape.RECTANGLE
+        set(value) {
+            field = value
+            binding.normalButtonBody.background = ContextCompat.getDrawable(context, value.drawableId)
+        }
+
     var buttonStyle: Color? = null
         set(value) {
             field = value
             val pair = value?.let { getColorIdPair(it) } ?: Pair(R.color.red_600, R.color.white)
 
-            binding.rectangleButtonBody.backgroundTintList =
+            binding.normalButtonBody.backgroundTintList =
                 ColorStateList.valueOf(ContextCompat.getColor(context, pair.first))
-            binding.rectangleButtonBody.setTextColor(ContextCompat.getColor(context, pair.second))
+            binding.normalButtonBody.setTextColor(ContextCompat.getColor(context, pair.second))
         }
 
     var buttonText: String = ""
         set(value) {
             field = value
-            binding.rectangleButtonBody.text = value
+            binding.normalButtonBody.text = value
         }
 
     private fun getColorIdPair(color: Color): Pair<Int, Int> {
@@ -56,9 +62,19 @@ class NormalButton @JvmOverloads constructor(
         fun setButtonText(normalButton: NormalButton, text: String) {
             normalButton.buttonText = text
         }
+
+        @JvmStatic
+        @BindingAdapter("buttonShape")
+        fun setButtonShape(normalButton: NormalButton, shape: Shape) {
+            normalButton.buttonShape = shape
+        }
     }
 
     enum class Color {
         LIGHT_RED, RED, WHITE, GRAY, BLACK
+    }
+
+    enum class Shape(val drawableId: Int) {
+        RECTANGLE(R.drawable.rectangle_button), ROUND(R.drawable.round_button)
     }
 }

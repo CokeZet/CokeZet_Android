@@ -8,7 +8,7 @@
         android:layout_height="match_parent">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/rectangle_button_body"
+            android:id="@+id/normal_button_body"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/rectangle_button"
