@@ -11,7 +11,7 @@
             android:id="@+id/rectangle_button_body"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/rectangle_button_radius"
+            android:background="@drawable/rectangle_button"
             android:textSize="18sp"
             tools:text="Button"
             app:layout_constraintStart_toStartOf="parent"

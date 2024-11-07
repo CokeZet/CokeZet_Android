@@ -8,15 +8,15 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import buy.coke.zet.common.R
-import buy.coke.zet.common.databinding.LayoutRectangleButtonBinding
+import buy.coke.zet.common.databinding.LayoutNormalButtonBinding
 
-class RectangleButton @JvmOverloads constructor(
+class NormalButton @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ): ConstraintLayout(context, attrs, defStyleAttr) {
-    private val binding: LayoutRectangleButtonBinding =
-        LayoutRectangleButtonBinding.inflate(LayoutInflater.from(context), this, true)
+    private val binding: LayoutNormalButtonBinding =
+        LayoutNormalButtonBinding.inflate(LayoutInflater.from(context), this, true)
 
     var buttonStyle: Color? = null
         set(value) {
@@ -47,14 +47,14 @@ class RectangleButton @JvmOverloads constructor(
     companion object {
         @JvmStatic
         @BindingAdapter("mainColor")
-        fun setButtonStyle(rectangleButton: RectangleButton, color: Color) {
-            rectangleButton.buttonStyle = color
+        fun setButtonStyle(normalButton: NormalButton, color: Color) {
+            normalButton.buttonStyle = color
         }
 
         @JvmStatic
         @BindingAdapter("buttonText")
-        fun setButtonText(rectangleButton: RectangleButton, text: String) {
-            rectangleButton.buttonText = text
+        fun setButtonText(normalButton: NormalButton, text: String) {
+            normalButton.buttonText = text
         }
     }
 

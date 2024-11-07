@@ -7,7 +7,7 @@
 
         <import type="buy.coke.zet.common.designsystem.statebutton.LogoButton.BrandName" />
         <import type="buy.coke.zet.common.designsystem.topbar.TopBar.Image"/>
-        <import type="buy.coke.zet.common.designsystem.normalbutton.RectangleButton.Color"/>
+        <import type="buy.coke.zet.common.designsystem.normalbutton.NormalButton.Color"/>
 
     </data>
 
@@ -47,7 +47,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/logo_button"/>
 
-        <buy.coke.zet.common.designsystem.normalbutton.RectangleButton
+        <buy.coke.zet.common.designsystem.normalbutton.NormalButton
             android:id="@+id/rectangle_button"
             android:layout_width="match_parent"
             android:layout_height="48dp"
