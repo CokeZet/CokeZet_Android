@@ -18,6 +18,11 @@ class NormalButton @JvmOverloads constructor(
     private val binding: LayoutNormalButtonBinding =
         LayoutNormalButtonBinding.inflate(LayoutInflater.from(context), this, true)
 
+    var clickListener: OnClickListener? = null
+        set(value) {
+            binding.normalButtonBody.setOnClickListener(value)
+        }
+
     var buttonShape: Shape = Shape.RECTANGLE
         set(value) {
             field = value
@@ -67,6 +72,12 @@ class NormalButton @JvmOverloads constructor(
         @BindingAdapter("buttonShape")
         fun setButtonShape(normalButton: NormalButton, shape: Shape) {
             normalButton.buttonShape = shape
+        }
+
+        @JvmStatic
+        @BindingAdapter("clickListener")
+        fun setButtonClickListener(normalButton: NormalButton, clickListener: OnClickListener) {
+            normalButton.clickListener = clickListener
         }
     }
 
