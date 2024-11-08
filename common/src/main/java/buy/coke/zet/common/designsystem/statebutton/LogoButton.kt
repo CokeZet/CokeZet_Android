@@ -52,7 +52,7 @@ class LogoButton @JvmOverloads constructor(
         }
 
         @JvmStatic
-        @BindingAdapter("onCheckChangedListener")
+        @BindingAdapter("checkedChangedListener")
         fun setOnCheckChangedListener(logoButton: LogoButton, onCheckedChangeListener: OnCheckedChangeListener) {
             logoButton.checkedChangedListener = onCheckedChangeListener
         }

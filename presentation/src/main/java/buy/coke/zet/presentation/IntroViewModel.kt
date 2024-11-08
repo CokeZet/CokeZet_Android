@@ -1,5 +1,6 @@
 package buy.coke.zet.presentation
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -13,6 +14,16 @@ class IntroViewModel: ViewModel() {
 
     fun rotateDesign() = viewModelScope.launch {
         _clickCountState.value = (++_clickCountState.value) % BUTTON_DESIGN_NUMBER
+    }
+
+    fun clickLogoButton(check: Boolean) {
+        if (check) Log.d("ZET_Android", "LogoButton : true")
+        else Log.d("ZET_Android", "LogoButton : false")
+    }
+
+    fun clickSwitchButton(check: Boolean) {
+        if (check) Log.d("ZET_Android", "SwitchButton : true")
+        else Log.d("ZET_Android", "SwitchButton : false")
     }
 
     companion object {
