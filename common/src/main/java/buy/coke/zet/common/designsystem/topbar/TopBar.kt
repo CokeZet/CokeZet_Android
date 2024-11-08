@@ -7,6 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
 import buy.coke.zet.common.R
 import buy.coke.zet.common.databinding.LayoutTopbarBinding
+import buy.coke.zet.common.designsystem.TopBarStyle
 
 class TopBar @JvmOverloads constructor(
     context: Context,
@@ -16,10 +17,10 @@ class TopBar @JvmOverloads constructor(
     private val binding: LayoutTopbarBinding =
         LayoutTopbarBinding.inflate(LayoutInflater.from(context), this, true)
 
-    var leftIconImage: Image? = null
+    var leftIconImage: TopBarStyle.Image? = null
         set(value) {
             field = value
-            value?.let { binding.leftIcon.setImageResource(getImageId(it)) }
+            value?.let { binding.leftIcon.setImageResource(it.imageId) }
         }
 
     var leftText: String = ""
@@ -28,22 +29,22 @@ class TopBar @JvmOverloads constructor(
             binding.leftText.text = value
         }
 
-    var rightFirstIconImage: Image? = null
+    var rightFirstIconImage: TopBarStyle.Image? = null
         set(value) {
             field = value
-            value?.let { binding.rightFirstIcon.setImageResource(getImageId(it)) }
+            value?.let { binding.rightFirstIcon.setImageResource(it.imageId) }
         }
 
-    var rightSecondIconImage: Image? = null
+    var rightSecondIconImage: TopBarStyle.Image? = null
         set(value) {
             field = value
-            value?.let { binding.rightSecondIcon.setImageResource(getImageId(it)) }
+            value?.let { binding.rightSecondIcon.setImageResource(it.imageId) }
         }
 
-    var rightThirdIconImage: Image? = null
+    var rightThirdIconImage: TopBarStyle.Image? = null
         set(value) {
             field = value
-            value?.let { binding.rightThirdIcon.setImageResource(getImageId(it)) }
+            value?.let { binding.rightThirdIcon.setImageResource(it.imageId) }
         }
 
     var leftIconClickListener: OnClickListener? = null
@@ -70,21 +71,10 @@ class TopBar @JvmOverloads constructor(
             binding.rightThirdIcon.setOnClickListener(value)
         }
 
-    private fun getImageId(image: Image): Int {
-        return when(image) {
-            Image.LOGO -> R.drawable.logo_topbar
-            Image.BACK -> R.drawable.back_topbar
-            Image.NOTIFICATION -> R.drawable.notification_topbar
-            Image.GRAPH -> R.drawable.graph_topbar
-            Image.PERSON -> R.drawable.person_topbar
-            Image.EXIT -> R.drawable.exit_topbar
-        }
-    }
-
     companion object {
         @JvmStatic
         @BindingAdapter("leftIconImage")
-        fun setLeftIconImage(topBar: TopBar, iconImage: Image) {
+        fun setLeftIconImage(topBar: TopBar, iconImage: TopBarStyle.Image) {
             topBar.leftIconImage = iconImage
         }
 
@@ -96,19 +86,19 @@ class TopBar @JvmOverloads constructor(
 
         @JvmStatic
         @BindingAdapter("rightFirstIconImage")
-        fun setRightFirstIconImage(topBar: TopBar, iconImage: Image) {
+        fun setRightFirstIconImage(topBar: TopBar, iconImage: TopBarStyle.Image) {
             topBar.rightFirstIconImage = iconImage
         }
 
         @JvmStatic
         @BindingAdapter("rightSecondIconImage")
-        fun setRightSecondIconImage(topBar: TopBar, iconImage: Image) {
+        fun setRightSecondIconImage(topBar: TopBar, iconImage: TopBarStyle.Image) {
             topBar.rightSecondIconImage = iconImage
         }
 
         @JvmStatic
         @BindingAdapter("rightThirdIconImage")
-        fun setRightThirdIconImage(topBar: TopBar, iconImage: Image) {
+        fun setRightThirdIconImage(topBar: TopBar, iconImage: TopBarStyle.Image) {
             topBar.rightThirdIconImage = iconImage
         }
 
@@ -137,7 +127,4 @@ class TopBar @JvmOverloads constructor(
         }
     }
 
-    enum class Image {
-        LOGO, BACK, NOTIFICATION, GRAPH, PERSON, EXIT
-    }
 }

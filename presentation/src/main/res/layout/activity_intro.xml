@@ -5,10 +5,10 @@
 
     <data>
 
-        <import type="buy.coke.zet.common.designsystem.statebutton.LogoButton.BrandName" />
-        <import type="buy.coke.zet.common.designsystem.topbar.TopBar.Image"/>
-        <import type="buy.coke.zet.common.designsystem.normalbutton.NormalButton.Color"/>
-        <import type="buy.coke.zet.common.designsystem.normalbutton.NormalButton.Shape"/>
+        <import type="buy.coke.zet.common.designsystem.LogoButtonStyle.BrandName" />
+        <import type="buy.coke.zet.common.designsystem.TopBarStyle.Image"/>
+        <import type="buy.coke.zet.common.designsystem.NormalButtonStyle.Color"/>
+        <import type="buy.coke.zet.common.designsystem.NormalButtonStyle.Shape"/>
 
         <variable
             name="viewModel"
@@ -38,6 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:brand="@{BrandName.BC}"
+            app:checkedChangedListener="@{(logoButton, check) -> viewModel.clickLogoButton(check)}"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,6 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            app:checkedChangedListener="@{(switchButton, check) -> viewModel.clickSwitchButton(check)}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/logo_button"/>
