@@ -4,6 +4,10 @@
         <item name="android:windowBackground">@color/gray_900</item>
         <item name="colorPrimary">@color/red_700</item>
         <item name="colorSecondary">@color/purple_700</item>
+
+        <item name="android:fontFamily">@font/suit_font_family</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="textAllCaps">false</item>
     </style>
 
     <style name="Theme.CokeZet_Android" parent="Base.Theme.CokeZet_Android" />
