@@ -1,12 +1,15 @@
 package buy.coke.zet.presentation
 
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import buy.coke.zet.common.designsystem.dialog.ShortDialog
 import buy.coke.zet.presentation.databinding.ActivityIntroBinding
 import kotlinx.coroutines.launch
 
@@ -25,6 +28,10 @@ class IntroActivity : AppCompatActivity() {
                     binding.rectangleButton.buttonStyle = setButtonStyle(count)
                 }
             }
+        }
+
+        binding.roundButton.clickListener = View.OnClickListener {
+            ShortDialog(this).show()
         }
     }
 
