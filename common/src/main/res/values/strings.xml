@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="title_topbar">텍스트</string>
+    <string name="notification_check_description">최저가 정보를 놓치지 않고 받아보려면 알림 수신 동의가 필요해요.</string>
+    <string name="yes">확인</string>
+    <string name="no">취소</string>
 </resources>
