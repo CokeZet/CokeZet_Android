@@ -55,7 +55,7 @@
             app:layout_constraintTop_toBottomOf="@id/logo_button"/>
 
         <buy.coke.zet.common.designsystem.normalbutton.NormalButton
-            android:id="@+id/rectangle_button"
+            android:id="@+id/normal_button"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginStart="25dp"
@@ -70,16 +70,30 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <buy.coke.zet.common.designsystem.normalbutton.NormalButton
-            android:id="@+id/round_button"
+            android:id="@+id/short_dialog_button"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
             android:layout_marginTop="10dp"
             app:mainColor="@{Color.LIGHT_RED}"
-            app:buttonText="@{@string/button}"
+            app:buttonText="@{`Short Dialog`}"
             app:buttonShape="@{Shape.ROUND}"
-            app:layout_constraintTop_toBottomOf="@id/rectangle_button"
+            app:layout_constraintTop_toBottomOf="@id/normal_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <buy.coke.zet.common.designsystem.normalbutton.NormalButton
+            android:id="@+id/long_dialog_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="10dp"
+            app:mainColor="@{Color.GRAY}"
+            app:buttonText="@{`Long Dialog`}"
+            app:buttonShape="@{Shape.ROUND}"
+            app:layout_constraintTop_toBottomOf="@id/short_dialog_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
