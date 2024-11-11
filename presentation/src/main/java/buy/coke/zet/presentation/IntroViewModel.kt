@@ -30,6 +30,10 @@ class IntroViewModel: ViewModel() {
         else Log.d("ZET_Android", "SwitchButton : false")
     }
 
+    fun clickDialogButton() {
+        Log.d("ZET_Android", "Click Dialog Button!")
+    }
+
     companion object {
         const val BUTTON_DESIGN_NUMBER = 5
     }

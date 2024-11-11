@@ -31,7 +31,7 @@ class IntroActivity : AppCompatActivity() {
         }
 
         binding.roundButton.clickListener = View.OnClickListener {
-            ShortDialog(this).show()
+            ShortDialog(this, yesButtonListener = viewModel::clickDialogButton).show()
         }
     }
 
