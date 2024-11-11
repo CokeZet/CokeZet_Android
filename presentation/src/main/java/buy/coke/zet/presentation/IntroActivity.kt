@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import buy.coke.zet.common.designsystem.dialog.LongDialog
 import buy.coke.zet.common.designsystem.dialog.ShortDialog
 import buy.coke.zet.presentation.databinding.ActivityIntroBinding
 import kotlinx.coroutines.launch
@@ -25,13 +26,17 @@ class IntroActivity : AppCompatActivity() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.clickCountState.collect { count ->
-                    binding.rectangleButton.buttonStyle = setButtonStyle(count)
+                    binding.normalButton.buttonStyle = setButtonStyle(count)
                 }
             }
         }
 
-        binding.roundButton.clickListener = View.OnClickListener {
+        binding.shortDialogButton.clickListener = View.OnClickListener {
             ShortDialog(this, yesButtonListener = viewModel::clickDialogButton).show()
+        }
+
+        binding.longDialogButton.clickListener = View.OnClickListener {
+            LongDialog(this, yesButtonListener = viewModel::clickDialogButton).show()
         }
     }
 
