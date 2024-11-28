@@ -2,6 +2,7 @@ package buy.coke.zet.common.designsystem.normalbutton
 
 import android.content.Context
 import android.content.res.ColorStateList
+import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -9,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import buy.coke.zet.common.databinding.LayoutNormalButtonBinding
 import buy.coke.zet.common.designsystem.NormalButtonStyle
+import buy.coke.zet.common.designsystem.dpToPx
 
 class NormalButton @JvmOverloads constructor(
     context: Context,
@@ -23,19 +25,29 @@ class NormalButton @JvmOverloads constructor(
             binding.normalButtonBody.setOnClickListener(value)
         }
 
+    var clickEnable: Boolean = true
+        set(value) {
+            field = value
+            binding.normalButtonBody.isEnabled = value
+        }
+
     var buttonShape: NormalButtonStyle.Shape = NormalButtonStyle.Shape.RECTANGLE
         set(value) {
             field = value
-            binding.normalButtonBody.background = ContextCompat.getDrawable(context, value.drawableId)
+//            val newBackground = binding.normalButtonBody.background as GradientDrawable
+//
+//            (binding.normalButtonBody.background as GradientDrawable).apply {
+//                this.cornerRadius = context.dpToPx(buttonShape.radius).toFloat()
+//            }
         }
 
-    var buttonStyle: NormalButtonStyle.Color = NormalButtonStyle.Color.LIGHT_RED
+    var buttonStyle: NormalButtonStyle.Color = NormalButtonStyle.Color.RED
         set(value) {
             field = value
 
-            binding.normalButtonBody.backgroundTintList =
-                ColorStateList.valueOf(ContextCompat.getColor(context, value.backgroundColor))
-            binding.normalButtonBody.setTextColor(ContextCompat.getColor(context, value.textColor))
+            binding.normalButtonBody.background = ContextCompat.getDrawable(context, value.backgroundColor)
+            val colorStateList = ContextCompat.getColorStateList(context, value.textColor)
+            binding.normalButtonBody.setTextColor(colorStateList)
         }
 
     var buttonText: String = ""
@@ -52,15 +64,15 @@ class NormalButton @JvmOverloads constructor(
         }
 
         @JvmStatic
-        @BindingAdapter("buttonText")
-        fun setButtonText(normalButton: NormalButton, text: String) {
-            normalButton.buttonText = text
-        }
-
-        @JvmStatic
         @BindingAdapter("buttonShape")
         fun setButtonShape(normalButton: NormalButton, shape: NormalButtonStyle.Shape) {
             normalButton.buttonShape = shape
+        }
+
+        @JvmStatic
+        @BindingAdapter("clickEnable")
+        fun setButtonClickEnable(normalButton: NormalButton, enable: Boolean) {
+            normalButton.clickEnable = enable
         }
 
         @JvmStatic

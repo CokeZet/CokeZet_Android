@@ -23,30 +23,12 @@ class IntroActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_intro)
         binding.viewModel = viewModel
 
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.clickCountState.collect { count ->
-                    binding.normalButton.buttonStyle = setButtonStyle(count)
-                }
-            }
-        }
-
         binding.shortDialogButton.clickListener = View.OnClickListener {
             ShortDialog(this, yesButtonListener = viewModel::clickDialogButton).show()
         }
 
         binding.longDialogButton.clickListener = View.OnClickListener {
             LongDialog(this, yesButtonListener = viewModel::clickDialogButton).show()
-        }
-    }
-
-    private fun setButtonStyle(count: Int): buy.coke.zet.common.designsystem.NormalButtonStyle.Color {
-        return when(count) {
-            0 -> buy.coke.zet.common.designsystem.NormalButtonStyle.Color.LIGHT_RED
-            1 -> buy.coke.zet.common.designsystem.NormalButtonStyle.Color.RED
-            2 -> buy.coke.zet.common.designsystem.NormalButtonStyle.Color.WHITE
-            3 -> buy.coke.zet.common.designsystem.NormalButtonStyle.Color.GRAY
-            else -> buy.coke.zet.common.designsystem.NormalButtonStyle.Color.BLACK
         }
     }
 
