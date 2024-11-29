@@ -58,7 +58,7 @@
             android:layout_marginBottom="20dp"
             app:buttonText="@{@string/yes}"
             app:buttonShape="@{Shape.RECTANGLE}"
-            app:mainColor="@{Color.LIGHT_RED}"
+            app:mainColor="@{Color.RED}"
             app:layout_constraintStart_toEndOf="@id/cancel_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dialog_description"

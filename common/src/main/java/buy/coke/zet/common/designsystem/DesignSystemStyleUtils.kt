@@ -4,15 +4,13 @@ import buy.coke.zet.common.R
 
 object NormalButtonStyle {
     enum class Color(val backgroundColor: Int, val textColor: Int) {
-        LIGHT_RED(R.color.red_600, R.color.white),
-        RED(R.color.red_700, R.color.white),
-        WHITE(R.color.red_50, R.color.black),
-        GRAY(R.color.gray_500, R.color.white),
-        BLACK(R.color.gray_700, R.color.gray_500)
+        RED(R.drawable.red_button_drawable, R.color.red_button_text_color),
+        WHITE(R.drawable.white_button_drawable, R.color.white_button_text_color),
+        GRAY(R.drawable.gray_button_drawable, R.color.gray_button_text_color)
     }
 
-    enum class Shape(val drawableId: Int) {
-        RECTANGLE(R.drawable.rectangle_button), ROUND(R.drawable.round_button)
+    enum class Shape(val radius: Int) {
+        RECTANGLE(10), ROUND(100)
     }
 
 }

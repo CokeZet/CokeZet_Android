@@ -35,6 +35,6 @@ class IntroViewModel: ViewModel() {
     }
 
     companion object {
-        const val BUTTON_DESIGN_NUMBER = 5
+        const val BUTTON_DESIGN_NUMBER = 3
     }
 }
