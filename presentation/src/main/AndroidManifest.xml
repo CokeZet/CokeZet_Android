@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".info.notification_setting.NotificationSettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".info.mypage.MyPageActivity"
             android:exported="false" />
         <activity

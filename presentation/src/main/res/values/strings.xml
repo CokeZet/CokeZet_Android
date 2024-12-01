@@ -13,4 +13,11 @@
     <string name="personal_information_term">개인정보 처리방침</string>
     <string name="logout">로그아웃</string>
     <string name="withdraw">회원탈퇴</string>
+    
+<!--    가격 알림 설정-->
+    <string name="notification_description">가격 알림을 받고 싶은 항목의 알림을 설정해주세요.</string>
+    <string name="hot_deal">핫딜</string>
+    <string name="lowest_price">최저가</string>
+    <string name="price_change">가격변동</string>
+    <string name="night_notification">야간 알림</string>
 </resources>
