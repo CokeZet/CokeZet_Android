@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".MyPageActivity">
+        tools:context=".info.mypage.MyPageActivity">
         
         <buy.coke.zet.common.designsystem.topbar.TopBar
             android:id="@+id/mypage_topbar"

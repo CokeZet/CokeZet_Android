@@ -1,11 +1,9 @@
-package buy.coke.zet.presentation
+package buy.coke.zet.presentation.info.mypage
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
+import buy.coke.zet.presentation.R
 import buy.coke.zet.presentation.databinding.ActivityMyPageBinding
 
 class MyPageActivity : AppCompatActivity() {
