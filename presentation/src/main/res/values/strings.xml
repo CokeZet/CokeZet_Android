@@ -3,7 +3,7 @@
     <string name="text">텍스트</string>
     <string name="button">Button</string>
 
-<!--    내정보-->
+    <!--    내정보-->
     <string name="welcome_text">오늘도 시원한 콜라 한 잔 하셨나요?</string>
     <string name="my_info">내정보</string>
     <string name="set_price_notification">가격 알림 설정</string>
@@ -13,8 +13,8 @@
     <string name="personal_information_term">개인정보 처리방침</string>
     <string name="logout">로그아웃</string>
     <string name="withdraw">회원탈퇴</string>
-    
-<!--    가격 알림 설정-->
+
+    <!--    가격 알림 설정-->
     <string name="notification_description">가격 알림을 받고 싶은 항목의 알림을 설정해주세요.</string>
     <string name="hot_deal">핫딜</string>
     <string name="lowest_price">최저가</string>

@@ -5,18 +5,16 @@
 
     <data>
         <variable
-            name="date"
-            type="String" />
-
-        <variable
-            name="title"
-            type="String" />
+            name="item"
+            type="buy.coke.zet.presentation.info.announcement.list.AnnouncementListItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@drawable/announcement_card_drawable">
+        android:background="@drawable/announcement_card_drawable"
+        android:layout_marginBottom="12dp"
+        android:onClick="@{() -> item.clickListener.invoke(item)}">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/announcement_date"
@@ -26,7 +24,7 @@
             android:layout_marginTop="20dp"
             android:textColor="@color/gray_500"
             android:textSize="14sp"
-            android:text="@{date}"
+            android:text="@{item.date}"
             tools:text="2023.12.29"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -48,7 +46,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:text="@{title}"
+            android:text="@{item.title}"
             tools:text="v1.0 업데이트 안내 드립니다. 1) 알림 기능이 추가 되었습니다."
             android:textSize="14sp"
             android:singleLine="true"
