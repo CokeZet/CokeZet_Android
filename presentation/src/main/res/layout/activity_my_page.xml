@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="buy.coke.zet.common.designsystem.TopBarStyle"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".info.mypage.MyPageActivity">
+        
+        <buy.coke.zet.common.designsystem.topbar.TopBar
+            android:id="@+id/mypage_topbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="8dp"
+            app:leftIconImage="@{TopBarStyle.Image.BACK}"
+            app:rightSecondIconImage="@{TopBarStyle.Image.NOTIFICATION}"
+            app:rightThirdIconImage="@{TopBarStyle.Image.GRAPH}"
+            app:leftText="@{@string/my_info}"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/info_container"
+            android:layout_width="match_parent"
+            android:layout_height="89dp"
+            android:background="@color/gray_800">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profile_photo_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:cardCornerRadius="28dp">
+
+                <ImageView
+                    android:id="@+id/profile_photo"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/user_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="김콜라님"
+                android:textStyle="bold"
+                android:layout_marginStart="12dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@id/profile_photo_container"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/welcome_title"/>
+
+            <TextView
+                android:id="@+id/welcome_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_text"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@id/profile_photo_container"
+                app:layout_constraintTop_toBottomOf="@+id/user_id"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            android:id="@+id/set_price_notification_button"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            layout="@layout/layout_mypage_item"
+            android:layout_marginBottom="8dp"
+            app:titleText="@{@string/set_price_notification}"/>
+
+        <include
+            android:id="@+id/announcement_button"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            layout="@layout/layout_mypage_item"
+            app:titleText="@{@string/announcement}"/>
+
+        <include
+            android:id="@+id/ask_question_button"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginBottom="8dp"
+            layout="@layout/layout_mypage_item"
+            app:titleText="@{@string/ask_question}"/>
+
+        <include
+            android:id="@+id/service_term_button"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            layout="@layout/layout_mypage_item"
+            app:titleText="@{@string/service_term}"/>
+
+        <include
+            android:id="@+id/personal_information_term_button"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            layout="@layout/layout_mypage_item"
+            app:titleText="@{@string/personal_information_term}"/>
+
+        <include
+            android:id="@+id/logout_button"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            layout="@layout/layout_mypage_item"
+            app:titleText="@{@string/logout}"/>
+
+        <include
+            android:id="@+id/withdraw"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            layout="@layout/layout_mypage_item"
+            app:titleText="@{@string/withdraw}"/>
+
+
+    </LinearLayout>
+
+</layout>
+
