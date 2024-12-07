@@ -10,6 +10,14 @@ object RectangleButtonStyle {
     }
 }
 
+object RoundButtonStyle {
+    enum class Color(val backgroundColor: Int, val textColor: Int) {
+        RED(R.drawable.red_round_button_drawable, R.color.red_button_text_color),
+        WHITE(R.drawable.white_round_button_drawable, R.color.white_button_text_color),
+        GRAY(R.drawable.gray_round_button_drawable, R.color.gray_button_text_color)
+    }
+}
+
 object TopBarStyle {
     enum class Image(val imageId: Int) {
         LOGO(R.drawable.logo_topbar),

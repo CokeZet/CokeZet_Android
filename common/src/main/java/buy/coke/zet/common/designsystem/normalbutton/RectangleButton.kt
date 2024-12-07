@@ -61,6 +61,12 @@ class RectangleButton @JvmOverloads constructor(
         fun setButtonClickListener(rectangleButton: RectangleButton, clickListener: OnClickListener) {
             rectangleButton.clickListener = clickListener
         }
+
+        @JvmStatic
+        @BindingAdapter("buttonText")
+        fun setButtonText(rectangleButton: RectangleButton, text: String) {
+            rectangleButton.buttonText = text
+        }
     }
 
 }
