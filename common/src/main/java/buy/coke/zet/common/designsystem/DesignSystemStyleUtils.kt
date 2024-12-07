@@ -2,17 +2,20 @@ package buy.coke.zet.common.designsystem
 
 import buy.coke.zet.common.R
 
-object NormalButtonStyle {
+object RectangleButtonStyle {
     enum class Color(val backgroundColor: Int, val textColor: Int) {
-        RED(R.drawable.red_button_drawable, R.color.red_button_text_color),
-        WHITE(R.drawable.white_button_drawable, R.color.white_button_text_color),
-        GRAY(R.drawable.gray_button_drawable, R.color.gray_button_text_color)
+        RED(R.drawable.red_rectangle_button_drawable, R.color.red_button_text_color),
+        WHITE(R.drawable.white_rectangle_button_drawable, R.color.white_button_text_color),
+        GRAY(R.drawable.gray_rectangle_button_drawable, R.color.gray_button_text_color)
     }
+}
 
-    enum class Shape(val radius: Int) {
-        RECTANGLE(10), ROUND(100)
+object RoundButtonStyle {
+    enum class Color(val backgroundColor: Int, val textColor: Int) {
+        RED(R.drawable.red_round_button_drawable, R.color.red_button_text_color),
+        WHITE(R.drawable.white_round_button_drawable, R.color.white_button_text_color),
+        GRAY(R.drawable.gray_round_button_drawable, R.color.gray_button_text_color)
     }
-
 }
 
 object TopBarStyle {

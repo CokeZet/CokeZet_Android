@@ -7,8 +7,7 @@
 
         <import type="buy.coke.zet.common.designsystem.LogoButtonStyle.BrandName" />
         <import type="buy.coke.zet.common.designsystem.TopBarStyle.Image"/>
-        <import type="buy.coke.zet.common.designsystem.NormalButtonStyle.Color"/>
-        <import type="buy.coke.zet.common.designsystem.NormalButtonStyle.Shape"/>
+        <import type="buy.coke.zet.common.designsystem.RectangleButtonStyle.Color"/>
 
         <variable
             name="viewModel"
@@ -54,7 +53,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/logo_button"/>
 
-        <buy.coke.zet.common.designsystem.normalbutton.NormalButton
+        <buy.coke.zet.common.designsystem.normalbutton.RectangleButton
             android:id="@+id/normal_button"
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -63,14 +62,13 @@
             android:layout_marginTop="10dp"
             app:mainColor="@{Color.RED}"
             app:buttonText="@{@string/button}"
-            app:buttonShape="@{Shape.RECTANGLE}"
             app:clickListener="@{() -> viewModel.rotateDesign()}"
             app:clickEnable="@{false}"
             app:layout_constraintTop_toBottomOf="@id/switch_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-        <buy.coke.zet.common.designsystem.normalbutton.NormalButton
+        <buy.coke.zet.common.designsystem.normalbutton.RectangleButton
             android:id="@+id/short_dialog_button"
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -79,12 +77,11 @@
             android:layout_marginTop="10dp"
             app:mainColor="@{Color.WHITE}"
             app:buttonText="@{`Short Dialog`}"
-            app:buttonShape="@{Shape.RECTANGLE}"
             app:layout_constraintTop_toBottomOf="@id/normal_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-        <buy.coke.zet.common.designsystem.normalbutton.NormalButton
+        <buy.coke.zet.common.designsystem.normalbutton.RectangleButton
             android:id="@+id/long_dialog_button"
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -93,7 +90,6 @@
             android:layout_marginTop="10dp"
             app:mainColor="@{Color.GRAY}"
             app:buttonText="@{`Long Dialog`}"
-            app:buttonShape="@{Shape.ROUND}"
             app:layout_constraintTop_toBottomOf="@id/short_dialog_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
