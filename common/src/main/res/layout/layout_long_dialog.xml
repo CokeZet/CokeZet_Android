@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="buy.coke.zet.common.designsystem.NormalButtonStyle.Shape"/>
         <import type="buy.coke.zet.common.designsystem.NormalButtonStyle.Color"/>
     </data>
 
@@ -64,7 +63,7 @@
             app:layout_constraintTop_toBottomOf="@id/dialog_warning"
             app:constraint_referenced_ids="cancel_button, okay_button"/>
 
-        <buy.coke.zet.common.designsystem.normalbutton.NormalButton
+        <buy.coke.zet.common.designsystem.normalbutton.RectangleButton
             android:id="@+id/cancel_button"
             android:layout_width="0dp"
             android:layout_height="48dp"
@@ -72,21 +71,19 @@
             android:layout_marginEnd="12dp"
             android:layout_marginBottom="20dp"
             app:buttonText="@{@string/no}"
-            app:buttonShape="@{Shape.RECTANGLE}"
             app:mainColor="@{Color.WHITE}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/dialog_warning"
             app:layout_constraintEnd_toStartOf="@id/okay_button"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <buy.coke.zet.common.designsystem.normalbutton.NormalButton
+        <buy.coke.zet.common.designsystem.normalbutton.RectangleButton
             android:id="@+id/okay_button"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
             app:buttonText="@{@string/yes}"
-            app:buttonShape="@{Shape.RECTANGLE}"
             app:mainColor="@{Color.GRAY}"
             app:layout_constraintStart_toEndOf="@id/cancel_button"
             app:layout_constraintEnd_toEndOf="parent"
