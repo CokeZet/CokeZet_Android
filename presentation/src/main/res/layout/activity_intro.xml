@@ -7,7 +7,7 @@
 
         <import type="buy.coke.zet.common.designsystem.LogoButtonStyle.BrandName" />
         <import type="buy.coke.zet.common.designsystem.TopBarStyle.Image"/>
-        <import type="buy.coke.zet.common.designsystem.NormalButtonStyle.Color"/>
+        <import type="buy.coke.zet.common.designsystem.RectangleButtonStyle.Color"/>
 
         <variable
             name="viewModel"

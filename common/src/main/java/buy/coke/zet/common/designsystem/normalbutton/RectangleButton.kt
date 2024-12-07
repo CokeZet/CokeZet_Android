@@ -7,7 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import buy.coke.zet.common.databinding.LayoutRectangleButtonBinding
-import buy.coke.zet.common.designsystem.NormalButtonStyle
+import buy.coke.zet.common.designsystem.RectangleButtonStyle
 
 class RectangleButton @JvmOverloads constructor(
     context: Context,
@@ -28,7 +28,7 @@ class RectangleButton @JvmOverloads constructor(
             binding.rectangleButtonBody.isEnabled = value
         }
 
-    var buttonStyle: NormalButtonStyle.Color = NormalButtonStyle.Color.RED
+    var buttonStyle: RectangleButtonStyle.Color = RectangleButtonStyle.Color.RED
         set(value) {
             field = value
 
@@ -46,7 +46,7 @@ class RectangleButton @JvmOverloads constructor(
     companion object {
         @JvmStatic
         @BindingAdapter("mainColor")
-        fun setButtonStyle(rectangleButton: RectangleButton, color: NormalButtonStyle.Color) {
+        fun setButtonStyle(rectangleButton: RectangleButton, color: RectangleButtonStyle.Color) {
             rectangleButton.buttonStyle = color
         }
 

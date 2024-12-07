@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="buy.coke.zet.common.designsystem.NormalButtonStyle.Color"/>
+        <import type="buy.coke.zet.common.designsystem.RectangleButtonStyle.Color"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

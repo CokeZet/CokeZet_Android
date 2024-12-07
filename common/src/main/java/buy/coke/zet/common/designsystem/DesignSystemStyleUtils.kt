@@ -2,7 +2,7 @@ package buy.coke.zet.common.designsystem
 
 import buy.coke.zet.common.R
 
-object NormalButtonStyle {
+object RectangleButtonStyle {
     enum class Color(val backgroundColor: Int, val textColor: Int) {
         RED(R.drawable.red_rectangle_button_drawable, R.color.red_button_text_color),
         WHITE(R.drawable.white_rectangle_button_drawable, R.color.white_button_text_color),
