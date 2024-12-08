@@ -3,6 +3,21 @@
 
     <application>
         <activity
+            android:name=".intro.entry.EntryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".intro.signup.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".intro.splash.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".info.announcement.AnnouncementActivity"
             android:exported="false" />
         <activity
