@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".intro.entry.EntryActivity"
+            android:exported="false" />
+        <activity
             android:name=".intro.signup.SignUpActivity"
             android:exported="false" />
         <activity

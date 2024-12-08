@@ -7,6 +7,11 @@
     <string name="signup_welcome">ZET와 함께 제로콜라\n최저가 탐색 시작해요</string>
     <string name="start_with_kakao">카카오로 시작하기</string>
 
+    <!--    시작 화면-->
+    <string name="entry_welcome">최저가 할인 정보와 실시간\n 가격변동 소식을 간편하게 받아봐요</string>
+    <string name="term_introduce">서비스 시작 시 이용약관 및 개인정보처리방침에 동의 처리됩니다.</string>
+    <string name="entry_start">ZET와 최저가 탐색 시작하기</string>
+
     <!--    내정보-->
     <string name="welcome_text">오늘도 시원한 콜라 한 잔 하셨나요?</string>
     <string name="my_info">내정보</string>

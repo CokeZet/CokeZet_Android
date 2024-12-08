@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="buy.coke.zet.common.designsystem.RoundButtonStyle"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".intro.entry.EntryActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/entry_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/intro_agreement"
+            android:layout_marginTop="56dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/welcome_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/entry_welcome"
+            android:layout_marginTop="56dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/entry_picture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/term_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="@string/term_introduce"
+            android:textSize="12sp"
+            android:textColor="@color/gray_500"
+            app:layout_constraintTop_toBottomOf="@id/welcome_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <buy.coke.zet.common.designsystem.normalbutton.RoundButton
+            android:id="@+id/start_button"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginBottom="28dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            app:mainColor="@{RoundButtonStyle.Color.GRAY}"
+            app:buttonText="@{@string/entry_start}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
