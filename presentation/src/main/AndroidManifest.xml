@@ -3,6 +3,10 @@
 
     <application>
         <activity
+            android:name="setting.NicknameSettingActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" />
+        <activity
             android:name=".intro.entry.EntryActivity"
             android:exported="false" />
         <activity
