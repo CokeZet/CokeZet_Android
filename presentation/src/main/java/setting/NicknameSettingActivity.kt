@@ -1,8 +1,10 @@
 package setting
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
+import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +20,10 @@ class NicknameSettingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_nickname_setting)
+
+        binding.nextButton.clickListener = View.OnClickListener {
+            startActivity(Intent(this, ShoppingListSettingActivity::class.java))
+        }
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
