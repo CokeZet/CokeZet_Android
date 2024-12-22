@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import buy.coke.zet.presentation.R
 import buy.coke.zet.presentation.databinding.ActivitySplashBinding
 import buy.coke.zet.presentation.intro.signup.SignUpActivity
+import buy.coke.zet.presentation.product.list.ProductListActivity
 import setting.NicknameSettingActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -16,6 +17,6 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
 
-        startActivity(Intent(this, NicknameSettingActivity::class.java))
+        startActivity(Intent(this, ProductListActivity::class.java))
     }
 }

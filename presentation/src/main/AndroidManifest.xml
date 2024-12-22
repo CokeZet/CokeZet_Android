@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".product.list.ProductListActivity"
+            android:exported="false" />
+        <activity
             android:name="setting.ShoppingListSettingActivity"
             android:exported="false" />
         <activity

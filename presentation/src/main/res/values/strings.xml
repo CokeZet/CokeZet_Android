@@ -27,6 +27,14 @@
     <string name="naver">네이버</string>
     <string name="market_kurly">마켓컬리</string>
 
+    <!--    상품 정보-->
+    <string name="setting_lowest_price">최저가 탐색 조건 설정</string>
+    <string name="brand">브랜드</string>
+    <string name="volume">용량</string>
+    <string name="shopping_mall">쇼핑몰</string>
+    <string name="discount_rate">할인율</string>
+    <string name="card_discount">카드혜택</string>
+
     <!--    내정보-->
     <string name="welcome_text">오늘도 시원한 콜라 한 잔 하셨나요?</string>
     <string name="my_info">내정보</string>
