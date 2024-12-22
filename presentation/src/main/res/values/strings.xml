@@ -12,6 +12,21 @@
     <string name="term_introduce">서비스 시작 시 이용약관 및 개인정보처리방침에 동의 처리됩니다.</string>
     <string name="entry_start">ZET와 최저가 탐색 시작하기</string>
 
+    <!--    초기 설정-->
+    <string name="customer">님,</string>
+    <string name="welcome_nickname_setting">몇 가지 더 설정하고\n함께 최저가 콜라 즐겨요!</string>
+    <string name="next">다음</string>
+    <string name="welcome_shopping_setting">%s 님,\n어떤 쇼핑몰에서 \n가격을 탐지할까요?</string>
+    <string name="current_step">%d/3</string>
+
+    <!--    쇼핑몰 및 카드사-->
+    <string name="all">전체</string>
+    <string name="coupang">쿠팡</string>
+    <string name="gmarket">지마켓</string>
+    <string name="eleventh_street">11번가</string>
+    <string name="naver">네이버</string>
+    <string name="market_kurly">마켓컬리</string>
+
     <!--    내정보-->
     <string name="welcome_text">오늘도 시원한 콜라 한 잔 하셨나요?</string>
     <string name="my_info">내정보</string>

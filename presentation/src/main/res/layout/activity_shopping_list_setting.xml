@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="buy.coke.zet.common.designsystem.LogoButtonStyle.BrandName"/>
+        <variable
+            name="nickname"
+            type="java.lang.String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="setting.ShoppingListSettingActivity">
+
+        <TextView
+            android:id="@+id/second_step_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/gray_600"
+            android:text="@{@string/current_step(2)}"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/shopping_welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="44dp"
+            android:textSize="24sp"
+            android:text="@{@string/welcome_shopping_setting(nickname)}"
+            app:layout_constraintTop_toBottomOf="@id/second_step_text"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <buy.coke.zet.common.designsystem.statebutton.LogoButton
+            android:id="@+id/icon_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:brand="@{BrandName.ALL}"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/icon_coupang"
+            app:layout_constraintTop_toBottomOf="@id/shopping_welcome_text"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_500"
+            android:textSize="14sp"
+            android:text="@string/all"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/icon_all"
+            app:layout_constraintStart_toStartOf="@id/icon_all"
+            app:layout_constraintEnd_toEndOf="@id/icon_all"/>
+
+        <buy.coke.zet.common.designsystem.statebutton.LogoButton
+            android:id="@+id/icon_coupang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="18dp"
+            app:brand="@{BrandName.COUPANG}"
+            app:layout_constraintStart_toEndOf="@id/icon_all"
+            app:layout_constraintEnd_toStartOf="@id/icon_gmarket"
+            app:layout_constraintTop_toBottomOf="@id/shopping_welcome_text"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_coupang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_500"
+            android:textSize="14sp"
+            android:text="@string/coupang"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/icon_coupang"
+            app:layout_constraintStart_toStartOf="@id/icon_coupang"
+            app:layout_constraintEnd_toEndOf="@id/icon_coupang"/>
+
+        <buy.coke.zet.common.designsystem.statebutton.LogoButton
+            android:id="@+id/icon_gmarket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="18dp"
+            app:brand="@{BrandName.GMARKET}"
+            app:layout_constraintStart_toEndOf="@id/icon_coupang"
+            app:layout_constraintEnd_toStartOf="@id/icon_eleventh_street"
+            app:layout_constraintTop_toBottomOf="@id/shopping_welcome_text"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_gmarket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_500"
+            android:textSize="14sp"
+            android:text="@string/gmarket"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/icon_gmarket"
+            app:layout_constraintStart_toStartOf="@id/icon_gmarket"
+            app:layout_constraintEnd_toEndOf="@id/icon_gmarket"/>
+
+        <buy.coke.zet.common.designsystem.statebutton.LogoButton
+            android:id="@+id/icon_eleventh_street"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="18dp"
+            app:brand="@{BrandName.ELEVENTHSTREET}"
+            app:layout_constraintStart_toEndOf="@id/icon_gmarket"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shopping_welcome_text"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_eleventh_steet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_500"
+            android:textSize="14sp"
+            android:text="@string/eleventh_street"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/icon_eleventh_street"
+            app:layout_constraintStart_toStartOf="@id/icon_eleventh_street"
+            app:layout_constraintEnd_toEndOf="@id/icon_eleventh_street"/>
+
+        <buy.coke.zet.common.designsystem.statebutton.LogoButton
+            android:id="@+id/icon_naver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            app:brand="@{BrandName.NAVERSHOPPING}"
+            app:layout_constraintStart_toStartOf="@id/icon_all"
+            app:layout_constraintEnd_toEndOf="@id/icon_all"
+            app:layout_constraintTop_toBottomOf="@id/icon_all"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_naver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_500"
+            android:textSize="14sp"
+            android:text="@string/all"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/icon_naver"
+            app:layout_constraintStart_toStartOf="@id/icon_naver"
+            app:layout_constraintEnd_toEndOf="@id/icon_naver"/>
+
+        <buy.coke.zet.common.designsystem.statebutton.LogoButton
+            android:id="@+id/icon_market_kurly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            app:brand="@{BrandName.MARKETKURLY}"
+            app:layout_constraintStart_toStartOf="@id/icon_coupang"
+            app:layout_constraintEnd_toEndOf="@id/icon_coupang"
+            app:layout_constraintTop_toBottomOf="@id/icon_coupang"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_market_kurly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_500"
+            android:textSize="14sp"
+            android:text="@string/market_kurly"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/icon_market_kurly"
+            app:layout_constraintStart_toStartOf="@id/icon_market_kurly"
+            app:layout_constraintEnd_toEndOf="@id/icon_market_kurly"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

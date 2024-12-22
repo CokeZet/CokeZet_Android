@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="buy.coke.zet.common.designsystem.RoundButtonStyle.Color"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="setting.NicknameSettingActivity">
+
+        <TextView
+            android:id="@+id/first_step_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/gray_600"
+            android:text="@{@string/current_step(1)}"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/input_nickname"
+            android:layout_width="201dp"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@id/text_limit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/customer_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/customer"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/input_nickname"
+            app:layout_constraintStart_toEndOf="@+id/input_nickname" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_limit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="14sp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_nickname"
+            app:layout_constraintBottom_toTopOf="@id/welcome_text"
+            tools:text="10/10" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:textSize="24sp"
+            android:text="@string/welcome_nickname_setting"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_limit"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <buy.coke.zet.common.designsystem.normalbutton.RoundButton
+            android:id="@+id/next_button"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="28dp"
+            app:mainColor="@{Color.RED}"
+            app:buttonText="@{@string/next}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

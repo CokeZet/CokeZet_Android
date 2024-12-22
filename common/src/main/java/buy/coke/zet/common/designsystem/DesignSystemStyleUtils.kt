@@ -46,7 +46,8 @@ object LogoButtonStyle {
         NONGHYUP(R.drawable.nonghyup_defaulticon, R.drawable.nonghyup_activeicon),
         SAMGSUNG(R.drawable.samgsung_defaulticon, R.drawable.samgsung_activeicon),
         SHINHAN(R.drawable.shinhan_defaulticon, R.drawable.shinhan_activeicon),
-        WOORI(R.drawable.woori_defaulticon, R.drawable.woori_activeicon)
+        WOORI(R.drawable.woori_defaulticon, R.drawable.woori_activeicon),
+        ALL(R.drawable.all_icon, R.drawable.all_activeicon)
     }
 
 }
