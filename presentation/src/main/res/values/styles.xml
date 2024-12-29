@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Setting Card Style -->
+    <style name="SettingCardStyle">
+        <item name="android:button">@null</item> <!-- 기본 버튼 아이콘 제거 -->
+        <item name="android:background">@drawable/setting_card_drawable</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/setting_card_text_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+    </style>
+
+</resources>
