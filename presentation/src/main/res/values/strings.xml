@@ -35,6 +35,16 @@
     <string name="discount_rate">할인율</string>
     <string name="card_discount">카드혜택</string>
 
+    <string name="nonghyup">농협</string>
+    <string name="kookmin">국민</string>
+    <string name="shinhan">신한</string>
+    <string name="lotte">롯데</string>
+    <string name="hana">하나</string>
+    <string name="samgsung">삼성</string>
+    <string name="city">시티</string>
+    <string name="woori">우리</string>
+    <string name="bc">BC</string>
+
     <!--    내정보-->
     <string name="welcome_text">오늘도 시원한 콜라 한 잔 하셨나요?</string>
     <string name="my_info">내정보</string>
@@ -52,4 +62,19 @@
     <string name="lowest_price">최저가</string>
     <string name="price_change">가격변동</string>
     <string name="night_notification">야간 알림</string>
+
+    <!--    최저가 탐색 조건-->
+    <string name="coca_cola">코카콜라</string>
+    <string name="pepsi">펩시</string>
+
+    <string name="volume_190">190ml~210ml</string>
+    <string name="volume_210">210ml</string>
+    <string name="volume_350">350ml</string>
+    <string name="volume_355">355ml</string>
+
+    <string name="zetpick">제트픽</string>
+    <string name="large_discount">대박</string>
+    <string name="middle_discount">중박</string>
+    <string name="low_discount">소박</string>
+    <string name="average">평범</string>
 </resources>

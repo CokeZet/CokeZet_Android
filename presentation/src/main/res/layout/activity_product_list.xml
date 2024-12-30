@@ -56,65 +56,115 @@
                 android:textColor="@color/gray_500"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="@id/brand_list_view"
+                app:layout_constraintBottom_toBottomOf="@id/brand_list_view"/>
 
             <TextView
                 android:id="@+id/volume_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="14dp"
                 android:text="@string/volume"
                 android:textColor="@color/gray_500"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/brand_title"/>
+                app:layout_constraintTop_toTopOf="@id/volume_list_view"
+                app:layout_constraintBottom_toBottomOf="@id/volume_list_view"/>
 
             <TextView
                 android:id="@+id/shopping_mall_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="14dp"
                 android:text="@string/shopping_mall"
                 android:textColor="@color/gray_500"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/volume_title"/>
+                app:layout_constraintTop_toTopOf="@id/shopping_mall_list_view"
+                app:layout_constraintBottom_toBottomOf="@id/shopping_mall_list_view"/>
 
             <TextView
                 android:id="@+id/discount_rate_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="14dp"
                 android:text="@string/discount_rate"
                 android:textColor="@color/gray_500"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/shopping_mall_title"/>
+                app:layout_constraintTop_toTopOf="@id/discount_rate_list_view"
+                app:layout_constraintBottom_toBottomOf="@id/discount_rate_list_view"/>
 
             <TextView
                 android:id="@+id/card_favor_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="14dp"
                 android:text="@string/card_discount"
                 android:textColor="@color/gray_500"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/discount_rate_title"/>
+                app:layout_constraintTop_toTopOf="@id/card_favor_list_view"
+                app:layout_constraintBottom_toBottomOf="@id/card_favor_list_view"/>
 
-            <CheckBox
-                android:layout_width="wrap_content"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/brand_list_view"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                style="@style/SettingCardStyle"
-                android:text="@string/eleventh_street"
+                android:layout_marginStart="16dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toEndOf="@id/brand_title"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"/>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/volume_list_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toEndOf="@id/volume_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/brand_list_view"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/shopping_mall_list_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toEndOf="@id/shopping_mall_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/volume_list_view"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/discount_rate_list_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toEndOf="@id/discount_rate_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shopping_mall_list_view"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/card_favor_list_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toEndOf="@id/card_favor_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/discount_rate_list_view"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -13,5 +13,45 @@ class ProductListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_product_list)
 
+        val brandAdapter = SettingItemAdapter(listOf(getString(R.string.coca_cola), getString(R.string.pepsi)))
+        binding.brandListView.adapter = brandAdapter
+
+        val volumeAdapter = SettingItemAdapter(listOf(
+            getString(R.string.volume_190),
+            getString(R.string.volume_210),
+            getString(R.string.volume_350),
+            getString(R.string.volume_355)))
+        binding.volumeListView.adapter = volumeAdapter
+
+        val shoppingMallAdapter = SettingItemAdapter(listOf(
+            getString(R.string.coupang),
+            getString(R.string.gmarket),
+            getString(R.string.eleventh_street),
+            getString(R.string.naver),
+            getString(R.string.market_kurly),
+        ))
+        binding.shoppingMallListView.adapter = shoppingMallAdapter
+
+        val discountRateAdapter = SettingItemAdapter(listOf(
+            getString(R.string.zetpick),
+            getString(R.string.large_discount),
+            getString(R.string.middle_discount),
+            getString(R.string.low_discount),
+            getString(R.string.average)
+        ))
+        binding.discountRateListView.adapter = discountRateAdapter
+
+        val cardFavorAdatper = SettingItemAdapter(listOf(
+            getString(R.string.nonghyup),
+            getString(R.string.kookmin),
+            getString(R.string.shinhan),
+            getString(R.string.lotte),
+            getString(R.string.hana),
+            getString(R.string.samgsung),
+            getString(R.string.city),
+            getString(R.string.woori),
+            getString(R.string.bc)
+        ))
+        binding.cardFavorListView.adapter = cardFavorAdatper
     }
 }
