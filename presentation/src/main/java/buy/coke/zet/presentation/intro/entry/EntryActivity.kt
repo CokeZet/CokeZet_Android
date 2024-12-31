@@ -1,5 +1,6 @@
 package buy.coke.zet.presentation.intro.entry
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -10,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import buy.coke.zet.common.designsystem.dialog.ShortDialog
 import buy.coke.zet.presentation.R
 import buy.coke.zet.presentation.databinding.ActivityEntryBinding
+import setting.NicknameSettingActivity
 
 class EntryActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEntryBinding
@@ -20,6 +22,7 @@ class EntryActivity : AppCompatActivity() {
 
         binding.startButton.clickListener = View.OnClickListener {
             ShortDialog(this).show()
+            startActivity(Intent(this, NicknameSettingActivity::class.java))
         }
     }
 }

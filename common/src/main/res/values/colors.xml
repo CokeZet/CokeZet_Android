@@ -50,4 +50,7 @@
     <color name="additional_positive">#296DEA</color>
     <color name="additional_error">#DE0000</color>
 
+    <!-- Translucent Color-->
+    <color name="setting_card_selected_color">#807B87F0</color>
+
 </resources>
