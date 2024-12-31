@@ -5,6 +5,7 @@
 
     <data>
         <import type="buy.coke.zet.common.designsystem.LogoButtonStyle.BrandName"/>
+        <import type="buy.coke.zet.common.designsystem.RoundButtonStyle"/>
         <variable
             name="nickname"
             type="java.lang.String" />
@@ -174,6 +175,19 @@
             app:layout_constraintTop_toBottomOf="@id/icon_market_kurly"
             app:layout_constraintStart_toStartOf="@id/icon_market_kurly"
             app:layout_constraintEnd_toEndOf="@id/icon_market_kurly"/>
+        
+        <buy.coke.zet.common.designsystem.normalbutton.RoundButton
+            android:id="@+id/next_button"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="16dp"
+            app:mainColor="@{RoundButtonStyle.Color.GRAY}"
+            app:buttonText="@{@string/next}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,10 +1,13 @@
 package buy.coke.zet.presentation.product.list
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import buy.coke.zet.presentation.R
 import buy.coke.zet.presentation.databinding.ActivityProductListBinding
+import buy.coke.zet.presentation.info.mypage.MyPageActivity
 
 class ProductListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProductListBinding
@@ -12,6 +15,9 @@ class ProductListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_product_list)
+        binding.productListTopbar.rightThirdIconClickListener = View.OnClickListener {
+            startActivity(Intent(this, MyPageActivity::class.java))
+        }
 
         val brandAdapter = SettingItemAdapter(listOf(getString(R.string.coca_cola), getString(R.string.pepsi)))
         binding.brandListView.adapter = brandAdapter
