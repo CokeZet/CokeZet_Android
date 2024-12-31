@@ -77,4 +77,6 @@
     <string name="middle_discount">중박</string>
     <string name="low_discount">소박</string>
     <string name="average">평범</string>
+
+    <string name="contains_delivery_fee">배송비 포함</string>
 </resources>
