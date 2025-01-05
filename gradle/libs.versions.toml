@@ -16,6 +16,7 @@ hilt = "2.53"
 retrofit = "2.11.0"
 okhttp = "4.12.0"
 gson = "2.11.0"
+securityCrypto = "1.1.0-alpha06"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
@@ -32,16 +33,24 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 # https://developer.android.com/jetpack/androidx/releases/hilt?hl=ko
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+
 # https://mvnrepository.com/artifact/com.google.dagger/hilt-core
 hilt-core = { module = "com.google.dagger:hilt-core", version.ref = "hilt" }
+
 # https://square.github.io/retrofit/
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+
 # https://square.github.io/okhttp/
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+
 # https://github.com/google/gson
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+
+# https://developer.android.com/jetpack/androidx/releases/security?hl=ko#1.1.0-alpha06
+security-crypto = { module = "androidx.security:security-crypto", version.ref = "securityCrypto" }
+security-crypto-ktx = { group = "androidx.security", name = "security-crypto-ktx", version.ref = "securityCrypto" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -51,3 +60,17 @@ jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrains
 
 # https://developer.android.com/jetpack/androidx/releases/hilt?hl=ko
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
+[bundles]
+network = [
+    "retrofit",
+    "retrofit-converter-gson",
+    "okhttp",
+    "okhttp-logging-interceptor",
+    "gson"
+]
+
+security-crypto = [
+    "security-crypto",
+    "security-crypto-ktx"
+]
