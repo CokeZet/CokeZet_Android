@@ -12,6 +12,11 @@ material = "1.12.0"
 activity = "1.8.0"
 constraintlayout = "2.1.4"
 jetbrainsKotlinJvm = "1.9.0"
+hilt = "2.53"
+retrofit = "2.11.0"
+okhttp = "4.12.0"
+gson = "2.11.0"
+securityCrypto = "1.1.0-alpha06"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
@@ -25,9 +30,47 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
+# https://developer.android.com/jetpack/androidx/releases/hilt?hl=ko
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+
+# https://mvnrepository.com/artifact/com.google.dagger/hilt-core
+hilt-core = { module = "com.google.dagger:hilt-core", version.ref = "hilt" }
+
+# https://square.github.io/retrofit/
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+
+# https://square.github.io/okhttp/
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+
+# https://github.com/google/gson
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+
+# https://developer.android.com/jetpack/androidx/releases/security?hl=ko#1.1.0-alpha06
+security-crypto = { module = "androidx.security:security-crypto", version.ref = "securityCrypto" }
+security-crypto-ktx = { group = "androidx.security", name = "security-crypto-ktx", version.ref = "securityCrypto" }
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 
+# https://developer.android.com/jetpack/androidx/releases/hilt?hl=ko
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
+[bundles]
+network = [
+    "retrofit",
+    "retrofit-converter-gson",
+    "okhttp",
+    "okhttp-logging-interceptor",
+    "gson"
+]
+
+security-crypto = [
+    "security-crypto",
+    "security-crypto-ktx"
+]
