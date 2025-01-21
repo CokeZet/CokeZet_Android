@@ -89,4 +89,11 @@
     <string name="compare_price">가격비교</string>
 
     <string name="contains_delivery_fee">배송비 포함</string>
+
+    <!--    제품정보-->
+    <string name="product_information">제품정보</string>
+    <string name="product_type">식품 유형</string>
+    <string name="wrap_type">포장 형태</string>
+    <string name="number">개수</string>
+    <string name="point">특징</string>
 </resources>
