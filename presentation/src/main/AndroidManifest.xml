@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name="setting.CardListSettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".product.detail.ProductDetailActivity"
             android:exported="false" />
         <activity
