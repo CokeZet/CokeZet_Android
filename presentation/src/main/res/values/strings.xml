@@ -78,5 +78,22 @@
     <string name="low_discount">소박</string>
     <string name="average">평범</string>
 
+    <!--    제품 상세-->
+    <string name="coca_cola_drink">코카콜라 음료</string>
+    <string name="pepsi_drink">펩시 음료</string>
+    <string name="unit_price">100ml당</string>
+    <string name="store_site">판매처</string>
+    <string name="delivery_fee">배송비</string>
+    <string name="discount_card">카드할인</string>
+    <string name="buy_with_lowest_price">최저가로 구매하기</string>
+    <string name="compare_price">가격비교</string>
+
     <string name="contains_delivery_fee">배송비 포함</string>
+
+    <!--    제품정보-->
+    <string name="product_information">제품정보</string>
+    <string name="product_type">식품 유형</string>
+    <string name="wrap_type">포장 형태</string>
+    <string name="number">개수</string>
+    <string name="point">특징</string>
 </resources>
