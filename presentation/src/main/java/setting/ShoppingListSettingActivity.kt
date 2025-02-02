@@ -17,7 +17,7 @@ class ShoppingListSettingActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_shopping_list_setting)
         binding.nickname = "복슬복슬한반달가슴곰"
         binding.nextButton.clickListener = View.OnClickListener {
-            startActivity(Intent(this, ProductListActivity::class.java))
+            startActivity(Intent(this, CardListSettingActivity::class.java))
         }
     }
 }
