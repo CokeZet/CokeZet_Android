@@ -2,6 +2,7 @@ package buy.coke.zet.presentation.info.mypage
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import buy.coke.zet.presentation.R
@@ -18,5 +19,8 @@ class MyPageActivity : AppCompatActivity() {
 
         binding.setPriceNotificationButton.root.setOnClickListener { startActivity(Intent(this, NotificationSettingActivity::class.java)) }
         binding.announcementButton.root.setOnClickListener { startActivity(Intent(this, AnnouncementActivity::class.java)) }
+        binding.mypageTopbar.leftIconClickListener = View.OnClickListener {
+            finish()
+        }
     }
 }
