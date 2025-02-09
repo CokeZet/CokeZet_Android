@@ -33,7 +33,7 @@ object TopBarStyle {
 object LogoButtonStyle {
     enum class BrandName(val defaultResourceId: Int, val activeResourceId: Int) {
         BC(R.drawable.bc_defaulticon, R.drawable.bc_activeicon),
-        CITY(R.drawable.city_defaulticon, R.drawable.city_activeicon),
+        CITY(R.drawable.citi_defaulticon, R.drawable.citi_activeicon),
         COUPANG(R.drawable.coupang_defaulticon, R.drawable.coupang_activeicon),
         ELEVENTHSTREET(R.drawable.eleventhstreet_defaulticon, R.drawable.eleventhstreet_activeicon),
         GMARKET(R.drawable.gmarket_defaulticon, R.drawable.gmarket_activeicon),
@@ -47,7 +47,7 @@ object LogoButtonStyle {
         SAMGSUNG(R.drawable.samgsung_defaulticon, R.drawable.samgsung_activeicon),
         SHINHAN(R.drawable.shinhan_defaulticon, R.drawable.shinhan_activeicon),
         WOORI(R.drawable.woori_defaulticon, R.drawable.woori_activeicon),
-        ALL(R.drawable.all_icon, R.drawable.all_activeicon)
+        ALL(R.drawable.all_defaulticon, R.drawable.all_activeicon)
     }
 
 }

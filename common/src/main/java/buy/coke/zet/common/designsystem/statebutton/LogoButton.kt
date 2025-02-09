@@ -26,8 +26,8 @@ class LogoButton @JvmOverloads constructor(
         set(branName) {
             field = branName
 
-            stateList.addState(intArrayOf(android.R.attr.state_checked), ContextCompat.getDrawable(context, branName?.activeResourceId ?: R.drawable.all_icon))
-            stateList.addState(IntArray(0), ContextCompat.getDrawable(context, branName?.defaultResourceId ?: R.drawable.all_icon))
+            stateList.addState(intArrayOf(android.R.attr.state_checked), ContextCompat.getDrawable(context, branName?.activeResourceId ?: R.drawable.all_defaulticon))
+            stateList.addState(IntArray(0), ContextCompat.getDrawable(context, branName?.defaultResourceId ?: R.drawable.all_defaulticon))
             binding.logoButtonBody.background = stateList
         }
 
