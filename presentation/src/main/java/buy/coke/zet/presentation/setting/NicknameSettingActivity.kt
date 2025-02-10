@@ -1,4 +1,4 @@
-package setting
+package buy.coke.zet.presentation.setting
 
 import android.content.Context
 import android.content.Intent

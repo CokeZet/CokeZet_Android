@@ -1,4 +1,4 @@
-package setting
+package buy.coke.zet.presentation.setting
 
 import android.content.Intent
 import android.os.Bundle
@@ -15,6 +15,7 @@ class CardListSettingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_card_list_setting)
+        binding.lifecycleOwner = this
 
         binding.nextButton.clickListener = View.OnClickListener {
             startActivity(Intent(this, ProductListActivity::class.java))
