@@ -17,6 +17,8 @@
     <string name="welcome_nickname_setting">몇 가지 더 설정하고\n함께 최저가 콜라 즐겨요!</string>
     <string name="next">다음</string>
     <string name="welcome_shopping_setting">%s 님,\n어떤 쇼핑몰에서 \n가격을 탐지할까요?</string>
+    <string name="welcome_card_setting">어떤 카드의 \n할인 혜택 알림을 \n받아볼까요?</string>
+    <string name="information_card_setting">선택한 정보는 ZET 홈의 \\\'최저가 탐색 조건 설정\\\'에서 언제든 변경할 수 있어요.</string>
     <string name="current_step">%d/3</string>
 
     <!--    쇼핑몰 및 카드사-->
@@ -43,6 +45,7 @@
     <string name="samgsung">삼성</string>
     <string name="city">시티</string>
     <string name="woori">우리</string>
+    <string name="hyundai">현대</string>
     <string name="bc">BC</string>
 
     <!--    내정보-->

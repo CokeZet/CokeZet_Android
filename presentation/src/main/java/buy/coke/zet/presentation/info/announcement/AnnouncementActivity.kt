@@ -1,6 +1,7 @@
 package buy.coke.zet.presentation.info.announcement
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +20,9 @@ class AnnouncementActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_announcement)
+        binding.annoucementTopbar.leftIconClickListener = View.OnClickListener {
+            finish()
+        }
 
         val items = listOf(
             AnnouncementListItem("2024-12-01", "v.1.0 업데이트 안내 드립니다. 1) 알림 기능이 추가되었습니다. 참고 부탁드립니다.", 0) { item ->
