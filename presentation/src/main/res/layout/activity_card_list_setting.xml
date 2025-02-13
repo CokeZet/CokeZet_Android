@@ -9,6 +9,10 @@
         <variable
             name="nickname"
             type="java.lang.String" />
+
+        <variable
+            name="viewModel"
+            type="buy.coke.zet.presentation.setting.CardListSettingViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -37,6 +41,7 @@
             android:layout_marginTop="44dp"
             android:textSize="24sp"
             android:text="@{@string/welcome_card_setting}"
+            android:lineSpacingMultiplier="1.24"
             app:layout_constraintTop_toBottomOf="@id/second_step_text"
             app:layout_constraintStart_toStartOf="parent"/>
 
@@ -45,8 +50,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            app:isChecked="@{true}"
             app:brand="@{BrandName.NONGHYUP}"
+            app:checkedChangedListener="@{(logoButton, isChecked) -> viewModel.onCheckSingleButton(0, isChecked)}"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/icon_kookmin"
@@ -56,7 +61,7 @@
             android:id="@+id/text_nonghyup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gray_500"
+            android:textColor="@{viewModel.checkStateFlowList[0] ? @color/white : @color/gray_500}"
             android:textSize="14sp"
             android:text="@string/nonghyup"
             android:layout_marginTop="8dp"
@@ -71,6 +76,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginStart="18dp"
             app:brand="@{BrandName.KOOKMIN}"
+            app:checkedChangedListener="@{(logoButton, isChecked) -> viewModel.onCheckSingleButton(1, isChecked)}"
             app:layout_constraintStart_toEndOf="@id/icon_nonghyup"
             app:layout_constraintEnd_toStartOf="@id/icon_shinhan"
             app:layout_constraintTop_toBottomOf="@id/card_welcome_text"/>
@@ -79,7 +85,7 @@
             android:id="@+id/text_kookmin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gray_500"
+            android:textColor="@{viewModel.checkStateFlowList[1] ? @color/white : @color/gray_500}"
             android:textSize="14sp"
             android:text="@string/kookmin"
             android:layout_marginTop="8dp"
@@ -94,6 +100,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginStart="18dp"
             app:brand="@{BrandName.SHINHAN}"
+            app:checkedChangedListener="@{(logoButton, isChecked) -> viewModel.onCheckSingleButton(2, isChecked)}"
             app:layout_constraintStart_toEndOf="@id/icon_kookmin"
             app:layout_constraintEnd_toStartOf="@id/icon_lotte"
             app:layout_constraintTop_toBottomOf="@id/card_welcome_text"/>
@@ -102,7 +109,7 @@
             android:id="@+id/text_shinhan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gray_500"
+            android:textColor="@{viewModel.checkStateFlowList[2] ? @color/white : @color/gray_500}"
             android:textSize="14sp"
             android:text="@string/shinhan"
             android:layout_marginTop="8dp"
@@ -117,6 +124,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginStart="18dp"
             app:brand="@{BrandName.LOTTE}"
+            app:checkedChangedListener="@{(logoButton, isChecked) -> viewModel.onCheckSingleButton(3, isChecked)}"
             app:layout_constraintStart_toEndOf="@id/icon_shinhan"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card_welcome_text"/>
@@ -125,7 +133,7 @@
             android:id="@+id/text_lotte"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gray_500"
+            android:textColor="@{viewModel.checkStateFlowList[3] ? @color/white : @color/gray_500}"
             android:textSize="14sp"
             android:text="@string/lotte"
             android:layout_marginTop="8dp"
@@ -139,6 +147,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="42dp"
             app:brand="@{BrandName.HANA}"
+            app:checkedChangedListener="@{(logoButton, isChecked) -> viewModel.onCheckSingleButton(4, isChecked)}"
             app:layout_constraintStart_toStartOf="@id/icon_nonghyup"
             app:layout_constraintEnd_toEndOf="@id/icon_nonghyup"
             app:layout_constraintTop_toBottomOf="@id/icon_nonghyup"/>
@@ -147,7 +156,7 @@
             android:id="@+id/text_hana"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gray_500"
+            android:textColor="@{viewModel.checkStateFlowList[4] ? @color/white : @color/gray_500}"
             android:textSize="14sp"
             android:text="@string/hana"
             android:layout_marginTop="8dp"
@@ -161,6 +170,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="42dp"
             app:brand="@{BrandName.SAMGSUNG}"
+            app:checkedChangedListener="@{(logoButton, isChecked) -> viewModel.onCheckSingleButton(5, isChecked)}"
             app:layout_constraintStart_toStartOf="@id/icon_kookmin"
             app:layout_constraintEnd_toEndOf="@id/icon_kookmin"
             app:layout_constraintTop_toBottomOf="@id/icon_kookmin"/>
@@ -169,7 +179,7 @@
             android:id="@+id/text_samgsung"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gray_500"
+            android:textColor="@{viewModel.checkStateFlowList[5] ? @color/white : @color/gray_500}"
             android:textSize="14sp"
             android:text="@string/samgsung"
             android:layout_marginTop="8dp"
@@ -183,6 +193,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="42dp"
             app:brand="@{BrandName.HYUNDAI}"
+            app:checkedChangedListener="@{(logoButton, isChecked) -> viewModel.onCheckSingleButton(6, isChecked)}"
             app:layout_constraintStart_toStartOf="@id/icon_shinhan"
             app:layout_constraintEnd_toEndOf="@id/icon_shinhan"
             app:layout_constraintTop_toBottomOf="@id/icon_shinhan"/>
@@ -191,7 +202,7 @@
             android:id="@+id/text_hyundai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gray_500"
+            android:textColor="@{viewModel.checkStateFlowList[6] ? @color/white : @color/gray_500}"
             android:textSize="14sp"
             android:text="@string/hyundai"
             android:layout_marginTop="8dp"
@@ -205,6 +216,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="42dp"
             app:brand="@{BrandName.WOORI}"
+            app:checkedChangedListener="@{(logoButton, isChecked) -> viewModel.onCheckSingleButton(7, isChecked)}"
             app:layout_constraintStart_toStartOf="@id/icon_lotte"
             app:layout_constraintEnd_toEndOf="@id/icon_lotte"
             app:layout_constraintTop_toBottomOf="@id/icon_lotte"/>
@@ -213,7 +225,7 @@
             android:id="@+id/text_woori"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gray_500"
+            android:textColor="@{viewModel.checkStateFlowList[7] ? @color/white : @color/gray_500}"
             android:textSize="14sp"
             android:text="@string/woori"
             android:layout_marginTop="8dp"
@@ -222,26 +234,27 @@
             app:layout_constraintEnd_toEndOf="@id/icon_woori"/>
 
         <buy.coke.zet.common.designsystem.statebutton.LogoButton
-            android:id="@+id/icon_city"
+            android:id="@+id/icon_citi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="42dp"
             app:brand="@{BrandName.CITY}"
+            app:checkedChangedListener="@{(logoButton, isChecked) -> viewModel.onCheckSingleButton(8, isChecked)}"
             app:layout_constraintStart_toStartOf="@id/icon_hana"
             app:layout_constraintEnd_toEndOf="@id/icon_hana"
             app:layout_constraintTop_toBottomOf="@id/icon_hana"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_city"
+            android:id="@+id/text_citi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gray_500"
+            android:textColor="@{viewModel.checkStateFlowList[8] ? @color/white : @color/gray_500}"
             android:textSize="14sp"
             android:text="@string/city"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/icon_city"
-            app:layout_constraintStart_toStartOf="@id/icon_city"
-            app:layout_constraintEnd_toEndOf="@id/icon_city"/>
+            app:layout_constraintTop_toBottomOf="@id/icon_citi"
+            app:layout_constraintStart_toStartOf="@id/icon_citi"
+            app:layout_constraintEnd_toEndOf="@id/icon_citi"/>
 
         <buy.coke.zet.common.designsystem.statebutton.LogoButton
             android:id="@+id/icon_bc"
@@ -249,6 +262,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="42dp"
             app:brand="@{BrandName.BC}"
+            app:checkedChangedListener="@{(logoButton, isChecked) -> viewModel.onCheckSingleButton(9, isChecked)}"
             app:layout_constraintStart_toStartOf="@id/icon_samgsung"
             app:layout_constraintEnd_toEndOf="@id/icon_samgsung"
             app:layout_constraintTop_toBottomOf="@id/icon_samgsung"/>
@@ -257,7 +271,7 @@
             android:id="@+id/text_bc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gray_500"
+            android:textColor="@{viewModel.checkStateFlowList[9] ? @color/white : @color/gray_500}"
             android:textSize="14sp"
             android:text="@string/bc"
             android:layout_marginTop="8dp"
@@ -265,15 +279,27 @@
             app:layout_constraintStart_toStartOf="@id/icon_bc"
             app:layout_constraintEnd_toEndOf="@id/icon_bc"/>
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.225"
+            android:textColor="@color/gray_500"
+            android:textSize="12sp"
+            android:text="@string/can_change_card_text"
+            app:layout_constraintBottom_toTopOf="@id/complete_button"/>
+
         <buy.coke.zet.common.designsystem.normalbutton.RoundButton
-            android:id="@+id/next_button"
+            android:id="@+id/complete_button"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="16dp"
-            app:mainColor="@{RoundButtonStyle.Color.GRAY}"
-            app:buttonText="@{@string/next}"
+            app:mainColor="@{RoundButtonStyle.Color.RED}"
+            app:buttonText="@{@string/complete}"
+            app:clickEnable="@{viewModel.canGoNextStep}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
