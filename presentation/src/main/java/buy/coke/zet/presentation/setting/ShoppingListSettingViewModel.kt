@@ -12,13 +12,23 @@ class ShoppingListSettingViewModel: ViewModel() {
     private val _checkStateFlowList = List(6) { MutableStateFlow(false) }
     val checkStateFlowList: List<StateFlow<Boolean>> = _checkStateFlowList
 
+    private val _canGoNextStep = MutableStateFlow(false)
+    val canGoNextStep: StateFlow<Boolean> = _canGoNextStep
+
     fun onCheckAllButton(isChecked: Boolean) {
-        for (stateIndex in _checkStateFlowList.indices) {
-            _checkStateFlowList[stateIndex].value = isChecked
-        }
+        _checkStateFlowList.forEach { state -> state.value = isChecked }
+        _canGoNextStep.value = isChecked
     }
 
     fun onCheckSingleButton(index: Int, isChecked: Boolean) {
         _checkStateFlowList[index].value = isChecked
+        _canGoNextStep.value = isAnyStateChecked()
+    }
+
+    fun isAnyStateChecked(): Boolean {
+        _checkStateFlowList.filterIndexed { index, _ -> index > 0 }
+            .forEach { state -> if (state.value) return true }
+
+        return false
     }
 }

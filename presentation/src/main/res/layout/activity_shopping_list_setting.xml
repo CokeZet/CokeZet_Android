@@ -199,8 +199,9 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="16dp"
-            app:mainColor="@{RoundButtonStyle.Color.GRAY}"
-            app:buttonText="@{@string/next}"
+            app:mainColor="@{RoundButtonStyle.Color.RED}"
+            app:buttonText="@{@string/step_forward}"
+            app:clickEnable="@{viewModel.canGoNextStep}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
