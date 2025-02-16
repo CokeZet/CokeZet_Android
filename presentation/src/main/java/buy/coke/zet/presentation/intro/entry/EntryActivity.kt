@@ -23,6 +23,8 @@ import androidx.databinding.DataBindingUtil
 import buy.coke.zet.common.designsystem.dialog.ShortDialog
 import buy.coke.zet.presentation.R
 import buy.coke.zet.presentation.databinding.ActivityEntryBinding
+import buy.coke.zet.presentation.info.term.TERM_TITLE
+import buy.coke.zet.presentation.info.term.TermActivity
 import buy.coke.zet.presentation.intro.splash.SplashActivity
 import buy.coke.zet.presentation.setting.NicknameSettingActivity
 
@@ -79,16 +81,20 @@ class EntryActivity : AppCompatActivity() {
             val startPair = Pair(originalTermText.indexOf("이용약관"), originalTermText.indexOf("개인정보처리방침"))
             val endPair = Pair(startPair.first + "이용약관".length, startPair.second + "개인정보처리방침".length)
 
-            this.setSpan(makeClickableSpan(SplashActivity::class.java), startPair.first, endPair.first, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-            this.setSpan(makeClickableSpan(EntryActivity::class.java), startPair.second, endPair.second, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+            this.setSpan(makeClickableSpan(getString(R.string.service_term)), startPair.first, endPair.first, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+            this.setSpan(makeClickableSpan(getString(R.string.personal_information_term)), startPair.second, endPair.second, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         }
         binding.termText.movementMethod = LinkMovementMethod.getInstance()
     }
 
-    private fun makeClickableSpan(cls: Class<*>): ClickableSpan {
+    private fun makeClickableSpan(title: String): ClickableSpan {
         return object: ClickableSpan() {
             override fun onClick(view: View) {
-//                Toast.makeText(this@EntryActivity, "Name : $cls", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@EntryActivity, TermActivity::class.java).apply {
+                    putExtra(TERM_TITLE, title)
+                }
+
+                startActivity(intent)
             }
 
             override fun updateDrawState(ds: TextPaint) {

@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".info.term.TermActivity"
+            android:exported="false" />
+        <activity
             android:name=".setting.CardListSettingActivity"
             android:exported="false" />
         <activity
