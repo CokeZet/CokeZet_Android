@@ -6,62 +6,69 @@
         <import type="buy.coke.zet.common.designsystem.RectangleButtonStyle.Color"/>
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/short_dialog"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/normal_dialog">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/dialog_description"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/short_dialog"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/notification_check_description"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/button_barrier_top"/>
-
-        <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/button_barrier_top"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:barrierDirection="top"
-            app:layout_constraintTop_toBottomOf="@id/dialog_description"
-            app:constraint_referenced_ids="cancel_button, okay_button"/>
-
-        <buy.coke.zet.common.designsystem.normalbutton.RectangleButton
-            android:id="@+id/cancel_button"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="20dp"
-            app:buttonText="@{@string/no}"
-            app:mainColor="@{Color.WHITE}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dialog_description"
-            app:layout_constraintEnd_toStartOf="@id/okay_button"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
-        <buy.coke.zet.common.designsystem.normalbutton.RectangleButton
-            android:id="@+id/okay_button"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            app:buttonText="@{@string/yes}"
-            app:mainColor="@{Color.RED}"
-            app:layout_constraintStart_toEndOf="@id/cancel_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dialog_description"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:background="@drawable/normal_dialog">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/dialog_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/notification_check_description"
+                android:lineSpacingMultiplier="1.24"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/button_barrier_top"/>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/button_barrier_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:layout_constraintTop_toBottomOf="@id/dialog_description"
+                app:constraint_referenced_ids="cancel_button, okay_button"/>
+
+            <buy.coke.zet.common.designsystem.normalbutton.RectangleButton
+                android:id="@+id/cancel_button"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="12dp"
+                app:buttonText="@{@string/no_thanks}"
+                app:mainColor="@{Color.WHITE}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dialog_description"
+                app:layout_constraintEnd_toStartOf="@id/okay_button"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <buy.coke.zet.common.designsystem.normalbutton.RectangleButton
+                android:id="@+id/okay_button"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="20dp"
+                app:buttonText="@{@string/get_notification}"
+                app:mainColor="@{Color.RED}"
+                app:layout_constraintStart_toEndOf="@id/cancel_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dialog_description"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
 
 </layout>
 

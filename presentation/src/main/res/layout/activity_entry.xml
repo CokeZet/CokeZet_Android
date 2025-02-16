@@ -23,24 +23,27 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/welcome_title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:lineSpacingMultiplier="1.24"
             android:text="@string/entry_welcome"
             android:textSize="20sp"
             android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/entry_picture"
+            app:layout_constraintBottom_toTopOf="@id/term_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/term_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="4dp"
             android:text="@string/term_introduce"
             android:textSize="12sp"
             android:textColor="@color/gray_500"
-            app:layout_constraintTop_toBottomOf="@id/welcome_title"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/start_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
