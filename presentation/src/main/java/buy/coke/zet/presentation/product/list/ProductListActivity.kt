@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import buy.coke.zet.presentation.R
 import buy.coke.zet.presentation.databinding.ActivityProductListBinding
 import buy.coke.zet.presentation.info.mypage.MyPageActivity
+import java.util.Locale
 
 class ProductListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProductListBinding
@@ -63,13 +64,13 @@ class ProductListActivity : AppCompatActivity() {
         val productInfoAdapter = ProductInfoAdapter()
         binding.productListView.adapter = productInfoAdapter
         productInfoAdapter.submitList(listOf(
-            ProductInfo(0, "펩시 제로 355ml 24개", 24, 16000, true),
-            ProductInfo(1, "펩시 제로 355ml 25개", 24, 16000, true),
-            ProductInfo(2, "펩시 제로 355ml 26개", 24, 16000, true),
-            ProductInfo(3, "펩시 제로 355ml 27개", 24, 16000, true),
-            ProductInfo(4, "펩시 제로 355ml 28개", 24, 16000, true),
-            ProductInfo(5, "펩시 제로 355ml 29개", 24, 16000, true),
-            ProductInfo(6, "펩시 제로 355ml 30개", 24, 16000, true),
+            ProductInfo(0, "펩시 제로 355ml 24개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+            ProductInfo(1, "펩시 제로 355ml 25개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+            ProductInfo(2, "펩시 제로 355ml 26개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+            ProductInfo(3, "펩시 제로 355ml 27개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+            ProductInfo(4, "펩시 제로 355ml 28개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+            ProductInfo(5, "펩시 제로 355ml 29개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+            ProductInfo(6, "펩시 제로 355ml 30개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
         ))
     }
 }
