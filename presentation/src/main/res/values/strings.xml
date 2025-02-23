@@ -37,7 +37,8 @@
     <string name="volume">용량</string>
     <string name="shopping_mall">쇼핑몰</string>
     <string name="discount_rate">할인율</string>
-    <string name="card_discount">카드혜택</string>
+    <string name="card_favor">카드혜택</string>
+    <string name="card_discount">카드할인</string>
     <string name="introduce_product_list">*100ml당 가격이 낮은 순으로 소개해 드려요.</string>
     <string name="find_more">더보기</string>
 
