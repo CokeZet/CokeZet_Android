@@ -20,6 +20,15 @@ class ProductListActivity : AppCompatActivity() {
             startActivity(Intent(this, MyPageActivity::class.java))
         }
 
+        binding.showSettingToggleButton.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                binding.settingContainer.visibility = View.GONE
+            }
+            else {
+                binding.settingContainer.visibility = View.VISIBLE
+            }
+        }
+
         val brandAdapter = SettingItemAdapter(listOf(getString(R.string.coca_cola), getString(R.string.pepsi)))
         binding.brandListView.adapter = brandAdapter
 
@@ -64,6 +73,7 @@ class ProductListActivity : AppCompatActivity() {
         val productInfoAdapter = ProductInfoAdapter()
         binding.productListView.adapter = productInfoAdapter
         productInfoAdapter.submitList(listOf(
+            ProductInfo(ProductInfoAdapter.INTRODUCE_ITEM_INDEX, "펩시 제로 355ml 24개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
             ProductInfo(0, "펩시 제로 355ml 24개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
             ProductInfo(1, "펩시 제로 355ml 25개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
             ProductInfo(2, "펩시 제로 355ml 26개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
@@ -71,6 +81,7 @@ class ProductListActivity : AppCompatActivity() {
             ProductInfo(4, "펩시 제로 355ml 28개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
             ProductInfo(5, "펩시 제로 355ml 29개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
             ProductInfo(6, "펩시 제로 355ml 30개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+            ProductInfo(ProductInfoAdapter.MORE_ITEM_INDEX, "펩시 제로 355ml 24개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true)
         ))
     }
 }
