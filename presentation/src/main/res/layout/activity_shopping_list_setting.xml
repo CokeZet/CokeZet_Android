@@ -53,7 +53,7 @@
             app:isChecked="@{viewModel.checkStateFlowList[0]}"
             app:checkedChangedListener="@{(logoButton, isChecked) -> viewModel.onCheckAllButton(isChecked)}"
             app:brand="@{BrandName.ALL}"
-            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/icon_coupang"
             app:layout_constraintTop_toBottomOf="@id/shopping_welcome_text"/>

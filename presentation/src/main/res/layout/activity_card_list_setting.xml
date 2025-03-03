@@ -52,7 +52,7 @@
             android:layout_marginTop="40dp"
             app:brand="@{BrandName.NONGHYUP}"
             app:checkedChangedListener="@{(logoButton, isChecked) -> viewModel.onCheckSingleButton(0, isChecked)}"
-            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/icon_kookmin"
             app:layout_constraintTop_toBottomOf="@id/card_welcome_text"/>
