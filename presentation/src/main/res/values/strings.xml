@@ -4,8 +4,9 @@
     <string name="button">Button</string>
 
     <!--    회원가입-->
-    <string name="signup_welcome">ZET와 함께 제로콜라\n최저가 탐색 시작해요</string>
+    <string name="signup_welcome">ZET와 함께 제로콜라 최저가 탐색 시작해요</string>
     <string name="start_with_kakao">카카오로 시작하기</string>
+    <string name="non_member">비회원</string>
 
     <!--    시작 화면-->
     <string name="entry_welcome">최저가 할인 정보와 실시간\n 가격변동 소식을 간편하게 받아봐요</string>

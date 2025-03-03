@@ -33,26 +33,55 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/signup_text"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="26dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/signup_welcome"
                 android:textSize="20sp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
-            <buy.coke.zet.common.designsystem.normalbutton.RoundButton
-                android:id="@+id/sign_up_button"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                app:mainColor="@{RoundButtonStyle.Color.RED}"
-                app:buttonText="@{@string/start_with_kakao}"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/non_member_button"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@color/gray_300"
+                android:text="@string/non_member"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/signup_text"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/google_login_button"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/google_login_background"
+                app:layout_constraintTop_toBottomOf="@id/non_member_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/kakao_login_button"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/kakao_login_background"
+                app:layout_constraintTop_toBottomOf="@id/google_login_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

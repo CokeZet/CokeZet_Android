@@ -16,8 +16,6 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up)
 
-        binding.signUpButton.clickListener = View.OnClickListener {
-            startActivity(Intent(this, EntryActivity::class.java))
-        }
+        binding.nonMemberButton.setOnClickListener { startActivity(Intent(this, EntryActivity::class.java)) }
     }
 }
