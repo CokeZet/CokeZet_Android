@@ -55,6 +55,7 @@
     <string name="bc">BC</string>
 
     <!--    내정보-->
+    <string name="mypage_nickname">%s 님</string>
     <string name="welcome_text">오늘도 시원한 콜라 한 잔 하셨나요?</string>
     <string name="my_info">내정보</string>
     <string name="set_price_notification">가격 알림 설정</string>
