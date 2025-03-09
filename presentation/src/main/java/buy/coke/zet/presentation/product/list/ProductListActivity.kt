@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import buy.coke.zet.presentation.R
 import buy.coke.zet.presentation.databinding.ActivityProductListBinding
 import buy.coke.zet.presentation.info.mypage.MyPageActivity
+import java.util.Locale
 
 class ProductListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProductListBinding
@@ -17,6 +18,15 @@ class ProductListActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_product_list)
         binding.productListTopbar.rightThirdIconClickListener = View.OnClickListener {
             startActivity(Intent(this, MyPageActivity::class.java))
+        }
+
+        binding.showSettingToggleButton.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                binding.settingContainer.visibility = View.GONE
+            }
+            else {
+                binding.settingContainer.visibility = View.VISIBLE
+            }
         }
 
         val brandAdapter = SettingItemAdapter(listOf(getString(R.string.coca_cola), getString(R.string.pepsi)))
@@ -63,13 +73,15 @@ class ProductListActivity : AppCompatActivity() {
         val productInfoAdapter = ProductInfoAdapter()
         binding.productListView.adapter = productInfoAdapter
         productInfoAdapter.submitList(listOf(
-            ProductInfo(0, "펩시 제로 355ml 24개", 24, 16000, true),
-            ProductInfo(1, "펩시 제로 355ml 25개", 24, 16000, true),
-            ProductInfo(2, "펩시 제로 355ml 26개", 24, 16000, true),
-            ProductInfo(3, "펩시 제로 355ml 27개", 24, 16000, true),
-            ProductInfo(4, "펩시 제로 355ml 28개", 24, 16000, true),
-            ProductInfo(5, "펩시 제로 355ml 29개", 24, 16000, true),
-            ProductInfo(6, "펩시 제로 355ml 30개", 24, 16000, true),
+            ProductInfo(ProductInfoAdapter.INTRODUCE_ITEM_INDEX, "펩시 제로 355ml 24개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+            ProductInfo(0, "펩시 제로 355ml 24개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+            ProductInfo(1, "펩시 제로 355ml 25개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+            ProductInfo(2, "펩시 제로 355ml 26개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+            ProductInfo(3, "펩시 제로 355ml 27개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+            ProductInfo(4, "펩시 제로 355ml 28개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+            ProductInfo(5, "펩시 제로 355ml 29개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+            ProductInfo(6, "펩시 제로 355ml 30개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+            ProductInfo(ProductInfoAdapter.MORE_ITEM_INDEX, "펩시 제로 355ml 24개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true)
         ))
     }
 }

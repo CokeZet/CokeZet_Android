@@ -5,6 +5,8 @@
     <string name="withdraw_title">ZET와의 최저가 탐색을 정말 그만두시겠어요?</string>
     <string name="withdraw_description">탈퇴 시 회원님이 설정한 카드 및 알림 조건은 복구할 수 없어요.</string>
     <string name="withdraw_warning">확인 시 바로 탈퇴됩니다.</string>
+    <string name="get_notification">알림 받기!</string>
+    <string name="no_thanks">괜찮아요</string>
     <string name="yes">확인</string>
     <string name="no">취소</string>
 </resources>

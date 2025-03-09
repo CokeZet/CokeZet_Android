@@ -1,24 +1,32 @@
 package buy.coke.zet.presentation.intro.entry
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.TextPaint
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
+import android.text.style.ForegroundColorSpan
+import android.text.style.UnderlineSpan
 import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
 import buy.coke.zet.common.designsystem.dialog.ShortDialog
 import buy.coke.zet.presentation.R
 import buy.coke.zet.presentation.databinding.ActivityEntryBinding
-import setting.NicknameSettingActivity
+import buy.coke.zet.presentation.info.term.TERM_TITLE
+import buy.coke.zet.presentation.info.term.TermActivity
+import buy.coke.zet.presentation.intro.splash.SplashActivity
+import buy.coke.zet.presentation.setting.NicknameSettingActivity
 
 class EntryActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEntryBinding
@@ -36,6 +44,12 @@ class EntryActivity : AppCompatActivity() {
             startActivity(Intent(this, NicknameSettingActivity::class.java))
         }
 
+        setStartButtonClickListener()
+        setWelcomeTextSpan()
+        setTermTextSpan()
+    }
+
+    private fun setStartButtonClickListener() {
         binding.startButton.clickListener = View.OnClickListener {
             ShortDialog(
                 context = this,
@@ -48,6 +62,46 @@ class EntryActivity : AppCompatActivity() {
                         startActivity(Intent(this, NicknameSettingActivity::class.java))
                     }
                 }).show()
+        }
+    }
+
+    private fun setWelcomeTextSpan() {
+        val originalWelcomeText = getString(R.string.entry_welcome)
+        binding.welcomeTitle.text = SpannableString(originalWelcomeText).apply {
+            val start = originalWelcomeText.indexOf("최저가 할인 정보")
+            val end = start + "최저가 할인 정보".length
+
+            this.setSpan(ForegroundColorSpan(getColor(buy.coke.zet.common.R.color.red_500)), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        }
+    }
+
+    private fun setTermTextSpan() {
+        val originalTermText = getString(R.string.term_introduce)
+        binding.termText.text = SpannableString(originalTermText).apply {
+            val startPair = Pair(originalTermText.indexOf("이용약관"), originalTermText.indexOf("개인정보처리방침"))
+            val endPair = Pair(startPair.first + "이용약관".length, startPair.second + "개인정보처리방침".length)
+
+            this.setSpan(makeClickableSpan(getString(R.string.service_term)), startPair.first, endPair.first, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+            this.setSpan(makeClickableSpan(getString(R.string.personal_information_term)), startPair.second, endPair.second, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        }
+        binding.termText.movementMethod = LinkMovementMethod.getInstance()
+    }
+
+    private fun makeClickableSpan(title: String): ClickableSpan {
+        return object: ClickableSpan() {
+            override fun onClick(view: View) {
+                val intent = Intent(this@EntryActivity, TermActivity::class.java).apply {
+                    putExtra(TERM_TITLE, title)
+                }
+
+                startActivity(intent)
+            }
+
+            override fun updateDrawState(ds: TextPaint) {
+                super.updateDrawState(ds)
+
+                ds.color = getColor(buy.coke.zet.common.R.color.gray_500)
+            }
         }
     }
 }

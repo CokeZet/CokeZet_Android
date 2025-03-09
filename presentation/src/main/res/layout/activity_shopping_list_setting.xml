@@ -9,13 +9,17 @@
         <variable
             name="nickname"
             type="java.lang.String" />
+
+        <variable
+            name="viewModel"
+            type="buy.coke.zet.presentation.setting.ShoppingListSettingViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="setting.ShoppingListSettingActivity">
+        tools:context=".setting.ShoppingListSettingActivity">
 
         <TextView
             android:id="@+id/second_step_text"
@@ -37,6 +41,7 @@
             android:layout_marginTop="44dp"
             android:textSize="24sp"
             android:text="@{@string/welcome_shopping_setting(nickname)}"
+            android:lineSpacingMultiplier="1.24"
             app:layout_constraintTop_toBottomOf="@id/second_step_text"
             app:layout_constraintStart_toStartOf="parent"/>
 
@@ -45,8 +50,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
+            app:isChecked="@{viewModel.checkStateFlowList[0]}"
+            app:checkedChangedListener="@{(logoButton, isChecked) -> viewModel.onCheckAllButton(isChecked)}"
             app:brand="@{BrandName.ALL}"
-            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/icon_coupang"
             app:layout_constraintTop_toBottomOf="@id/shopping_welcome_text"/>
@@ -55,7 +62,7 @@
             android:id="@+id/text_all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gray_500"
+            android:textColor="@{viewModel.checkStateFlowList[0] ? @color/white : @color/gray_500}"
             android:textSize="14sp"
             android:text="@string/all"
             android:layout_marginTop="8dp"
@@ -69,6 +76,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:layout_marginStart="18dp"
+            app:isChecked="@{viewModel.checkStateFlowList[1]}"
+            app:checkedChangedListener="@{(logoButton, isChecked) -> viewModel.onCheckSingleButton(1, isChecked)}"
             app:brand="@{BrandName.COUPANG}"
             app:layout_constraintStart_toEndOf="@id/icon_all"
             app:layout_constraintEnd_toStartOf="@id/icon_gmarket"
@@ -78,7 +87,7 @@
             android:id="@+id/text_coupang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gray_500"
+            android:textColor="@{viewModel.checkStateFlowList[1] ? @color/white : @color/gray_500}"
             android:textSize="14sp"
             android:text="@string/coupang"
             android:layout_marginTop="8dp"
@@ -92,6 +101,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:layout_marginStart="18dp"
+            app:isChecked="@{viewModel.checkStateFlowList[2]}"
+            app:checkedChangedListener="@{(logoButton, isChecked) -> viewModel.onCheckSingleButton(2, isChecked)}"
             app:brand="@{BrandName.GMARKET}"
             app:layout_constraintStart_toEndOf="@id/icon_coupang"
             app:layout_constraintEnd_toStartOf="@id/icon_eleventh_street"
@@ -101,7 +112,7 @@
             android:id="@+id/text_gmarket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gray_500"
+            android:textColor="@{viewModel.checkStateFlowList[2] ? @color/white : @color/gray_500}"
             android:textSize="14sp"
             android:text="@string/gmarket"
             android:layout_marginTop="8dp"
@@ -115,6 +126,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:layout_marginStart="18dp"
+            app:isChecked="@{viewModel.checkStateFlowList[3]}"
+            app:checkedChangedListener="@{(logoButton, isChecked) -> viewModel.onCheckSingleButton(3, isChecked)}"
             app:brand="@{BrandName.ELEVENTHSTREET}"
             app:layout_constraintStart_toEndOf="@id/icon_gmarket"
             app:layout_constraintEnd_toEndOf="parent"
@@ -124,57 +137,13 @@
             android:id="@+id/text_eleventh_steet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/gray_500"
+            android:textColor="@{viewModel.checkStateFlowList[3] ? @color/white : @color/gray_500}"
             android:textSize="14sp"
             android:text="@string/eleventh_street"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@id/icon_eleventh_street"
             app:layout_constraintStart_toStartOf="@id/icon_eleventh_street"
             app:layout_constraintEnd_toEndOf="@id/icon_eleventh_street"/>
-
-        <buy.coke.zet.common.designsystem.statebutton.LogoButton
-            android:id="@+id/icon_naver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="42dp"
-            app:brand="@{BrandName.NAVERSHOPPING}"
-            app:layout_constraintStart_toStartOf="@id/icon_all"
-            app:layout_constraintEnd_toEndOf="@id/icon_all"
-            app:layout_constraintTop_toBottomOf="@id/icon_all"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_naver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/gray_500"
-            android:textSize="14sp"
-            android:text="@string/all"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/icon_naver"
-            app:layout_constraintStart_toStartOf="@id/icon_naver"
-            app:layout_constraintEnd_toEndOf="@id/icon_naver"/>
-
-        <buy.coke.zet.common.designsystem.statebutton.LogoButton
-            android:id="@+id/icon_market_kurly"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="42dp"
-            app:brand="@{BrandName.MARKETKURLY}"
-            app:layout_constraintStart_toStartOf="@id/icon_coupang"
-            app:layout_constraintEnd_toEndOf="@id/icon_coupang"
-            app:layout_constraintTop_toBottomOf="@id/icon_coupang"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/text_market_kurly"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/gray_500"
-            android:textSize="14sp"
-            android:text="@string/market_kurly"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/icon_market_kurly"
-            app:layout_constraintStart_toStartOf="@id/icon_market_kurly"
-            app:layout_constraintEnd_toEndOf="@id/icon_market_kurly"/>
         
         <buy.coke.zet.common.designsystem.normalbutton.RoundButton
             android:id="@+id/next_button"
@@ -183,8 +152,9 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="16dp"
-            app:mainColor="@{RoundButtonStyle.Color.GRAY}"
-            app:buttonText="@{@string/next}"
+            app:mainColor="@{RoundButtonStyle.Color.RED}"
+            app:buttonText="@{@string/step_forward}"
+            app:clickEnable="@{viewModel.canGoNextStep}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>

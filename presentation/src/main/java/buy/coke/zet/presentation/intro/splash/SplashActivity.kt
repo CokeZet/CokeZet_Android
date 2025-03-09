@@ -11,7 +11,7 @@ import buy.coke.zet.presentation.databinding.ActivitySplashBinding
 import buy.coke.zet.presentation.intro.entry.EntryActivity
 import buy.coke.zet.presentation.intro.signup.SignUpActivity
 import buy.coke.zet.presentation.product.list.ProductListActivity
-import setting.NicknameSettingActivity
+import buy.coke.zet.presentation.setting.NicknameSettingActivity
 
 class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding

@@ -4,6 +4,6 @@ data class ProductInfo(
     val id: Int,
     val title: String,
     val discountRate: Int,
-    val price: Int,
+    val price: String,
     val isDeliveryFeeContains: Boolean
 )

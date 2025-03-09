@@ -3,7 +3,10 @@
 
     <application>
         <activity
-            android:name="setting.CardListSettingActivity"
+            android:name=".info.term.TermActivity"
+            android:exported="false" />
+        <activity
+            android:name=".setting.CardListSettingActivity"
             android:exported="false" />
         <activity
             android:name=".product.detail.ProductDetailActivity"
@@ -12,12 +15,12 @@
             android:name=".product.list.ProductListActivity"
             android:exported="false" />
         <activity
-            android:name="setting.ShoppingListSettingActivity"
+            android:name=".setting.ShoppingListSettingActivity"
             android:exported="false" />
         <activity
-            android:name="setting.NicknameSettingActivity"
+            android:name=".setting.NicknameSettingActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name=".intro.entry.EntryActivity"
             android:exported="false" />

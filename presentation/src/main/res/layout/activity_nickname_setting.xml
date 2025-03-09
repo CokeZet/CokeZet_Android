@@ -5,13 +5,18 @@
 
     <data>
         <import type="buy.coke.zet.common.designsystem.RoundButtonStyle.Color"/>
+        <import type="buy.coke.zet.presentation.setting.NicknameSettingViewModel.NicknameStatus"/>
+
+        <variable
+            name="viewModel"
+            type="buy.coke.zet.presentation.setting.NicknameSettingViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="setting.NicknameSettingActivity">
+        tools:context=".setting.NicknameSettingActivity">
 
         <TextView
             android:id="@+id/first_step_text"
@@ -31,6 +36,9 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:layout_marginStart="20dp"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:onTextChanged="@{viewModel.onTextChanged}"
             app:layout_constraintVertical_chainStyle="packed"
             app:layout_constraintBottom_toTopOf="@id/text_limit"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +51,7 @@
             android:layout_marginStart="8dp"
             android:text="@string/customer"
             android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="@id/input_nickname"
             app:layout_constraintBottom_toBottomOf="@id/input_nickname"
             app:layout_constraintStart_toEndOf="@+id/input_nickname" />
 
@@ -50,10 +59,12 @@
             android:id="@+id/text_limit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="2dp"
             android:textSize="14sp"
-            android:layout_marginStart="20dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="@{viewModel.nicknameStatusFlow == NicknameStatus.WRONG_TEXT ? @string/invalid_nickname :  viewModel.currentNicknameFlow.length() + `/10`}"
+            android:textColor="@{viewModel.nicknameStatusFlow == NicknameStatus.EMPTY ? @color/gray_500 : (viewModel.nicknameStatusFlow == NicknameStatus.MAX || viewModel.nicknameStatusFlow == NicknameStatus.WRONG_TEXT ? @color/red_700 : @color/white)}"
+            app:layout_constraintStart_toStartOf="@id/input_nickname"
             app:layout_constraintTop_toBottomOf="@id/input_nickname"
             app:layout_constraintBottom_toTopOf="@id/welcome_text"
             tools:text="10/10" />
@@ -62,13 +73,13 @@
             android:id="@+id/welcome_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="24dp"
             android:textSize="24sp"
             android:text="@string/welcome_nickname_setting"
+            android:lineSpacingMultiplier="1.24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_limit"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="@id/input_nickname" />
 
         <buy.coke.zet.common.designsystem.normalbutton.RoundButton
             android:id="@+id/next_button"
@@ -77,6 +88,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="28dp"
+            app:clickEnable="@{viewModel.currentNicknameFlow.length() > 0 ? true : false}"
             app:mainColor="@{Color.RED}"
             app:buttonText="@{@string/next}"
             app:layout_constraintStart_toStartOf="parent"
