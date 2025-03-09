@@ -23,6 +23,7 @@
     <string name="can_change_card_text">선택한 정보는 ZET 홈의 \&apos;최저가 탐색 조건 설정\&apos;에서\n언제든 변경할 수 있어요.</string>
     <string name="current_step">%d/3</string>
     <string name="complete">완료</string>
+    <string name="invalid_nickname">특수문자, 이모티콘은 입력할 수 없어요.</string>
 
     <!--    쇼핑몰 및 카드사-->
     <string name="all">전체</string>
@@ -40,7 +41,7 @@
     <string name="discount_rate">할인율</string>
     <string name="card_favor">카드혜택</string>
     <string name="card_discount">카드할인</string>
-    <string name="introduce_product_list">*100ml당 가격이 낮은 순으로 소개해 드려요.</string>
+    <string name="introduce_product_list">100ml당 가격이 낮은 순으로 소개해 드려요.</string>
     <string name="find_more">더보기</string>
 
     <string name="nonghyup">농협</string>

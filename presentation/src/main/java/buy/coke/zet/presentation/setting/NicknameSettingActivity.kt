@@ -28,7 +28,11 @@ class NicknameSettingActivity : AppCompatActivity() {
         binding.inputNickname.requestFocus()
 
         binding.nextButton.clickListener = View.OnClickListener {
-            startActivity(Intent(this, ShoppingListSettingActivity::class.java))
+            startActivity(
+                Intent(this, ShoppingListSettingActivity::class.java).apply {
+                    putExtra(USER_NICKNAME, viewModel.currentNicknameFlow.value)
+                }
+            )
         }
     }
 
@@ -40,5 +44,9 @@ class NicknameSettingActivity : AppCompatActivity() {
             currentFocus?.clearFocus()
         }
         return super.dispatchTouchEvent(ev)
+    }
+
+    companion object {
+        const val USER_NICKNAME = "UserNickname"
     }
 }

@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
 class ShoppingListSettingViewModel: ViewModel() {
-    private val _checkStateFlowList = List(6) { MutableStateFlow(false) }
+    private val _checkStateFlowList = List(4) { MutableStateFlow(false) }
     val checkStateFlowList: List<StateFlow<Boolean>> = _checkStateFlowList
 
     private val _canGoNextStep = MutableStateFlow(false)
@@ -25,7 +25,7 @@ class ShoppingListSettingViewModel: ViewModel() {
         _canGoNextStep.value = isAnyStateChecked()
     }
 
-    fun isAnyStateChecked(): Boolean {
+    private fun isAnyStateChecked(): Boolean {
         _checkStateFlowList.filterIndexed { index, _ -> index > 0 }
             .forEach { state -> if (state.value) return true }
 

@@ -5,6 +5,7 @@
 
     <data>
         <import type="buy.coke.zet.common.designsystem.RoundButtonStyle.Color"/>
+        <import type="buy.coke.zet.presentation.setting.NicknameSettingViewModel.NicknameStatus"/>
 
         <variable
             name="viewModel"
@@ -61,8 +62,8 @@
             android:layout_marginTop="2dp"
             android:layout_marginStart="2dp"
             android:textSize="14sp"
-            android:text="@{viewModel.currentNicknameFlow.length() + `/10`}"
-            android:textColor="@{viewModel.currentNicknameFlow.length() == 0 ? @color/gray_500 : (viewModel.currentNicknameFlow.length() == 10 ? @color/red_700 : @color/white)}"
+            android:text="@{viewModel.nicknameStatusFlow == NicknameStatus.WRONG_TEXT ? @string/invalid_nickname :  viewModel.currentNicknameFlow.length() + `/10`}"
+            android:textColor="@{viewModel.nicknameStatusFlow == NicknameStatus.EMPTY ? @color/gray_500 : (viewModel.nicknameStatusFlow == NicknameStatus.MAX || viewModel.nicknameStatusFlow == NicknameStatus.WRONG_TEXT ? @color/red_700 : @color/white)}"
             app:layout_constraintStart_toStartOf="@id/input_nickname"
             app:layout_constraintTop_toBottomOf="@id/input_nickname"
             app:layout_constraintBottom_toTopOf="@id/welcome_text"
