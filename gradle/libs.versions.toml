@@ -16,7 +16,6 @@ hilt = "2.53"
 retrofit = "2.11.0"
 okhttp = "4.12.0"
 gson = "2.11.0"
-securityCrypto = "1.1.0-alpha06"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
@@ -48,10 +47,6 @@ okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-i
 # https://github.com/google/gson
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 
-# https://developer.android.com/jetpack/androidx/releases/security?hl=ko#1.1.0-alpha06
-security-crypto = { module = "androidx.security:security-crypto", version.ref = "securityCrypto" }
-security-crypto-ktx = { group = "androidx.security", name = "security-crypto-ktx", version.ref = "securityCrypto" }
-
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
@@ -68,9 +63,4 @@ network = [
     "okhttp",
     "okhttp-logging-interceptor",
     "gson"
-]
-
-security-crypto = [
-    "security-crypto",
-    "security-crypto-ktx"
 ]

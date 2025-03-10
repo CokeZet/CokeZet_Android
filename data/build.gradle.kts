@@ -41,7 +41,6 @@ dependencies {
     kapt(libs.hilt.android.compiler)
 
     implementation(libs.bundles.network)
-    implementation(libs.bundles.security.crypto)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
