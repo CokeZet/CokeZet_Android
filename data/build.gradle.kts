@@ -46,6 +46,8 @@ dependencies {
     implementation(libs.credentials.auth)
     implementation(libs.identity.googleid)
 
+    implementation(libs.datastore)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
