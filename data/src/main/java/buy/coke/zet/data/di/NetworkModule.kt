@@ -1,15 +1,16 @@
 package buy.coke.zet.data.di
 
-import android.content.SharedPreferences
+import buy.coke.zet.data.local.TokenManager
+import buy.coke.zet.data.remote.AuthService
+import buy.coke.zet.data.util.AuthInterceptor
 import buy.coke.zet.data.util.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit.Builder
+import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
@@ -20,39 +21,36 @@ object NetworkModule {
         level = HttpLoggingInterceptor.Level.BODY
     }
 
-    private fun getTokenFromSharedPreferences(sharedPreferences: SharedPreferences): String? {
-        return sharedPreferences.getString(Constants.USER_ACCESS_TOKEN, null)
-    }
-
-    private fun authorizationInterceptor(sharedPreferences: SharedPreferences): Interceptor {
-        return Interceptor { chain ->
-            val token = getTokenFromSharedPreferences(sharedPreferences)
-            val newRequest = chain.request().newBuilder()
-                .apply {
-                    if (token != null) {
-                        addHeader("Authorization", "Bearer $token")
-                    }
-                }
-                .build()
-            chain.proceed(newRequest)
-        }
+    @Provides
+    @Singleton
+    fun provideAuthInterceptor(tokenManager: TokenManager): AuthInterceptor {
+        return AuthInterceptor(tokenManager)
     }
 
     @Provides
     @Singleton
     fun provideOkHttpClient(
-        sharedPreferences: SharedPreferences
+        authInterceptor: AuthInterceptor,
     ): OkHttpClient {
         return OkHttpClient.Builder()
+            .addInterceptor(authInterceptor)
             .addInterceptor(logging)
-            .addInterceptor(authorizationInterceptor(sharedPreferences))
             .build()
     }
 
     @Provides
     @Singleton
-    fun provideRetrofitBuilder(): Builder {
-        return Builder()
+    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(Constants.API_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttpClient)
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideAuthApiService(retrofit: Retrofit): AuthService {
+        return retrofit.create(AuthService::class.java)
     }
 }
