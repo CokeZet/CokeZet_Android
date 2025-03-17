@@ -2,6 +2,8 @@ package buy.coke.zet.data.di
 
 import buy.coke.zet.data.datasource.AuthDataSource
 import buy.coke.zet.data.datasource.AuthDataSourceImpl
+import buy.coke.zet.data.datasource.GoogleAuthDataSource
+import buy.coke.zet.data.datasource.GoogleAuthDataSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -15,4 +17,9 @@ abstract class DataSourceModule {
     abstract fun bindAuthDataSource(
         authDataSourceImpl: AuthDataSourceImpl
     ): AuthDataSource
+
+    @Binds
+    abstract fun bindGoogleAuthDataSource(
+        googleAuthDataSourceImpl: GoogleAuthDataSourceImpl
+    ): GoogleAuthDataSource
 }
