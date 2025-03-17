@@ -3,7 +3,7 @@ package buy.coke.zet.data.datasource
 import android.content.Context
 import androidx.credentials.CredentialManager
 import androidx.credentials.GetCredentialRequest
-import buy.coke.zet.data.model.GoogleLoginModel
+import buy.coke.zet.data.model.GoogleAuthModel
 import buy.coke.zet.data.util.Constants
 import buy.coke.zet.domain.ServiceResult
 import com.google.android.libraries.identity.googleid.GetGoogleIdOption
@@ -14,14 +14,14 @@ import java.util.UUID
 import javax.inject.Inject
 
 interface GoogleAuthDataSource {
-    suspend fun signInWithGoogle(): ServiceResult<GoogleLoginModel>
+    suspend fun loginWithGoogle(): ServiceResult<GoogleAuthModel>
 }
 
 class GoogleAuthDataSourceImpl @Inject constructor(
     @ApplicationContext private val context: Context,
     private val credentialManager: CredentialManager
 ) : GoogleAuthDataSource {
-    override suspend fun signInWithGoogle(): ServiceResult<GoogleLoginModel> {
+    override suspend fun loginWithGoogle(): ServiceResult<GoogleAuthModel> {
         return try {
             val rawNonce = UUID.randomUUID().toString()
             val hashedNonce = hashNonce(rawNonce)
@@ -46,7 +46,7 @@ class GoogleAuthDataSourceImpl @Inject constructor(
             val googleIdToken = googleIdTokenCredential.idToken
 
             if (googleIdToken.isNotEmpty()) {
-                ServiceResult.Success(GoogleLoginModel(idToken = googleIdToken))
+                ServiceResult.Success(GoogleAuthModel(idToken = googleIdToken))
             } else {
                 ServiceResult.Error("GOOGLE_LOGIN_FAILED", "Google 로그인 실패: ID 토큰 없음")
             }
