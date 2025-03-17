@@ -16,6 +16,8 @@ hilt = "2.53"
 retrofit = "2.11.0"
 okhttp = "4.12.0"
 gson = "2.11.0"
+credentials = "1.5.0"
+identityGoogleId = "1.1.1"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
@@ -46,6 +48,13 @@ okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-i
 
 # https://github.com/google/gson
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+
+# https://developer.android.com/identity/sign-in/credential-manager?hl=ko
+credentials = { module = "androidx.credentials:credentials", version.ref = "credentials" }
+credentials-auth = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "credentials" }
+
+# https://developer.android.com/identity/sign-in/credential-manager-siwg?hl=ko
+identity-googleid = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "identityGoogleId" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
