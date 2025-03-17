@@ -1,4 +1,4 @@
-package buy.coke.zet.data.util
+package buy.coke.zet.data.network.interceptor
 
 import buy.coke.zet.data.local.TokenManager
 import okhttp3.Interceptor

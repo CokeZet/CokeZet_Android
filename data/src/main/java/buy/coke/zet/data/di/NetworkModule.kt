@@ -1,8 +1,8 @@
 package buy.coke.zet.data.di
 
 import buy.coke.zet.data.local.TokenManager
-import buy.coke.zet.data.remote.AuthService
-import buy.coke.zet.data.util.AuthInterceptor
+import buy.coke.zet.data.api.AuthApiService
+import buy.coke.zet.data.network.interceptor.AuthInterceptor
 import buy.coke.zet.data.util.Constants
 import dagger.Module
 import dagger.Provides
@@ -50,7 +50,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideAuthApiService(retrofit: Retrofit): AuthService {
-        return retrofit.create(AuthService::class.java)
+    fun provideAuthApiService(retrofit: Retrofit): AuthApiService {
+        return retrofit.create(AuthApiService::class.java)
     }
 }

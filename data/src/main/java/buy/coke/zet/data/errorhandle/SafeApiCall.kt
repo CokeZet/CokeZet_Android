@@ -1,4 +1,4 @@
-package buy.coke.zet.data.util
+package buy.coke.zet.data.errorhandle
 
 import android.util.Log
 import buy.coke.zet.data.dto.response.CommonResponseDto

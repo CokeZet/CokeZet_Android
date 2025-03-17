@@ -4,8 +4,8 @@ import buy.coke.zet.data.dto.request.LoginRequestDto
 import buy.coke.zet.data.dto.request.RefreshRequestDto
 import buy.coke.zet.data.dto.response.LoginResponseDto
 import buy.coke.zet.data.dto.response.RefreshResponseDto
-import buy.coke.zet.data.remote.AuthService
-import buy.coke.zet.data.util.safeApiCall
+import buy.coke.zet.data.api.AuthApiService
+import buy.coke.zet.data.errorhandle.safeApiCall
 import buy.coke.zet.domain.ServiceResult
 import javax.inject.Inject
 
@@ -15,7 +15,7 @@ interface AuthDataSource {
 }
 
 class AuthDataSourceImpl @Inject constructor(
-    private val apiService: AuthService
+    private val apiService: AuthApiService
 ) : AuthDataSource {
     override suspend fun login(loginRequestDto: LoginRequestDto): ServiceResult<LoginResponseDto> {
         return safeApiCall { apiService.login(loginRequestDto) }
