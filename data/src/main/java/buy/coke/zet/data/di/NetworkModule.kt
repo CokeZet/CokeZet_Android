@@ -2,6 +2,8 @@ package buy.coke.zet.data.di
 
 import buy.coke.zet.data.local.TokenManager
 import buy.coke.zet.data.api.AuthApiService
+import buy.coke.zet.data.datasource.AuthDataSource
+import buy.coke.zet.data.network.authenticator.TokenAuthenticator
 import buy.coke.zet.data.network.interceptor.AuthInterceptor
 import buy.coke.zet.data.util.Constants
 import dagger.Module
@@ -29,11 +31,22 @@ object NetworkModule {
 
     @Provides
     @Singleton
+    fun provideTokenAuthenticator(
+        tokenManager: TokenManager,
+        authDataSource: dagger.Lazy<AuthDataSource>
+    ): TokenAuthenticator {
+        return TokenAuthenticator(authDataSource, tokenManager)
+    }
+
+    @Provides
+    @Singleton
     fun provideOkHttpClient(
         authInterceptor: AuthInterceptor,
+        tokenAuthenticator: TokenAuthenticator
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(authInterceptor)
+            .authenticator(tokenAuthenticator)
             .addInterceptor(logging)
             .build()
     }
