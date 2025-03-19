@@ -42,10 +42,6 @@ dependencies {
 
     implementation(libs.bundles.network)
 
-    implementation(libs.credentials)
-    implementation(libs.credentials.auth)
-    implementation(libs.identity.googleid)
-
     implementation(libs.datastore)
 
     implementation(libs.androidx.core.ktx)
