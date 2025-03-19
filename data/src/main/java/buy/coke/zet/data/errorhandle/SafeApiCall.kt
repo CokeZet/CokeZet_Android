@@ -1,7 +1,7 @@
 package buy.coke.zet.data.errorhandle
 
 import android.util.Log
-import buy.coke.zet.data.dto.response.CommonResponseDto
+import buy.coke.zet.data.dto.CommonResponseDto
 import buy.coke.zet.domain.ServiceResult
 import retrofit2.Response
 import java.io.IOException

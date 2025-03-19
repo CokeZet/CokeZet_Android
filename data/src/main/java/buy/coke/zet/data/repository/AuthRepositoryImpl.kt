@@ -2,7 +2,7 @@ package buy.coke.zet.data.repository
 
 import android.util.Log
 import buy.coke.zet.data.datasource.AuthDataSource
-import buy.coke.zet.data.dto.request.LoginRequestDto
+import buy.coke.zet.data.dto.login.LoginRequestDto
 import buy.coke.zet.data.local.TokenManager
 import buy.coke.zet.data.mapper.toEntity
 import buy.coke.zet.domain.ServiceResult

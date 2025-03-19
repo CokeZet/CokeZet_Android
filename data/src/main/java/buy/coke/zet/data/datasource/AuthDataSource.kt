@@ -1,9 +1,9 @@
 package buy.coke.zet.data.datasource
 
-import buy.coke.zet.data.dto.request.LoginRequestDto
-import buy.coke.zet.data.dto.request.RefreshRequestDto
-import buy.coke.zet.data.dto.response.LoginResponseDto
-import buy.coke.zet.data.dto.response.RefreshResponseDto
+import buy.coke.zet.data.dto.login.LoginRequestDto
+import buy.coke.zet.data.dto.refresh.RefreshRequestDto
+import buy.coke.zet.data.dto.login.LoginResponseDto
+import buy.coke.zet.data.dto.refresh.RefreshResponseDto
 import buy.coke.zet.data.api.AuthApiService
 import buy.coke.zet.data.errorhandle.safeApiCall
 import buy.coke.zet.domain.ServiceResult

@@ -1,10 +1,10 @@
 package buy.coke.zet.data.api
 
-import buy.coke.zet.data.dto.request.LoginRequestDto
-import buy.coke.zet.data.dto.request.RefreshRequestDto
-import buy.coke.zet.data.dto.response.CommonResponseDto
-import buy.coke.zet.data.dto.response.LoginResponseDto
-import buy.coke.zet.data.dto.response.RefreshResponseDto
+import buy.coke.zet.data.dto.login.LoginRequestDto
+import buy.coke.zet.data.dto.refresh.RefreshRequestDto
+import buy.coke.zet.data.dto.CommonResponseDto
+import buy.coke.zet.data.dto.login.LoginResponseDto
+import buy.coke.zet.data.dto.refresh.RefreshResponseDto
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST

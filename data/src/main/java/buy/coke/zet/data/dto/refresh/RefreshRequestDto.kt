@@ -1,4 +1,4 @@
-package buy.coke.zet.data.dto.request
+package buy.coke.zet.data.dto.refresh
 
 import com.google.gson.annotations.SerializedName
 
