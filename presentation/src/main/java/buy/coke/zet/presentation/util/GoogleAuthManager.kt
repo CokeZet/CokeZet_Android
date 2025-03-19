@@ -4,6 +4,7 @@ import android.app.Activity
 import androidx.credentials.CredentialManager
 import androidx.credentials.GetCredentialRequest
 import buy.coke.zet.domain.ServiceResult
+import buy.coke.zet.presentation.BuildConfig
 import com.google.android.libraries.identity.googleid.GetGoogleIdOption
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
 import java.security.MessageDigest
@@ -15,7 +16,7 @@ import java.util.UUID
  * */
 
 object GoogleAuthManager {
-    private const val CLIENT_ID = ""
+    private const val CLIENT_ID = BuildConfig.GOOGLE_CLIENT_ID
 
     suspend fun getGoogleToken(activity: Activity): String? {
         val credentialManager = CredentialManager.create(activity)
