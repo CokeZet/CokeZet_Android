@@ -1,6 +1,5 @@
 package buy.coke.zet.data.repository
 
-import android.util.Log
 import buy.coke.zet.data.datasource.AuthDataSource
 import buy.coke.zet.data.dto.request.LoginRequestDto
 import buy.coke.zet.data.local.TokenManager
@@ -16,10 +15,8 @@ class AuthRepositoryImpl @Inject constructor(
 ) : AuthRepository {
 
     override suspend fun loginWithGoogle(idToken: String): ServiceResult<LoginResponseEntity> {
-        Log.d("0526GoogleResult", "idToken: $idToken")
 
         val serverResult = authDataSource.login(LoginRequestDto(idToken, AUTH_PROVIDER_GOOGLE))
-        Log.d("0526ServerResult", serverResult.toString())
 
         return when (serverResult) {
             is ServiceResult.Success -> {
@@ -34,6 +31,11 @@ class AuthRepositoryImpl @Inject constructor(
             is ServiceResult.NetworkError -> ServiceResult.NetworkError
         }
     }
+
+    override suspend fun isHasToken(): Boolean {
+        return tokenManager.isHasToken()
+    }
+
 
     companion object {
         private const val AUTH_PROVIDER_GOOGLE = "GOOGLE"

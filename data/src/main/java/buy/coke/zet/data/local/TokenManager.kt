@@ -45,7 +45,7 @@ class TokenManager @Inject constructor(
         userPreferencesStore.data.first()[REFRESH_TOKEN]
     }
 
-    fun hasAccessToken(): Boolean = runBlocking {
+    fun isHasToken(): Boolean = runBlocking {
         !userPreferencesStore.data.first()[ACCESS_TOKEN].isNullOrEmpty()
     }
 
