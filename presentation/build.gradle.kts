@@ -1,9 +1,19 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     kotlin("kapt")
     alias(libs.plugins.hilt)
 }
+
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(localPropertiesFile.inputStream())
+}
+
+val GOOGLE_CLIENT_ID = localProperties.getProperty("GOOGLE_CLIENT_ID", "")
 
 android {
     namespace = "buy.coke.zet.presentation"
@@ -14,6 +24,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        buildConfigField("String", "GOOGLE_CLIENT_ID", "\"$GOOGLE_CLIENT_ID\"")
     }
 
     buildTypes {
@@ -35,6 +47,9 @@ android {
     dataBinding {
         enable = true
     }
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
@@ -42,6 +57,10 @@ dependencies {
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+
+    implementation(libs.credentials)
+    implementation(libs.credentials.auth)
+    implementation(libs.identity.googleid)
 
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.core.ktx)

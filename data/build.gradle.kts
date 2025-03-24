@@ -1,9 +1,19 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     kotlin("kapt")
     alias(libs.plugins.hilt)
 }
+
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(localPropertiesFile.inputStream())
+}
+
+val API_BASE_URL = localProperties.getProperty("API_BASE_URL", "")
 
 android {
     namespace = "buy.coke.zet.data"
@@ -14,6 +24,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        buildConfigField("String", "API_BASE_URL", "\"$API_BASE_URL\"")
     }
 
     buildTypes {
@@ -32,6 +44,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
@@ -41,7 +56,8 @@ dependencies {
     kapt(libs.hilt.android.compiler)
 
     implementation(libs.bundles.network)
-    implementation(libs.bundles.security.crypto)
+
+    implementation(libs.datastore)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

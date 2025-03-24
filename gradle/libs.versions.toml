@@ -16,7 +16,9 @@ hilt = "2.53"
 retrofit = "2.11.0"
 okhttp = "4.12.0"
 gson = "2.11.0"
-securityCrypto = "1.1.0-alpha06"
+credentials = "1.3.0"
+identityGoogleId = "1.1.1"
+datastorePreferences = "1.1.3"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
@@ -48,9 +50,15 @@ okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-i
 # https://github.com/google/gson
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 
-# https://developer.android.com/jetpack/androidx/releases/security?hl=ko#1.1.0-alpha06
-security-crypto = { module = "androidx.security:security-crypto", version.ref = "securityCrypto" }
-security-crypto-ktx = { group = "androidx.security", name = "security-crypto-ktx", version.ref = "securityCrypto" }
+# https://developer.android.com/identity/sign-in/credential-manager?hl=ko
+credentials = { module = "androidx.credentials:credentials", version.ref = "credentials" }
+credentials-auth = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "credentials" }
+
+# https://developer.android.com/identity/sign-in/credential-manager-siwg?hl=ko
+identity-googleid = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "identityGoogleId" }
+
+# https://developer.android.com/jetpack/androidx/releases/datastore?hl=ko
+datastore = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -68,9 +76,4 @@ network = [
     "okhttp",
     "okhttp-logging-interceptor",
     "gson"
-]
-
-security-crypto = [
-    "security-crypto",
-    "security-crypto-ktx"
 ]
