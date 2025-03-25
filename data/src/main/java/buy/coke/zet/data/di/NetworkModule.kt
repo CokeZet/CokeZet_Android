@@ -15,6 +15,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
+import javax.inject.Provider
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -33,7 +34,7 @@ object NetworkModule {
     @Singleton
     fun provideTokenAuthenticator(
         tokenManager: TokenManager,
-        authDataSource: dagger.Lazy<AuthDataSource>
+        authDataSource: Provider<AuthDataSource>
     ): TokenAuthenticator {
         return TokenAuthenticator(authDataSource, tokenManager)
     }
