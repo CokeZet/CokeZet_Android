@@ -33,16 +33,44 @@ class AuthRepositoryImpl @Inject constructor(
     }
 
     override suspend fun isValidToken(hasToken: Boolean): ServiceResult<LoginResponseEntity> {
-        if (hasToken) {
-            val serverResult = authDataSource.getLogin()
+        if (!hasToken) {
+            return ServiceResult.Error("NOT_HAVE_TOKEN", "저장된 토큰이 없습니다.")
+        }
 
-            return when (serverResult) {
-                is ServiceResult.Success -> ServiceResult.Success(serverResult.data.toEntity())
-                is ServiceResult.Error -> ServiceResult.Error(serverResult.code, serverResult.message)
+        val firstResult = authDataSource.getLogin()
+
+        if (firstResult is ServiceResult.Success) {
+            tokenManager.saveTokens(
+                firstResult.data.accessToken,
+                firstResult.data.refreshToken
+            )
+            return ServiceResult.Success(firstResult.data.toEntity())
+        }
+
+        if (firstResult is ServiceResult.Error && firstResult.code == "AUTH-003") {
+            val secondResult = authDataSource.getLogin()
+
+            return when (secondResult) {
+                is ServiceResult.Success -> {
+                    tokenManager.saveTokens(
+                        secondResult.data.accessToken,
+                        secondResult.data.refreshToken
+                    )
+                    ServiceResult.Success(secondResult.data.toEntity())
+                }
+
+                is ServiceResult.Error -> ServiceResult.Error(secondResult.code, secondResult.message)
                 is ServiceResult.NetworkError -> ServiceResult.NetworkError
             }
-        } else {
-            return ServiceResult.Error("NOT HAVE TOKEN", "저장 되어 있는 토큰이 없습니다.")
+        }
+
+        // 401이 아니거나 재시도 안될때 동작 ( 토큰이 비어있는 상황 등등 )
+        return when (firstResult) {
+            is ServiceResult.Error -> {
+                ServiceResult.Error(firstResult.code, firstResult.message)
+            }
+            is ServiceResult.NetworkError -> ServiceResult.NetworkError
+            else -> ServiceResult.Error("UNKNOWN", "알 수 없는 오류 발생")
         }
     }
 
