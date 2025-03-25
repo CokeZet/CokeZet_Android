@@ -37,40 +37,19 @@ class AuthRepositoryImpl @Inject constructor(
             return ServiceResult.Error("NOT_HAVE_TOKEN", "저장된 토큰이 없습니다.")
         }
 
-        val firstResult = authDataSource.getLogin()
+        val result = authDataSource.getLogin()
 
-        if (firstResult is ServiceResult.Success) {
-            tokenManager.saveTokens(
-                firstResult.data.accessToken,
-                firstResult.data.refreshToken
-            )
-            return ServiceResult.Success(firstResult.data.toEntity())
-        }
-
-        if (firstResult is ServiceResult.Error && firstResult.code == "AUTH-003") {
-            val secondResult = authDataSource.getLogin()
-
-            return when (secondResult) {
-                is ServiceResult.Success -> {
-                    tokenManager.saveTokens(
-                        secondResult.data.accessToken,
-                        secondResult.data.refreshToken
-                    )
-                    ServiceResult.Success(secondResult.data.toEntity())
-                }
-
-                is ServiceResult.Error -> ServiceResult.Error(secondResult.code, secondResult.message)
-                is ServiceResult.NetworkError -> ServiceResult.NetworkError
+        return when (result) {
+            is ServiceResult.Success -> {
+                tokenManager.saveTokens(
+                    result.data.accessToken,
+                    result.data.refreshToken
+                )
+                ServiceResult.Success(result.data.toEntity())
             }
-        }
 
-        // 401이 아니거나 재시도 안될때 동작 ( 토큰이 비어있는 상황 등등 )
-        return when (firstResult) {
-            is ServiceResult.Error -> {
-                ServiceResult.Error(firstResult.code, firstResult.message)
-            }
+            is ServiceResult.Error -> ServiceResult.Error(result.code, result.message)
             is ServiceResult.NetworkError -> ServiceResult.NetworkError
-            else -> ServiceResult.Error("UNKNOWN", "알 수 없는 오류 발생")
         }
     }
 
