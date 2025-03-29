@@ -21,7 +21,7 @@ class TokenAuthenticator @Inject constructor(
 
         val requestUrl = response.request.url.toString()
         if (requestUrl.contains("/api/auth/refresh")) {
-            // refresh 만 header값 제거
+            // refresh 요청만 Authenticator 실행 안되도록 처리
             return null
         }
 
