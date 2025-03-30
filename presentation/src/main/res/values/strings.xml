@@ -107,4 +107,6 @@
     <string name="wrap_type">포장 형태</string>
     <string name="number">개수</string>
     <string name="point">특징</string>
+
+    <string name="not_support_feature">현재 지원하지 않는 기능입니다.</string>
 </resources>
