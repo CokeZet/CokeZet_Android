@@ -24,6 +24,7 @@
     <string name="current_step">%d/3</string>
     <string name="complete">완료</string>
     <string name="invalid_nickname">특수문자, 이모티콘은 입력할 수 없어요.</string>
+    <string name="sign_up_and_unlock">회원가입 하고 잠금 풀기</string>
 
     <!--    쇼핑몰 및 카드사-->
     <string name="all">전체</string>
