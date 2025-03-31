@@ -59,6 +59,8 @@ dependencies {
 
     implementation(libs.datastore)
 
+    implementation(libs.timber)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
