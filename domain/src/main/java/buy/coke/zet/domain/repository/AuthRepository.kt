@@ -5,4 +5,6 @@ import buy.coke.zet.domain.entitiy.response.LoginResponseEntity
 
 interface AuthRepository {
     suspend fun loginWithGoogle(idToken: String): ServiceResult<LoginResponseEntity>
+    suspend fun isValidToken(hasToken: Boolean): ServiceResult<LoginResponseEntity>
+    suspend fun isHasToken(): Boolean
 }

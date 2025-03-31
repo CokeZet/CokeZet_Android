@@ -1,6 +1,5 @@
 package buy.coke.zet.data.repository
 
-import android.util.Log
 import buy.coke.zet.data.datasource.AuthDataSource
 import buy.coke.zet.data.dto.login.LoginRequestDto
 import buy.coke.zet.data.local.TokenManager
@@ -16,10 +15,8 @@ class AuthRepositoryImpl @Inject constructor(
 ) : AuthRepository {
 
     override suspend fun loginWithGoogle(idToken: String): ServiceResult<LoginResponseEntity> {
-        Log.d("0526GoogleResult", "idToken: $idToken")
 
         val serverResult = authDataSource.login(LoginRequestDto(idToken, AUTH_PROVIDER_GOOGLE))
-        Log.d("0526ServerResult", serverResult.toString())
 
         return when (serverResult) {
             is ServiceResult.Success -> {
@@ -34,6 +31,32 @@ class AuthRepositoryImpl @Inject constructor(
             is ServiceResult.NetworkError -> ServiceResult.NetworkError
         }
     }
+
+    override suspend fun isValidToken(hasToken: Boolean): ServiceResult<LoginResponseEntity> {
+        if (!hasToken) {
+            return ServiceResult.Error("NOT_HAVE_TOKEN", "저장된 토큰이 없습니다.")
+        }
+
+        val result = authDataSource.getLogin()
+
+        return when (result) {
+            is ServiceResult.Success -> {
+                tokenManager.saveTokens(
+                    result.data.accessToken,
+                    result.data.refreshToken
+                )
+                ServiceResult.Success(result.data.toEntity())
+            }
+
+            is ServiceResult.Error -> ServiceResult.Error(result.code, result.message)
+            is ServiceResult.NetworkError -> ServiceResult.NetworkError
+        }
+    }
+
+    override suspend fun isHasToken(): Boolean {
+        return tokenManager.isHasToken()
+    }
+
 
     companion object {
         private const val AUTH_PROVIDER_GOOGLE = "GOOGLE"
