@@ -13,6 +13,7 @@ interface AuthDataSource {
     suspend fun login(loginRequestDto: LoginRequestDto): ServiceResult<LoginResponseDto>
     suspend fun getLogin(): ServiceResult<LoginResponseDto>
     suspend fun refreshToken(refreshToken: String): ServiceResult<RefreshResponseDto>
+    suspend fun logout(): ServiceResult<Unit>
 }
 
 class AuthDataSourceImpl @Inject constructor(
@@ -28,5 +29,9 @@ class AuthDataSourceImpl @Inject constructor(
 
     override suspend fun refreshToken(refreshToken: String): ServiceResult<RefreshResponseDto> {
         return safeApiCall { apiService.refresh(RefreshRequestDto(refreshToken)) }
+    }
+
+    override suspend fun logout(): ServiceResult<Unit> {
+        return safeApiCall { apiService.logout() }
     }
 }

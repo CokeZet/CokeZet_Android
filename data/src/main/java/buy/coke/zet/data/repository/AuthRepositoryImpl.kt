@@ -15,9 +15,7 @@ class AuthRepositoryImpl @Inject constructor(
 ) : AuthRepository {
 
     override suspend fun loginWithGoogle(idToken: String): ServiceResult<LoginResponseEntity> {
-
         val serverResult = authDataSource.login(LoginRequestDto(idToken, AUTH_PROVIDER_GOOGLE))
-
         return when (serverResult) {
             is ServiceResult.Success -> {
                 tokenManager.saveTokens(
@@ -38,7 +36,6 @@ class AuthRepositoryImpl @Inject constructor(
         }
 
         val result = authDataSource.getLogin()
-
         return when (result) {
             is ServiceResult.Success -> {
                 tokenManager.saveTokens(
@@ -55,6 +52,15 @@ class AuthRepositoryImpl @Inject constructor(
 
     override suspend fun isHasToken(): Boolean {
         return tokenManager.isHasToken()
+    }
+
+    override suspend fun logout(): ServiceResult<Unit> {
+        val result = authDataSource.logout()
+        return when(result) {
+            is ServiceResult.Success -> ServiceResult.Success(Unit)
+            is ServiceResult.Error -> ServiceResult.Error(result.code, result.message)
+            is ServiceResult.NetworkError -> ServiceResult.NetworkError
+        }
     }
 
 
