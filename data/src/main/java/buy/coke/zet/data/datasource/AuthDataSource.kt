@@ -6,6 +6,8 @@ import buy.coke.zet.data.dto.login.LoginResponseDto
 import buy.coke.zet.data.dto.refresh.RefreshResponseDto
 import buy.coke.zet.data.api.AuthApiService
 import buy.coke.zet.data.errorhandle.safeApiCall
+import buy.coke.zet.data.errorhandle.safeApiCallAllowingNull
+import buy.coke.zet.data.mapper.mapToUnit
 import buy.coke.zet.domain.ServiceResult
 import javax.inject.Inject
 
@@ -32,6 +34,6 @@ class AuthDataSourceImpl @Inject constructor(
     }
 
     override suspend fun logout(): ServiceResult<Unit> {
-        return safeApiCall { apiService.logout() }
+        return safeApiCallAllowingNull { apiService.logout() }.mapToUnit()
     }
 }
