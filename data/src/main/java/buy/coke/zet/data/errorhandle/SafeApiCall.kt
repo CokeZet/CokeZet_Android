@@ -6,6 +6,7 @@ import com.google.gson.Gson
 import retrofit2.Response
 import java.io.IOException
 
+// Response Body가 null이 아닌 API호출을 할 때 사용
 suspend fun <T> safeApiCall(apiCall: suspend () -> Response<CommonResponseDto<T>>): ServiceResult<T> {
     return try {
         val response = apiCall()
