@@ -3,6 +3,7 @@
 
     <data>
         <import type="buy.coke.zet.common.designsystem.TopBarStyle.Image"/>
+        <import type="buy.coke.zet.common.designsystem.RoundButtonStyle"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -180,6 +181,32 @@
                 app:layout_constraintStart_toEndOf="@id/card_favor_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/discount_rate_list_view"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/blocking_container"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/feature_block_drawable"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <buy.coke.zet.common.designsystem.normalbutton.RoundButton
+                android:id="@+id/unlock_blocking_container_button"
+                android:layout_width="169dp"
+                android:layout_height="32dp"
+                android:layout_marginBottom="16dp"
+                android:textSize="14sp"
+                app:buttonTextSize="@{14}"
+                app:buttonText="@{@string/sign_up_and_unlock}"
+                app:mainColor="@{RoundButtonStyle.Color.RED}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

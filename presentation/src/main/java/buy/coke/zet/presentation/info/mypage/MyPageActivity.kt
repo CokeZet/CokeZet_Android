@@ -8,6 +8,7 @@ import android.text.style.ForegroundColorSpan
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import buy.coke.zet.presentation.LoginStatus
 import buy.coke.zet.presentation.R
 import buy.coke.zet.presentation.databinding.ActivityMyPageBinding
 import buy.coke.zet.presentation.info.announcement.AnnouncementActivity
@@ -46,5 +47,13 @@ class MyPageActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.mypageTopbar.leftIconClickListener = View.OnClickListener { finish() }
+        if (LoginStatus.userInfo == null) setNonMemberPage()
+    }
+
+    fun setNonMemberPage() {
+        binding.userNickname.text = getString(R.string.non_member) + "님"
+        binding.welcomeTitle.text = getString(R.string.mypage_singup_text)
+        binding.logoutButton.root.visibility = View.GONE
+        binding.withdraw.root.visibility = View.GONE
     }
 }

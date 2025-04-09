@@ -7,6 +7,8 @@
     <string name="signup_welcome">ZET와 함께 제로콜라 최저가 탐색 시작해요</string>
     <string name="start_with_kakao">카카오로 시작하기</string>
     <string name="non_member">비회원</string>
+    <string name="login_success">로그인 성공</string>
+    <string name="login_fail">로그인 실패</string>
 
     <!--    시작 화면-->
     <string name="entry_welcome">최저가 할인 정보와 실시간\n 가격변동 소식을 간편하게 받아봐요</string>
@@ -24,6 +26,7 @@
     <string name="current_step">%d/3</string>
     <string name="complete">완료</string>
     <string name="invalid_nickname">특수문자, 이모티콘은 입력할 수 없어요.</string>
+    <string name="sign_up_and_unlock">회원가입 하고 잠금 풀기</string>
 
     <!--    쇼핑몰 및 카드사-->
     <string name="all">전체</string>
@@ -57,6 +60,7 @@
 
     <!--    내정보-->
     <string name="mypage_nickname">%s 님</string>
+    <string name="mypage_singup_text">회원가입으로 맞춤 정보를 받아보세요!</string>
     <string name="welcome_text">오늘도 시원한 콜라 한 잔 하셨나요?</string>
     <string name="my_info">내정보</string>
     <string name="set_price_notification">가격 알림 설정</string>
@@ -107,4 +111,6 @@
     <string name="wrap_type">포장 형태</string>
     <string name="number">개수</string>
     <string name="point">특징</string>
+
+    <string name="not_support_feature">현재 지원하지 않는 기능입니다.</string>
 </resources>

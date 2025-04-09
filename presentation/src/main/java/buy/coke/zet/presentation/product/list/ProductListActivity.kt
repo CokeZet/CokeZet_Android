@@ -1,10 +1,12 @@
 package buy.coke.zet.presentation.product.list
 
 import android.content.Intent
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import buy.coke.zet.presentation.LoginStatus
 import buy.coke.zet.presentation.R
 import buy.coke.zet.presentation.databinding.ActivityProductListBinding
 import buy.coke.zet.presentation.info.mypage.MyPageActivity
@@ -18,6 +20,11 @@ class ProductListActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_product_list)
         binding.productListTopbar.rightThirdIconClickListener = View.OnClickListener {
             startActivity(Intent(this, MyPageActivity::class.java))
+        }
+
+        if (LoginStatus.userInfo != null) {
+            binding.blockingContainer.visibility = View.GONE
+            binding.unlockBlockingContainerButton.visibility = View.GONE
         }
 
         binding.showSettingToggleButton.setOnCheckedChangeListener { _, isChecked ->
