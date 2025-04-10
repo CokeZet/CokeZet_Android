@@ -43,7 +43,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/non_member_button"
-                android:layout_width="0dp"
+                android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
@@ -61,7 +61,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/google_login_button"
-                android:layout_width="0dp"
+                android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
@@ -73,7 +73,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/kakao_login_button"
-                android:layout_width="0dp"
+                android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"

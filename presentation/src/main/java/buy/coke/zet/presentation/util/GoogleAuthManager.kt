@@ -3,9 +3,8 @@ package buy.coke.zet.presentation.util
 import android.app.Activity
 import androidx.credentials.CredentialManager
 import androidx.credentials.GetCredentialRequest
-import buy.coke.zet.domain.ServiceResult
 import buy.coke.zet.presentation.BuildConfig
-import com.google.android.libraries.identity.googleid.GetGoogleIdOption
+import com.google.android.libraries.identity.googleid.GetSignInWithGoogleOption
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
 import java.security.MessageDigest
 import java.util.UUID
@@ -25,14 +24,12 @@ object GoogleAuthManager {
             val rawNonce = UUID.randomUUID().toString()
             val hashedNonce = hashNonce(rawNonce)
 
-            val googleIdOption = GetGoogleIdOption.Builder()
-                .setServerClientId(CLIENT_ID)
-                .setFilterByAuthorizedAccounts(true)
+            val googleSignInOption = GetSignInWithGoogleOption.Builder(CLIENT_ID)
                 .setNonce(hashedNonce)
                 .build()
 
             val getCredentialRequest = GetCredentialRequest.Builder()
-                .addCredentialOption(googleIdOption)
+                .addCredentialOption(googleSignInOption)
                 .build()
 
             val result = credentialManager.getCredential(activity, getCredentialRequest)

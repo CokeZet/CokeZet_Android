@@ -43,6 +43,12 @@ class RoundButton @JvmOverloads constructor(
             binding.roundButtonBody.text = value
         }
 
+    var textSize: Int = 18
+        set(value) {
+            field = value
+            binding.roundButtonBody.textSize = value.toFloat()
+        }
+
     companion object {
         @JvmStatic
         @BindingAdapter("mainColor")
@@ -66,6 +72,12 @@ class RoundButton @JvmOverloads constructor(
         @BindingAdapter("buttonText")
         fun setButtonText(roundButton: RoundButton, text: String) {
             roundButton.buttonText = text
+        }
+
+        @JvmStatic
+        @BindingAdapter("buttonTextSize")
+        fun setButtonTextSize(roundButton: RoundButton, size: Int) {
+            roundButton.textSize = size
         }
     }
 
