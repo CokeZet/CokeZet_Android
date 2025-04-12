@@ -9,7 +9,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
+import buy.coke.zet.domain.entitiy.response.LoginResponseEntity
 import buy.coke.zet.domain.usecase.IsHasTokenUseCase
+import buy.coke.zet.presentation.LoginStatus
 import buy.coke.zet.presentation.R
 import buy.coke.zet.presentation.databinding.ActivitySplashBinding
 import buy.coke.zet.presentation.intro.entry.EntryActivity
@@ -31,6 +33,7 @@ class SplashActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             val autoLoginResult = viewModel.isAutoLoginPossible()
+            LoginStatus.userInfo = LoginResponseEntity(null, null, null, null)
             if (autoLoginResult) {
                 Toast.makeText(this@SplashActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
                 Handler(Looper.getMainLooper()).postDelayed({

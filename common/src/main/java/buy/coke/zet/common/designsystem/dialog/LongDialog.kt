@@ -15,7 +15,6 @@ class LongDialog(
     private val yesButtonText: String? = null,
     private val noButtonText: String? = null,
     private val warning: String? = null,
-    private val description: String? = null,
     private val title: String? = null
 ): Dialog(context) {
     private val binding: LayoutLongDialogBinding = LayoutLongDialogBinding.inflate(LayoutInflater.from(context))
@@ -39,8 +38,7 @@ class LongDialog(
 
         yesButtonText?.let { binding.okayButton.buttonText = it }
         noButtonText?.let { binding.cancelButton.buttonText = it }
-        warning?.let { binding.dialogWarning.text = it }
-        description?.let { binding.dialogDescription.text = it }
+        warning?.let { binding.dialogWarning.text = it } ?: kotlin.run { binding.dialogWarning.visibility = View.GONE }
         title?.let { binding.dialogTitle.text = it }
     }
 }

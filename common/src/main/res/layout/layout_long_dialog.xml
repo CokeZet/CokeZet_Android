@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <import type="buy.coke.zet.common.designsystem.RectangleButtonStyle.Color"/>
@@ -16,7 +17,7 @@
             android:id="@+id/dialog_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/withdraw_title"
+            tools:text="ZET와의 최저가 탐색을 정말 그만두시겠어요?"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
@@ -26,32 +27,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/dialog_description"/>
-
-        <TextView
-            android:id="@+id/dialog_description"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/withdraw_description"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dialog_title"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/dialog_warning"/>
 
         <TextView
             android:id="@+id/dialog_warning"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/withdraw_warning"
+            tools:text="확인 시 바로 탈퇴됩니다."
             android:layout_marginStart="20dp"
             android:layout_marginEnd="36dp"
             android:layout_marginBottom="13dp"
             android:textColor="@color/red_600"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dialog_description"
+            app:layout_constraintTop_toBottomOf="@id/dialog_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/button_barrier_top"/>
 
