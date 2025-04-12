@@ -2,6 +2,7 @@ package buy.coke.zet.data.di
 
 import buy.coke.zet.data.local.TokenManager
 import buy.coke.zet.data.api.AuthApiService
+import buy.coke.zet.data.api.UserApiService
 import buy.coke.zet.data.datasource.AuthDataSource
 import buy.coke.zet.data.network.authenticator.TokenAuthenticator
 import buy.coke.zet.data.network.interceptor.AuthInterceptor
@@ -66,5 +67,11 @@ object NetworkModule {
     @Singleton
     fun provideAuthApiService(retrofit: Retrofit): AuthApiService {
         return retrofit.create(AuthApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideUserApiService(retrofit: Retrofit): UserApiService {
+        return retrofit.create(UserApiService::class.java)
     }
 }

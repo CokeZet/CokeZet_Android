@@ -6,8 +6,8 @@ import com.google.gson.Gson
 import retrofit2.Response
 import java.io.IOException
 
-// Response Body가 null이 아닌 API호출을 할 때 사용
-suspend fun <T> safeApiCall(apiCall: suspend () -> Response<CommonResponseDto<T>>): ServiceResult<T> {
+// Response Body가 null인 API호출을 할 때 사용
+suspend fun <T> safeApiCallAllowingNull(apiCall: suspend () -> Response<CommonResponseDto<T>>): ServiceResult<T?> {
     return try {
         val response = apiCall()
         if (response.isSuccessful) {
@@ -15,7 +15,7 @@ suspend fun <T> safeApiCall(apiCall: suspend () -> Response<CommonResponseDto<T>
 
             if (body != null) {
                 return when {
-                    body.code?.uppercase() == "SUCCESS" && body.data != null -> {
+                    body.code?.uppercase() == "SUCCESS" -> {
                         ServiceResult.Success(body.data)
                     }
                     else -> {
@@ -23,7 +23,7 @@ suspend fun <T> safeApiCall(apiCall: suspend () -> Response<CommonResponseDto<T>
                     }
                 }
             } else {
-                ServiceResult.Error("NULL_BODY", "Response Body의 값이 null 입니다.")
+                ServiceResult.Error("NULL_BODY", "응답 Body가 null입니다")
             }
         } else {
             val errorBodyString = response.errorBody()?.string()
@@ -41,6 +41,6 @@ suspend fun <T> safeApiCall(apiCall: suspend () -> Response<CommonResponseDto<T>
     } catch (e: IOException) {
         ServiceResult.NetworkError
     } catch (e: Exception) {
-        ServiceResult.Error("EXCEPTION", e.localizedMessage ?: "네트워크 요청 중 알 수 없는 오류 발생")
+        ServiceResult.Error("EXCEPTION", e.localizedMessage ?: "알 수 없는 오류 발생")
     }
 }
