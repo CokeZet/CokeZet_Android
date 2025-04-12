@@ -6,6 +6,7 @@
     <!--    회원가입-->
     <string name="signup_welcome">ZET와 함께 제로콜라 최저가 탐색 시작해요</string>
     <string name="start_with_kakao">카카오로 시작하기</string>
+    <string name="start_with_non_member"><u>비회원으로 시작하기</u></string>
     <string name="non_member">비회원</string>
     <string name="login_success">로그인 성공</string>
     <string name="login_fail">로그인 실패</string>
