@@ -12,7 +12,7 @@ import buy.coke.zet.presentation.databinding.LayoutMoreButtonBinding
 import buy.coke.zet.presentation.databinding.ProductCardLayoutBinding
 import buy.coke.zet.presentation.product.detail.ProductDetailActivity
 
-class ProductInfoAdapter : ListAdapter<ProductInfo, RecyclerView.ViewHolder>(diffCallback) {
+class ProductInfoAdapter(private val moreButtonClickListener: () -> Unit) : ListAdapter<ProductInfo, RecyclerView.ViewHolder>(diffCallback) {
     companion object {
         private val diffCallback = object : DiffUtil.ItemCallback<ProductInfo>() {
             override fun areItemsTheSame(oldItem: ProductInfo, newItem: ProductInfo): Boolean {
@@ -35,6 +35,7 @@ class ProductInfoAdapter : ListAdapter<ProductInfo, RecyclerView.ViewHolder>(dif
             ProductIntroduceViewHolder(binding)
         } else if (viewType == MORE_ITEM_INDEX) {
             val binding = LayoutMoreButtonBinding.inflate(layoutInflater, parent, false)
+            binding.root.setOnClickListener { moreButtonClickListener() }
             MoreButtonViewHolder(binding)
         } else {
             val binding = ProductCardLayoutBinding.inflate(layoutInflater, parent, false)
