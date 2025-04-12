@@ -7,4 +7,5 @@ interface AuthRepository {
     suspend fun loginWithGoogle(idToken: String): ServiceResult<LoginResponseEntity>
     suspend fun isValidToken(hasToken: Boolean): ServiceResult<LoginResponseEntity>
     suspend fun isHasToken(): Boolean
+    suspend fun logout(): ServiceResult<Unit>
 }

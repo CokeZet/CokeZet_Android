@@ -1,7 +1,9 @@
 package buy.coke.zet.data.di
 
 import buy.coke.zet.data.repository.AuthRepositoryImpl
+import buy.coke.zet.data.repository.UserRepositoryImpl
 import buy.coke.zet.domain.repository.AuthRepository
+import buy.coke.zet.domain.repository.UserRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -15,4 +17,9 @@ abstract class RepositoryModule {
     abstract fun bindAuthRepository(
         authRepositoryImpl: AuthRepositoryImpl
     ): AuthRepository
+
+    @Binds
+    abstract fun bindUserRepository(
+        userRepositoryImpl: UserRepositoryImpl
+    ): UserRepository
 }
