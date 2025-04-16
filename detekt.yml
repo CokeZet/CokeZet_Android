@@ -1,0 +1,23 @@
+build:
+  maxIssues: 10
+#  weights:
+#    complexity: 2
+#    LongParameterList: 1
+#    style: 1
+
+style:
+  UnusedImports:
+    active: true  # 사용하지 않는 import 문은 삭제 경고
+
+naming:
+  VariableNaming:
+    active: true
+    variablePattern: '^(_)?[a-z][A-Za-z0-9]*$'  # 변수는 카멜케이스
+
+  ClassNaming:
+    active: true
+    classPattern: '^[A-Z][a-zA-Z0-9]*$'  # 클래스는 파스칼 케이스
+
+  ObjectPropertyNaming:
+    active: true
+    constantPattern: '^[A-Z][_A-Z0-9]*$'  # const val 등은 대문자+언더바 형식
