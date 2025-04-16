@@ -9,7 +9,6 @@ plugins {
 }
 
 subprojects {
-    if (project == rootProject) return@subprojects
     apply(plugin = "io.gitlab.arturbosch.detekt")
 
     extensions.configure<io.gitlab.arturbosch.detekt.extensions.DetektExtension> {
