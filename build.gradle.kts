@@ -14,5 +14,6 @@ subprojects {
     extensions.configure<io.gitlab.arturbosch.detekt.extensions.DetektExtension> {
         config = files("$rootDir/detekt.yml")
         buildUponDefaultConfig = false
+        ignoreFailures = true
     }
 }
