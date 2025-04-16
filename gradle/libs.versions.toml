@@ -20,6 +20,7 @@ credentials = "1.3.0"
 identityGoogleId = "1.1.1"
 datastorePreferences = "1.1.3"
 timber = "5.0.1"
+detekt = "1.23.8"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
@@ -72,6 +73,9 @@ jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrains
 
 # https://developer.android.com/jetpack/androidx/releases/hilt?hl=ko
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
+# detekt https://github.com/detekt/detekt
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 
 [bundles]
 network = [
