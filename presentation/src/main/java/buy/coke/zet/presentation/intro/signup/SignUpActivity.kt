@@ -30,7 +30,7 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up)
 
-        binding.nonMemberButton.setOnClickListener { startActivity(Intent(this, NicknameSettingActivity::class.java)) }
+        binding.nonMemberTextButton.setOnClickListener { startActivity(Intent(this, NicknameSettingActivity::class.java)) }
         binding.googleLoginButton.setOnClickListener { loginWithGoogleAccount() }
         binding.kakaoLoginButton.setOnClickListener { Toast.makeText(this, getString(R.string.not_support_feature), Toast.LENGTH_SHORT).show() }
     }

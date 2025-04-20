@@ -14,6 +14,18 @@ import java.util.Locale
 
 class ProductListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProductListBinding
+    private val productList = mutableListOf(
+        ProductInfo(ProductInfoAdapter.INTRODUCE_ITEM_INDEX, "펩시 제로 355ml 24개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+        ProductInfo(0, "펩시 제로 355ml 24개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+        ProductInfo(1, "펩시 제로 355ml 25개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+        ProductInfo(2, "펩시 제로 355ml 26개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+        ProductInfo(3, "펩시 제로 355ml 27개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+        ProductInfo(4, "펩시 제로 355ml 28개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+        ProductInfo(5, "펩시 제로 355ml 29개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+        ProductInfo(6, "펩시 제로 355ml 30개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
+        ProductInfo(ProductInfoAdapter.MORE_ITEM_INDEX, "펩시 제로 355ml 24개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true)
+    )
+    private val productInfoAdapter = ProductInfoAdapter(this::clickMoreProductButton)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,18 +89,17 @@ class ProductListActivity : AppCompatActivity() {
         ))
         binding.cardFavorListView.adapter = cardFavorAdapter
 
-        val productInfoAdapter = ProductInfoAdapter()
         binding.productListView.adapter = productInfoAdapter
-        productInfoAdapter.submitList(listOf(
-            ProductInfo(ProductInfoAdapter.INTRODUCE_ITEM_INDEX, "펩시 제로 355ml 24개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
-            ProductInfo(0, "펩시 제로 355ml 24개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
-            ProductInfo(1, "펩시 제로 355ml 25개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
-            ProductInfo(2, "펩시 제로 355ml 26개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
-            ProductInfo(3, "펩시 제로 355ml 27개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
-            ProductInfo(4, "펩시 제로 355ml 28개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
-            ProductInfo(5, "펩시 제로 355ml 29개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
-            ProductInfo(6, "펩시 제로 355ml 30개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true),
-            ProductInfo(ProductInfoAdapter.MORE_ITEM_INDEX, "펩시 제로 355ml 24개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true)
-        ))
+        productInfoAdapter.submitList(productList)
+    }
+
+    private fun clickMoreProductButton() {
+        productList.removeAt(productList.size - 1)
+        repeat(4) { index ->
+            productList.add(ProductInfo(7 + index, "펩시 제로 355ml 30개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true))
+        }
+
+        productInfoAdapter.submitList(productList)
+        binding.productListView.requestLayout()
     }
 }

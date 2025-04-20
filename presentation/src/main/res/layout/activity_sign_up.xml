@@ -41,21 +41,14 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/non_member_button"
-                android:layout_width="300dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/round_button"
-                android:backgroundTint="@color/gray_300"
-                android:text="@string/non_member"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                app:layout_constraintTop_toBottomOf="@id/signup_text"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/non_member_text_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/start_with_non_member"
+                android:textSize="12sp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@id/google_login_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -66,8 +59,9 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="40dp"
                 android:background="@drawable/google_login_background"
-                app:layout_constraintTop_toBottomOf="@id/non_member_button"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -79,6 +73,7 @@
                 android:layout_marginEnd="30dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/kakao_login_background"
+                android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@id/google_login_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
