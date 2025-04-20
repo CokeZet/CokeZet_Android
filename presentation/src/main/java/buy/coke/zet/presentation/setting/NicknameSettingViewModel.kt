@@ -23,7 +23,7 @@ class NicknameSettingViewModel: ViewModel() {
             NicknameStatus.EMPTY
         } else if (!regex.matches(nickname)) {
             NicknameStatus.WRONG_TEXT
-        } else if (nickname.length >= 10) {
+        } else if (nickname.length > MAX_LENGTH) {
             NicknameStatus.MAX
         } else {
             NicknameStatus.VALID
@@ -32,5 +32,9 @@ class NicknameSettingViewModel: ViewModel() {
 
     enum class NicknameStatus {
         EMPTY, VALID, WRONG_TEXT, MAX
+    }
+
+    companion object {
+        const val MAX_LENGTH = 10
     }
 }
