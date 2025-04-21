@@ -24,8 +24,8 @@
                 android:layout_height="56dp"
                 app:leftIconImage="@{TopBarStyle.Image.BACK}"
                 app:rightFirstIconImage="@{TopBarStyle.Image.NOTIFICATION}"
-                app:rightSecondIconImage="@{TopBarStyle.Image.GRAPH}"
-                app:rightThirdIconImage="@{TopBarStyle.Image.PERSON}"
+                app:rightSecondIconImage="@{TopBarStyle.Image.PERSON}"
+                app:rightThirdIconImage="@{TopBarStyle.Image.HOME}"
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <androidx.appcompat.widget.AppCompatImageView

@@ -20,7 +20,7 @@
             android:layout_height="56dp"
             app:leftIconImage="@{TopBarStyle.Image.BACK}"
             app:rightSecondIconImage="@{TopBarStyle.Image.NOTIFICATION}"
-            app:rightThirdIconImage="@{TopBarStyle.Image.GRAPH}"
+            app:rightThirdIconImage="@{TopBarStyle.Image.HOME}"
             app:leftText="@{@string/my_info}"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout

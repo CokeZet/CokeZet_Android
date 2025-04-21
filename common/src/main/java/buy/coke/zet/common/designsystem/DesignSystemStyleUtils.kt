@@ -25,7 +25,8 @@ object TopBarStyle {
         NOTIFICATION(R.drawable.notification_topbar),
         GRAPH(R.drawable.graph_topbar),
         PERSON(R.drawable.person_topbar),
-        EXIT(R.drawable.exit_topbar)
+        EXIT(R.drawable.exit_topbar),
+        HOME(R.drawable.home_topbar)
     }
 
 }
