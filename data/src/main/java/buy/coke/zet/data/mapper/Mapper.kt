@@ -6,7 +6,7 @@ import buy.coke.zet.data.dto.promotions.PromotionResponseDto
 import buy.coke.zet.data.dto.updateprofile.UpdateProfileRequestDto
 import buy.coke.zet.domain.entitiy.promotion.PromotionItemEntity
 import buy.coke.zet.domain.entitiy.promotion.StorePromotionResponseEntity
-import buy.coke.zet.domain.entitiy.response.LoginResponseEntity
+import buy.coke.zet.domain.entitiy.login.LoginResponseEntity
 import buy.coke.zet.domain.entitiy.updateprofile.UpdateProfileRequestEntity
 
 fun LoginResponseDto.toEntity(): LoginResponseEntity {
