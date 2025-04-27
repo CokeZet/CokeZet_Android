@@ -9,7 +9,6 @@ data class PromotionItemEntity(
     val productId: Long,
     val productName: String,
     val size: String,
-    val brand: String,
     val promotionTypeLabel: String,
     val price: Int
 )

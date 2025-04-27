@@ -8,6 +8,7 @@ import javax.inject.Inject
 /** 편의점 프로모션 유스케이스
  * 편의점 스티키 (배너) 를 설정할 수 있는 유스케이스 입니다.
  * StorePromotionResponseEntity의
+ * storeName = GS25
  * productName = 펩시제로라임
  * size = 500ml
  * promotionType = 1+1

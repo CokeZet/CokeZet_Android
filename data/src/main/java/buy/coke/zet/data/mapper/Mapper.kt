@@ -31,7 +31,6 @@ fun PromotionItem.toEntity(): PromotionItemEntity {
         productId = productId,
         productName = productName,
         size = size,
-        brand = brand,
         promotionTypeLabel = when (promotionType) {
             "ONE_PLUS_ONE" -> "1+1"
             "TWO_PLUS_ONE" -> "2+1"
