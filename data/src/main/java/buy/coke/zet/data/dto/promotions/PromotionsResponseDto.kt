@@ -7,7 +7,7 @@ data class PromotionResponseDto(
 )
 
 data class PromotionItem(
-    val productId: Long,
+    val productId: Int,
     val productName: String,
     val size: String,
     val brand: String,

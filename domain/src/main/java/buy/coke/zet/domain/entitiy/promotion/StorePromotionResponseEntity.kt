@@ -6,7 +6,7 @@ data class StorePromotionResponseEntity(
 )
 
 data class PromotionItemEntity(
-    val productId: Long,
+    val productId: Int,
     val productName: String,
     val size: String,
     val promotionTypeLabel: String,
