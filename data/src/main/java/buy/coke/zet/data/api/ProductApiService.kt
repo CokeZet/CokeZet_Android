@@ -7,7 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ProductApiService {
-    @GET("/api/promotions")
+    @GET("/api/v1/products")
     suspend fun getProducts(
         @Query("brand") brand: String? = null,
         @Query("productSize") productSize: Int? = null,
@@ -16,5 +16,5 @@ interface ProductApiService {
         @Query("cardName") cardName: String? = null,
         @Query("page") page: Int? = null,
         @Query("size") size: Int? = null
-    ): Response<CommonResponseDto<GetProductResponseDto>>
+    ): Response<CommonResponseDto<List<GetProductResponseDto>>>
 }
