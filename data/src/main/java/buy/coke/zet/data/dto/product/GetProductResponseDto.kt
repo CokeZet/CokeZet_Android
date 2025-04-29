@@ -2,7 +2,7 @@ package buy.coke.zet.data.dto.product
 
 import com.google.gson.annotations.SerializedName
 
-data class GetProductResponse(
+data class GetProductResponseDto(
     @SerializedName("productId") val productId: Int? = null,
     @SerializedName("storeProductId") val storeProductId: Int? = null,
     @SerializedName("price") val price: Int? = null,

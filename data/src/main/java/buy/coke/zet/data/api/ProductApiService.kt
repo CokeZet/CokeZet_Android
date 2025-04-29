@@ -1,7 +1,7 @@
 package buy.coke.zet.data.api
 
 import buy.coke.zet.data.dto.CommonResponseDto
-import buy.coke.zet.data.dto.product.GetProductResponse
+import buy.coke.zet.data.dto.product.GetProductResponseDto
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -16,5 +16,5 @@ interface ProductApiService {
         @Query("cardName") cardName: String? = null,
         @Query("page") page: Int? = null,
         @Query("size") size: Int? = null
-    ): Response<CommonResponseDto<GetProductResponse>>
+    ): Response<CommonResponseDto<GetProductResponseDto>>
 }
