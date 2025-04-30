@@ -1,9 +1,11 @@
 package buy.coke.zet.data.di
 
 import buy.coke.zet.data.repository.AuthRepositoryImpl
+import buy.coke.zet.data.repository.ProductRepositoryImpl
 import buy.coke.zet.data.repository.PromotionRepositoryImpl
 import buy.coke.zet.data.repository.UserRepositoryImpl
 import buy.coke.zet.domain.repository.AuthRepository
+import buy.coke.zet.domain.repository.ProductRepository
 import buy.coke.zet.domain.repository.PromotionRepository
 import buy.coke.zet.domain.repository.UserRepository
 import dagger.Binds
@@ -29,4 +31,9 @@ abstract class RepositoryModule {
     abstract fun bindPromotionRepository(
         promotionRepositoryImpl: PromotionRepositoryImpl
     ): PromotionRepository
+
+    @Binds
+    abstract fun bindProductRepository(
+        productRepositoryImpl: ProductRepositoryImpl
+    ): ProductRepository
 }
