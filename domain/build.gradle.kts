@@ -13,6 +13,8 @@ dependencies {
     kapt(libs.hilt.android.compiler)
     implementation(libs.hilt.core)
 
+    implementation(libs.paging.common)
+
     testImplementation(libs.junit5)
     testImplementation(libs.mockito)
     testImplementation(libs.kotlinx.coroutines.test)

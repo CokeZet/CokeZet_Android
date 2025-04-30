@@ -24,6 +24,7 @@ detekt = "1.23.8"
 junit5 = "5.10.0"
 mockito = "5.1.0"
 kotlinxCoroutinesTest = "1.7.2"
+paging = "3.3.4"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
@@ -76,6 +77,10 @@ mockito = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito
 
 # https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-test/
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
+
+# Paging https://developer.android.com/topic/libraries/architecture/paging/v3-overview?hl=ko
+paging = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "paging" }
+paging-common = { group = "androidx.paging", name = "paging-common", version.ref = "paging" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
