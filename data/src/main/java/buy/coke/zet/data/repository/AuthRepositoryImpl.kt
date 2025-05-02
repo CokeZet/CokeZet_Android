@@ -5,7 +5,7 @@ import buy.coke.zet.data.dto.login.LoginRequestDto
 import buy.coke.zet.data.local.TokenManager
 import buy.coke.zet.data.mapper.toEntity
 import buy.coke.zet.domain.ServiceResult
-import buy.coke.zet.domain.entitiy.response.LoginResponseEntity
+import buy.coke.zet.domain.entitiy.login.LoginResponseEntity
 import buy.coke.zet.domain.repository.AuthRepository
 import javax.inject.Inject
 

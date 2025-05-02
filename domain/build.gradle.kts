@@ -12,4 +12,12 @@ java {
 dependencies {
     kapt(libs.hilt.android.compiler)
     implementation(libs.hilt.core)
+
+    testImplementation(libs.junit5)
+    testImplementation(libs.mockito)
+    testImplementation(libs.kotlinx.coroutines.test)
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
 }

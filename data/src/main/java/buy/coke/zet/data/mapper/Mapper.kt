@@ -1,8 +1,12 @@
 package buy.coke.zet.data.mapper
 
 import buy.coke.zet.data.dto.login.LoginResponseDto
+import buy.coke.zet.data.dto.promotions.PromotionItem
+import buy.coke.zet.data.dto.promotions.PromotionResponseDto
 import buy.coke.zet.data.dto.updateprofile.UpdateProfileRequestDto
-import buy.coke.zet.domain.entitiy.response.LoginResponseEntity
+import buy.coke.zet.domain.entitiy.promotion.PromotionItemEntity
+import buy.coke.zet.domain.entitiy.promotion.StorePromotionResponseEntity
+import buy.coke.zet.domain.entitiy.login.LoginResponseEntity
 import buy.coke.zet.domain.entitiy.updateprofile.UpdateProfileRequestEntity
 
 fun LoginResponseDto.toEntity(): LoginResponseEntity {
@@ -20,4 +24,27 @@ fun UpdateProfileRequestEntity.toDto(): UpdateProfileRequestDto {
         commerceIds = this.commerceIds,
         cardCompanyIds = this.cardCompanyIds
     )
+}
+
+fun PromotionItem.toEntity(): PromotionItemEntity {
+    return PromotionItemEntity(
+        productId = productId,
+        productName = productName,
+        size = size,
+        promotionTypeLabel = when (promotionType) {
+            "ONE_PLUS_ONE" -> "1+1"
+            "TWO_PLUS_ONE" -> "2+1"
+            else -> "NONE"
+        },
+        price = price
+    )
+}
+
+fun PromotionResponseDto.toEntityList(): List<StorePromotionResponseEntity> {
+    return storePromotions.map { (storeName, items) ->
+        StorePromotionResponseEntity(
+            storeName = storeName,
+            promotions = items.map { it.toEntity() }
+        )
+    }
 }

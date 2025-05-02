@@ -1,7 +1,7 @@
 package buy.coke.zet.domain.usecase
 
 import buy.coke.zet.domain.ServiceResult
-import buy.coke.zet.domain.entitiy.response.LoginResponseEntity
+import buy.coke.zet.domain.entitiy.login.LoginResponseEntity
 import buy.coke.zet.domain.repository.AuthRepository
 import javax.inject.Inject
 
