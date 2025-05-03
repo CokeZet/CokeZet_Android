@@ -9,19 +9,14 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
-import buy.coke.zet.domain.ServiceResult
-import buy.coke.zet.domain.entitiy.response.LoginResponseEntity
-import buy.coke.zet.domain.usecase.IsHasTokenUseCase
+import buy.coke.zet.domain.entitiy.login.LoginResponseEntity
 import buy.coke.zet.presentation.LoginStatus
 import buy.coke.zet.presentation.R
 import buy.coke.zet.presentation.databinding.ActivitySplashBinding
-import buy.coke.zet.presentation.intro.entry.EntryActivity
 import buy.coke.zet.presentation.intro.signup.SignUpActivity
 import buy.coke.zet.presentation.product.list.ProductListActivity
-import buy.coke.zet.presentation.setting.NicknameSettingActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
@@ -34,11 +29,9 @@ class SplashActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             val autoLoginResult = viewModel.isAutoLoginPossible()
-
-            if (autoLoginResult is ServiceResult.Success) {
+            LoginStatus.userInfo = LoginResponseEntity(null, null, null, null)
+            if (autoLoginResult) {
                 Toast.makeText(this@SplashActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
-                LoginStatus.userInfo = autoLoginResult.data
-
                 Handler(Looper.getMainLooper()).postDelayed({
                     startActivity(Intent(this@SplashActivity, ProductListActivity::class.java))
                     finish()
@@ -46,8 +39,6 @@ class SplashActivity : AppCompatActivity() {
             }
             else {
                 Toast.makeText(this@SplashActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
-                LoginStatus.userInfo = null
-
                 Handler(Looper.getMainLooper()).postDelayed({
                     startActivity(Intent(this@SplashActivity, SignUpActivity::class.java))
                     finish()

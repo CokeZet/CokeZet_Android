@@ -61,6 +61,8 @@ dependencies {
 
     implementation(libs.timber)
 
+    implementation(libs.paging)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

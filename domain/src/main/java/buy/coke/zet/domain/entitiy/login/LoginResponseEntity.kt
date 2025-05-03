@@ -1,4 +1,4 @@
-package buy.coke.zet.domain.entitiy.response
+package buy.coke.zet.domain.entitiy.login
 
 data class LoginResponseEntity(
     val id: Long? = null,
