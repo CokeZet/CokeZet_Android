@@ -2,6 +2,8 @@ package buy.coke.zet.data.di
 
 import buy.coke.zet.data.datasource.AuthDataSource
 import buy.coke.zet.data.datasource.AuthDataSourceImpl
+import buy.coke.zet.data.datasource.ProductDataSource
+import buy.coke.zet.data.datasource.ProductDataSourceImpl
 import buy.coke.zet.data.datasource.PromotionDataSource
 import buy.coke.zet.data.datasource.PromotionDataSourceImpl
 import buy.coke.zet.data.datasource.UserDataSource
@@ -29,4 +31,9 @@ abstract class DataSourceModule {
     abstract fun bindPromotionDataSource(
         promotionDataSourceImpl: PromotionDataSourceImpl
     ): PromotionDataSource
+
+    @Binds
+    abstract fun bindProductDataSource(
+        productDataSourceImpl: ProductDataSourceImpl
+    ): ProductDataSource
 }
