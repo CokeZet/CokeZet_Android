@@ -9,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
+import buy.coke.zet.domain.ServiceResult
 import buy.coke.zet.domain.entitiy.login.LoginResponseEntity
 import buy.coke.zet.presentation.LoginStatus
 import buy.coke.zet.presentation.R
@@ -29,9 +30,11 @@ class SplashActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             val autoLoginResult = viewModel.isAutoLoginPossible()
-            LoginStatus.userInfo = LoginResponseEntity(null, null, null, null)
-            if (autoLoginResult) {
+
+            if (autoLoginResult is ServiceResult.Success) {
                 Toast.makeText(this@SplashActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
+                LoginStatus.userInfo = autoLoginResult.data
+                
                 Handler(Looper.getMainLooper()).postDelayed({
                     startActivity(Intent(this@SplashActivity, ProductListActivity::class.java))
                     finish()

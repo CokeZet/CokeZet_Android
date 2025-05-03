@@ -2,7 +2,7 @@ package buy.coke.zet.presentation.intro.splash
 
 import androidx.lifecycle.ViewModel
 import buy.coke.zet.domain.ServiceResult
-import buy.coke.zet.domain.entitiy.response.LoginResponseEntity
+import buy.coke.zet.domain.entitiy.login.LoginResponseEntity
 import buy.coke.zet.domain.usecase.IsHasTokenUseCase
 import buy.coke.zet.domain.usecase.IsValidTokenUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
