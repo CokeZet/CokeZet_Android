@@ -60,7 +60,7 @@
     <string name="bc">BC</string>
 
     <!--    내정보-->
-    <string name="mypage_nickname">%s 님</string>
+    <string name="mypage_customer">님</string>
     <string name="mypage_singup_text">회원가입으로 맞춤 정보를 받아보세요!</string>
     <string name="welcome_text">오늘도 시원한 콜라 한 잔 하셨나요?</string>
     <string name="my_info">내정보</string>

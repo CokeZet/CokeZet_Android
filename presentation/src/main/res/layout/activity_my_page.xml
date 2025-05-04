@@ -50,7 +50,7 @@
                 android:id="@+id/user_nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="김콜라 님"
+                android:text="김콜라"
                 android:textStyle="bold"
                 android:layout_marginStart="12dp"
                 android:layout_marginBottom="8dp"
@@ -60,10 +60,22 @@
                 app:layout_constraintBottom_toTopOf="@id/welcome_title"/>
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mypage_customer"
+                android:layout_marginStart="2dp"
+                android:textColor="@color/gray_500"
+                android:fontFamily="@font/suit_medium"
+                app:layout_constraintStart_toEndOf="@id/user_nickname"
+                app:layout_constraintTop_toTopOf="@id/user_nickname"
+                app:layout_constraintBottom_toBottomOf="@id/user_nickname"/>
+
+            <TextView
                 android:id="@+id/welcome_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/welcome_text"
+                android:fontFamily="@font/suit_medium"
                 android:textSize="16sp"
                 android:layout_marginStart="12dp"
                 app:layout_constraintStart_toEndOf="@id/profile_photo_container"
@@ -77,7 +89,6 @@
             android:layout_width="match_parent"
             android:layout_height="64dp"
             layout="@layout/layout_mypage_item"
-            android:layout_marginBottom="8dp"
             app:titleText="@{@string/set_price_notification}"/>
 
         <include
@@ -91,7 +102,6 @@
             android:id="@+id/ask_question_button"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:layout_marginBottom="8dp"
             layout="@layout/layout_mypage_item"
             app:titleText="@{@string/ask_question}"/>
 
@@ -123,6 +133,15 @@
             layout="@layout/layout_mypage_item"
             app:titleText="@{@string/withdraw}"/>
 
+        <TextView
+            android:id="@+id/version_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버전정보 0.0.0"
+            android:textSize="12sp"
+            android:textColor="@color/gray_500"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp" />
 
     </LinearLayout>
 
