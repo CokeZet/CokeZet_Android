@@ -1,8 +1,8 @@
 package buy.coke.zet.domain.usecase
 
 import buy.coke.zet.domain.ServiceResult
-import buy.coke.zet.domain.entitiy.login.LoginResponseEntity
-import buy.coke.zet.domain.repository.AuthRepository
+import buy.coke.zet.domain.entitiy.getprofile.GetProfileResponseEntity
+import buy.coke.zet.domain.repository.UserRepository
 import javax.inject.Inject
 
 /** 토큰 유효성에 따른 자동 로그인 유스케이스
@@ -12,9 +12,9 @@ import javax.inject.Inject
  */
 
 class IsValidTokenUseCase @Inject constructor(
-    private val authRepository: AuthRepository
+    private val userRepository: UserRepository
 ) {
-    suspend operator fun invoke(hasToken: Boolean): ServiceResult<LoginResponseEntity> {
-        return authRepository.isValidToken(hasToken)
+    suspend operator fun invoke(hasToken: Boolean): ServiceResult<GetProfileResponseEntity> {
+        return userRepository.isValidToken(hasToken)
     }
 }

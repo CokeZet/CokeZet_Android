@@ -30,30 +30,6 @@ class AuthRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun isValidToken(hasToken: Boolean): ServiceResult<LoginResponseEntity> {
-        if (!hasToken) {
-            return ServiceResult.Error("NOT_HAVE_TOKEN", "저장된 토큰이 없습니다.")
-        }
-
-        val result = authDataSource.getLogin()
-        return when (result) {
-            is ServiceResult.Success -> {
-                tokenManager.saveTokens(
-                    result.data.accessToken,
-                    result.data.refreshToken
-                )
-                ServiceResult.Success(result.data.toEntity())
-            }
-
-            is ServiceResult.Error -> ServiceResult.Error(result.code, result.message)
-            is ServiceResult.NetworkError -> ServiceResult.NetworkError
-        }
-    }
-
-    override suspend fun isHasToken(): Boolean {
-        return tokenManager.isHasToken()
-    }
-
     override suspend fun logout(): ServiceResult<Unit> {
         val result = authDataSource.logout()
         return when(result) {

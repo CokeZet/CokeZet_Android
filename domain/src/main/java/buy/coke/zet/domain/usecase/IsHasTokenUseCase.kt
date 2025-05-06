@@ -1,6 +1,6 @@
 package buy.coke.zet.domain.usecase
 
-import buy.coke.zet.domain.repository.AuthRepository
+import buy.coke.zet.domain.repository.UserRepository
 import javax.inject.Inject
 
 /** 토큰 유효성 검사 유스케이스
@@ -10,9 +10,9 @@ import javax.inject.Inject
  */
 
 class IsHasTokenUseCase @Inject constructor(
-    private val authRepository: AuthRepository
+    private val userRepository: UserRepository
 ) {
     suspend operator fun invoke(): Boolean {
-        return authRepository.isHasToken()
+        return userRepository.isHasToken()
     }
 }
