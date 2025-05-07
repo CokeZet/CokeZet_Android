@@ -45,7 +45,7 @@
     <string name="discount_rate">할인율</string>
     <string name="card_favor">카드혜택</string>
     <string name="card_discount">카드할인</string>
-    <string name="introduce_product_list">100ml당 가격이 낮은 순으로 소개해 드려요.</string>
+    <string name="introduce_product_list">*100ml당 가격이 낮은 순으로 소개해 드려요.</string>
     <string name="find_more">더보기</string>
 
     <string name="nonghyup">농협</string>
@@ -60,7 +60,7 @@
     <string name="bc">BC</string>
 
     <!--    내정보-->
-    <string name="mypage_nickname">%s 님</string>
+    <string name="mypage_customer">님</string>
     <string name="mypage_singup_text">회원가입으로 맞춤 정보를 받아보세요!</string>
     <string name="welcome_text">오늘도 시원한 콜라 한 잔 하셨나요?</string>
     <string name="my_info">내정보</string>
@@ -95,7 +95,7 @@
     <string name="large_discount">대박</string>
     <string name="middle_discount">중박</string>
     <string name="low_discount">소박</string>
-    <string name="average">평범</string>
+    <string name="normal">일반</string>
 
     <!--    제품 상세-->
     <string name="coca_cola_drink">코카콜라 음료</string>

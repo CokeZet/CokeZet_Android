@@ -34,13 +34,6 @@ class MyPageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_my_page)
-        val originalText = binding.userNickname.text.toString()
-        binding.userNickname.text = SpannableString(originalText).apply {
-            val start = originalText.indexOf("님")
-            val end = start + 1
-
-            this.setSpan(ForegroundColorSpan(getColor(buy.coke.zet.common.R.color.gray_500)), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        }
 
         binding.setPriceNotificationButton.root.setOnClickListener { startActivity(Intent(this, NotificationSettingActivity::class.java)) }
         binding.announcementButton.root.setOnClickListener { startActivity(Intent(this, AnnouncementActivity::class.java)) }
@@ -90,7 +83,7 @@ class MyPageActivity : AppCompatActivity() {
     }
 
     private fun setNonMemberPage() {
-        binding.userNickname.text = getString(R.string.non_member) + "님"
+        binding.userNickname.text = getString(R.string.non_member)
         binding.welcomeTitle.text = getString(R.string.mypage_singup_text)
         binding.logoutButton.root.visibility = View.GONE
         binding.withdraw.root.visibility = View.GONE

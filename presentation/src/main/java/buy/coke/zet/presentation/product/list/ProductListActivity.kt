@@ -1,7 +1,6 @@
 package buy.coke.zet.presentation.product.list
 
 import android.content.Intent
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -72,7 +71,7 @@ class ProductListActivity : AppCompatActivity() {
             getString(R.string.large_discount),
             getString(R.string.middle_discount),
             getString(R.string.low_discount),
-            getString(R.string.average)
+            getString(R.string.normal)
         ))
         binding.discountRateListView.adapter = discountRateAdapter
 

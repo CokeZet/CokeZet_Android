@@ -38,6 +38,7 @@
     <color name="gray_900">#121212</color>
     <color name="gray_950">#1E1E1E</color>
     <color name="black">#0E0D0D</color>
+    <color name="divider_color">#171717</color>
 
     <!-- Text Color -->
     <color name="basic_title">#222222</color>

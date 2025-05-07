@@ -8,8 +8,8 @@
 
         <CheckBox
             android:id="@+id/logo_button_body"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
             android:button="@null"
             android:checked="false"
             app:layout_constraintTop_toTopOf="parent"
