@@ -47,4 +47,13 @@ class UserRepositoryImpl @Inject constructor(
     override suspend fun isHasToken(): Boolean {
         return tokenManager.isHasToken()
     }
+
+    override suspend fun getProfile(): ServiceResult<GetProfileResponseEntity> {
+        val result = userDataSource.getProfile()
+        return when (result) {
+            is ServiceResult.Success -> ServiceResult.Success(result.data.toEntity())
+            is ServiceResult.Error -> ServiceResult.Error(result.code, result.message)
+            is ServiceResult.NetworkError -> ServiceResult.NetworkError
+        }
+    }
 }

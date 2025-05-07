@@ -9,4 +9,5 @@ interface UserRepository {
     suspend fun updateProfile(updateProfile: UpdateProfileRequestEntity): ServiceResult<Unit>
     suspend fun isValidToken(hasToken: Boolean): ServiceResult<GetProfileResponseEntity>
     suspend fun isHasToken(): Boolean
+    suspend fun getProfile(): ServiceResult<GetProfileResponseEntity>
 }
