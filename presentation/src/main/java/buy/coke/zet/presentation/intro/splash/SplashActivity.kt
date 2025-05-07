@@ -33,7 +33,7 @@ class SplashActivity : AppCompatActivity() {
 
             if (autoLoginResult is ServiceResult.Success) {
                 Toast.makeText(this@SplashActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
-                LoginStatus.userInfo = autoLoginResult.data
+//                LoginStatus.userInfo = autoLoginResult.data
                 
                 Handler(Looper.getMainLooper()).postDelayed({
                     startActivity(Intent(this@SplashActivity, ProductListActivity::class.java))
