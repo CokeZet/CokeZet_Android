@@ -21,7 +21,8 @@ class ProductRepositoryImpl @Inject constructor(
 
         return Pager(
             config = PagingConfig(
-                pageSize = 10,
+                pageSize = 5,
+                initialLoadSize = 20,
                 enablePlaceholders = false
             ),
             pagingSourceFactory = {
