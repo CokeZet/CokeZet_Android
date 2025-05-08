@@ -1,5 +1,8 @@
 package buy.coke.zet.data.mapper
 
+import buy.coke.zet.data.dto.contents.GetNoticeResponseDto
+import buy.coke.zet.data.dto.contents.GetPrivacyPolicyResponseDto
+import buy.coke.zet.data.dto.contents.GetTermsResponseDto
 import buy.coke.zet.data.dto.getprofile.GetProfileResponseDto
 import buy.coke.zet.data.dto.getprofile.PreferredCardCompany
 import buy.coke.zet.data.dto.getprofile.PreferredCommerce
@@ -9,6 +12,9 @@ import buy.coke.zet.data.dto.product.GetProductResponseDto
 import buy.coke.zet.data.dto.promotions.PromotionItem
 import buy.coke.zet.data.dto.promotions.PromotionResponseDto
 import buy.coke.zet.data.dto.updateprofile.UpdateProfileRequestDto
+import buy.coke.zet.domain.entitiy.contents.GetNoticeResponseEntity
+import buy.coke.zet.domain.entitiy.contents.GetPrivacyPolicyResponseEntity
+import buy.coke.zet.domain.entitiy.contents.GetTermsResponseEntity
 import buy.coke.zet.domain.entitiy.getprofile.CardCompanyEntity
 import buy.coke.zet.domain.entitiy.getprofile.CommerceEntity
 import buy.coke.zet.domain.entitiy.getprofile.GetProfileResponseEntity
@@ -113,5 +119,37 @@ fun PreferredCardCompany.toEntity(): CardCompanyEntity {
     return CardCompanyEntity(
         id = id,
         name = name
+    )
+}
+
+fun GetNoticeResponseDto.toEntity(): GetNoticeResponseEntity {
+    return GetNoticeResponseEntity(
+        id = this.id,
+        title = this.title,
+        content = this.content,
+        createdAt = this.createdAt,
+        important = this.important
+    )
+}
+
+fun List<GetNoticeResponseDto>.toEntity(): List<GetNoticeResponseEntity> {
+    return this.map { it.toEntity() }
+}
+
+fun GetTermsResponseDto.toEntity(): GetTermsResponseEntity {
+    return GetTermsResponseEntity(
+        id = this.id,
+        title = this.title,
+        content = this.content,
+        updatedAt = this.updatedAt
+    )
+}
+
+fun GetPrivacyPolicyResponseDto.toEntity(): GetPrivacyPolicyResponseEntity {
+    return GetPrivacyPolicyResponseEntity(
+        id = this.id,
+        title = this.title,
+        content = this.content,
+        updatedAt = this.updatedAt
     )
 }
