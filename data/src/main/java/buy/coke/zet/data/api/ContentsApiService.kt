@@ -1,9 +1,9 @@
 package buy.coke.zet.data.api
 
 import buy.coke.zet.data.dto.CommonResponseDto
-import buy.coke.zet.data.dto.contents.notice.GetNoticeResponseDto
-import buy.coke.zet.data.dto.contents.privacypolicy.GetPrivacyPolicyResponseDto
-import buy.coke.zet.data.dto.contents.terms.GetTermsResponseDto
+import buy.coke.zet.data.dto.contents.GetNoticeResponseDto
+import buy.coke.zet.data.dto.contents.GetPrivacyPolicyResponseDto
+import buy.coke.zet.data.dto.contents.GetTermsResponseDto
 import retrofit2.Response
 import retrofit2.http.GET
 

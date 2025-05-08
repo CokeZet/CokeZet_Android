@@ -1,9 +1,9 @@
 package buy.coke.zet.data.datasource
 
 import buy.coke.zet.data.api.ContentsApiService
-import buy.coke.zet.data.dto.contents.notice.GetNoticeResponseDto
-import buy.coke.zet.data.dto.contents.privacypolicy.GetPrivacyPolicyResponseDto
-import buy.coke.zet.data.dto.contents.terms.GetTermsResponseDto
+import buy.coke.zet.data.dto.contents.GetNoticeResponseDto
+import buy.coke.zet.data.dto.contents.GetPrivacyPolicyResponseDto
+import buy.coke.zet.data.dto.contents.GetTermsResponseDto
 import buy.coke.zet.data.errorhandle.safeApiCall
 import buy.coke.zet.domain.ServiceResult
 import javax.inject.Inject

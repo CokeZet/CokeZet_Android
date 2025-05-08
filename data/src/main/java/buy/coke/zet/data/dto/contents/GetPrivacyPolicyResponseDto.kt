@@ -1,4 +1,4 @@
-package buy.coke.zet.data.dto.contents.privacypolicy
+package buy.coke.zet.data.dto.contents
 
 import com.google.gson.annotations.SerializedName
 
