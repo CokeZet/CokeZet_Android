@@ -1,10 +1,12 @@
 package buy.coke.zet.data.api
 
 import buy.coke.zet.data.dto.CommonResponseDto
+import buy.coke.zet.data.dto.getprofile.GetProfileResponseDto
 import buy.coke.zet.data.dto.updateprofile.UpdateProfileRequestDto
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface UserApiService {
@@ -13,4 +15,7 @@ interface UserApiService {
 
     @POST("/api/users/profile")
     suspend fun updateProfile(@Body request: UpdateProfileRequestDto): Response<CommonResponseDto<Unit>>
+
+    @GET("/api/users/profile")
+    suspend fun getProfile(): Response<CommonResponseDto<GetProfileResponseDto>>
 }

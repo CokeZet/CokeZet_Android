@@ -8,7 +8,8 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 /** 상품 조회 유스케이스
- *  상품을 조회할 수 있습니다. Paging 처리 했습니다. ( size는 10개씩 입니다. )
+ *  상품을 조회할 수 있습니다. Paging 처리 했습니다.
+ *  과도한 쿼리호출을 방지하기위해 초기에 20개 데이터를 미리불러오고 그 이후 5개씩 쿼리 호출 합니다.
  * 매개변수에 예시로
  * brand = "코카콜라"
  * productSize = "190"

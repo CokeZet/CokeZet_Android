@@ -2,6 +2,7 @@ package buy.coke.zet.data.di
 
 import buy.coke.zet.data.local.TokenManager
 import buy.coke.zet.data.api.AuthApiService
+import buy.coke.zet.data.api.ContentsApiService
 import buy.coke.zet.data.api.ProductApiService
 import buy.coke.zet.data.api.PromotionApiService
 import buy.coke.zet.data.api.UserApiService
@@ -87,5 +88,11 @@ object NetworkModule {
     @Singleton
     fun provideProductApiService(retrofit: Retrofit): ProductApiService {
         return retrofit.create(ProductApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideContentsApiService(retrofit: Retrofit): ContentsApiService {
+        return retrofit.create(ContentsApiService::class.java)
     }
 }
