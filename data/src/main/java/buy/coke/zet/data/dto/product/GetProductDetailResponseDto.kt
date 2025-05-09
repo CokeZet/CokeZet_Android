@@ -13,6 +13,6 @@ data class GetProductDetailResponseDto(
     @SerializedName("count") val count: Int,
     @SerializedName("taste") val taste: String,
     @SerializedName("storeName") val storeName: String,
-    @SerializedName("cardNameList") val cardNameList: String,
+    @SerializedName("cardNameList") val cardNameList: List<String>,
     @SerializedName("productUrl") val productUrl: String
 )
