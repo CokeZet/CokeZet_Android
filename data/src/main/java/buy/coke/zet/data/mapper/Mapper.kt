@@ -7,6 +7,7 @@ import buy.coke.zet.data.dto.getprofile.GetProfileResponseDto
 import buy.coke.zet.data.dto.getprofile.PreferredCardCompany
 import buy.coke.zet.data.dto.getprofile.PreferredCommerce
 import buy.coke.zet.data.dto.login.LoginResponseDto
+import buy.coke.zet.data.dto.product.GetProductDetailResponseDto
 import buy.coke.zet.data.dto.product.GetProductRequestDto
 import buy.coke.zet.data.dto.product.GetProductResponseDto
 import buy.coke.zet.data.dto.promotions.PromotionItem
@@ -21,6 +22,7 @@ import buy.coke.zet.domain.entitiy.getprofile.GetProfileResponseEntity
 import buy.coke.zet.domain.entitiy.promotion.PromotionItemEntity
 import buy.coke.zet.domain.entitiy.promotion.StorePromotionResponseEntity
 import buy.coke.zet.domain.entitiy.login.LoginResponseEntity
+import buy.coke.zet.domain.entitiy.product.GetProductDetailResponseEntity
 import buy.coke.zet.domain.entitiy.product.GetProductRequestEntity
 import buy.coke.zet.domain.entitiy.product.GetProductResponseEntity
 import buy.coke.zet.domain.entitiy.updateprofile.UpdateProfileRequestEntity
@@ -151,5 +153,22 @@ fun GetPrivacyPolicyResponseDto.toEntity(): GetPrivacyPolicyResponseEntity {
         title = this.title,
         content = this.content,
         updatedAt = this.updatedAt
+    )
+}
+
+fun GetProductDetailResponseDto.toEntity(): GetProductDetailResponseEntity {
+    return GetProductDetailResponseEntity(
+        id = this.id,
+        storeProductId = this.storeProductId,
+        price = this.price,
+        pricePerMl = this.pricePerMl,
+        discountRate = this.discountRate,
+        size = this.size,
+        brand = this.brand,
+        count = this.count,
+        taste = this.taste,
+        storeName = this.storeName,
+        cardNameList = this.cardNameList,
+        productUrl = this.productUrl
     )
 }
