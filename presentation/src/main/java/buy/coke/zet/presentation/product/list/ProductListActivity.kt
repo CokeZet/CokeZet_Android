@@ -33,6 +33,7 @@ class ProductListActivity : AppCompatActivity() {
         binding.productListTopbar.rightThirdIconClickListener = View.OnClickListener {
             startActivity(Intent(this, MyPageActivity::class.java))
         }
+        setAdvertiseViewPager()
 
         if (LoginStatus.userInfo != null) {
             binding.blockingContainer.visibility = View.GONE
@@ -113,5 +114,17 @@ class ProductListActivity : AppCompatActivity() {
         repeat(4) { index ->
             productList.add(ProductInfo(productList.size - 1 + index, "펩시 제로 355ml 30개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true))
         }
+    }
+
+    private fun setAdvertiseViewPager() {
+        val bannerItemList = listOf(R.drawable.advertiese_card_sample,
+            R.drawable.advertiese_card_sample,
+            R.drawable.advertiese_card_sample,
+            R.drawable.advertiese_card_sample,
+            R.drawable.advertiese_card_sample
+        )
+
+        binding.advertiseBannerViewpager.adapter = BannerPagerAdapter(bannerItemList)
+        binding.advertiseBannerViewpager.setCurrentItem(0, false)
     }
 }

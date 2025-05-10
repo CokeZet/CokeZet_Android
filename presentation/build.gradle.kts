@@ -61,6 +61,7 @@ dependencies {
     implementation(libs.credentials)
     implementation(libs.credentials.auth)
     implementation(libs.identity.googleid)
+    implementation(libs.androidx.viewpager2)
 
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.core.ktx)
