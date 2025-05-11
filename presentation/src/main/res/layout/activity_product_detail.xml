@@ -287,12 +287,34 @@
                         app:layout_constraintTop_toBottomOf="@id/advertise_box_container"/>
 
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/lowest_price_graph_image"
+                        android:id="@+id/price_graph_image"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
-                        android:src="@drawable/lowest_price_sample_image"
+                        android:src="@drawable/price_graph_zetpick"
                         app:layout_constraintTop_toBottomOf="@id/top_divider"
                         app:layout_constraintBottom_toTopOf="@id/bottom_divider"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/graph_tooltip"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="47dp"
+                        android:layout_marginTop="30dp"
+                        android:src="@drawable/tooptip_icon"
+                        app:layout_constraintTop_toTopOf="@id/price_graph_image"
+                        app:layout_constraintEnd_toEndOf="@id/price_graph_image"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/graph_summation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/suit_medium"
+                        android:text="현재 100ml당 193원"
+                        android:layout_marginEnd="4dp"
+                        app:layout_constraintEnd_toStartOf="@id/graph_tooltip"
+                        app:layout_constraintTop_toTopOf="@id/graph_tooltip"
+                        app:layout_constraintBottom_toBottomOf="@id/graph_tooltip"/>
 
                     <TextView
                         android:id="@+id/bottom_divider"
@@ -307,7 +329,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/gray_800"
                         android:layout_marginTop="8dp"
-                        app:layout_constraintTop_toBottomOf="@id/lowest_price_graph_image">
+                        app:layout_constraintTop_toBottomOf="@id/price_graph_image">
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/compare_price_title"
@@ -318,6 +340,16 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="@id/more_button"
                             app:layout_constraintBottom_toBottomOf="@id/more_button"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/comparison_tooltip"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="4dp"
+                            android:src="@drawable/tooptip_icon"
+                            app:layout_constraintStart_toEndOf="@id/compare_price_title"
+                            app:layout_constraintTop_toTopOf="@id/compare_price_title"
+                            app:layout_constraintBottom_toBottomOf="@id/compare_price_title"/>
 
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/more_button"

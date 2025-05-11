@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.RecyclerView
 import buy.coke.zet.presentation.LoginStatus
 import buy.coke.zet.presentation.R
 import buy.coke.zet.presentation.databinding.ActivityProductListBinding
@@ -32,6 +33,7 @@ class ProductListActivity : AppCompatActivity() {
         binding.productListTopbar.rightThirdIconClickListener = View.OnClickListener {
             startActivity(Intent(this, MyPageActivity::class.java))
         }
+        setAdvertiseViewPager()
 
         if (LoginStatus.userInfo != null) {
             binding.blockingContainer.visibility = View.GONE
@@ -90,15 +92,39 @@ class ProductListActivity : AppCompatActivity() {
 
         binding.productListView.adapter = productInfoAdapter
         productInfoAdapter.submitList(productList)
+
+        binding.productListView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                if (!recyclerView.canScrollVertically(1) && productList.size > 10) {
+                    repeat(4) { index ->
+                        productList.add(ProductInfo(productList.size - 1 + index, "펩시 제로 355ml 30개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true))
+                    }
+
+                    productInfoAdapter.submitList(productList)
+                    binding.productListView.requestLayout()
+                }
+            }
+        })
     }
 
     private fun clickMoreProductButton() {
         productList.removeAt(productList.size - 1)
         repeat(4) { index ->
-            productList.add(ProductInfo(7 + index, "펩시 제로 355ml 30개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true))
+            productList.add(ProductInfo(productList.size - 1 + index, "펩시 제로 355ml 30개", 24, String.format(Locale.getDefault(), "%,d원", 16000), true))
         }
+    }
 
-        productInfoAdapter.submitList(productList)
-        binding.productListView.requestLayout()
+    private fun setAdvertiseViewPager() {
+        val bannerItemList = listOf(R.drawable.advertiese_card_sample,
+            R.drawable.advertiese_card_sample,
+            R.drawable.advertiese_card_sample,
+            R.drawable.advertiese_card_sample,
+            R.drawable.advertiese_card_sample
+        )
+
+        binding.advertiseBannerViewpager.adapter = BannerPagerAdapter(bannerItemList)
+        binding.advertiseBannerViewpager.setCurrentItem(0, false)
     }
 }
