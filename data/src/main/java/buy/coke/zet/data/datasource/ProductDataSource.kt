@@ -1,6 +1,7 @@
 package buy.coke.zet.data.datasource
 
 import buy.coke.zet.data.api.ProductApiService
+import buy.coke.zet.data.dto.product.GetProductDetailResponseDto
 import buy.coke.zet.data.dto.product.GetProductRequestDto
 import buy.coke.zet.data.dto.product.GetProductResponseDto
 import buy.coke.zet.data.errorhandle.safeApiCall
@@ -9,6 +10,7 @@ import javax.inject.Inject
 
 interface ProductDataSource {
     suspend fun getProducts(request: GetProductRequestDto): ServiceResult<List<GetProductResponseDto>>
+    suspend fun getProductDetail(productId: Long): ServiceResult<GetProductDetailResponseDto>
 }
 
 class ProductDataSourceImpl @Inject constructor(
@@ -26,5 +28,9 @@ class ProductDataSourceImpl @Inject constructor(
                 size = request.size
             )
         }
+    }
+
+    override suspend fun getProductDetail(productId: Long): ServiceResult<GetProductDetailResponseDto> {
+        return safeApiCall { apiService.getProductDetail(productId) }
     }
 }
