@@ -4,8 +4,6 @@ import buy.coke.zet.data.dto.contents.GetNoticeResponseDto
 import buy.coke.zet.data.dto.contents.GetPrivacyPolicyResponseDto
 import buy.coke.zet.data.dto.contents.GetTermsResponseDto
 import buy.coke.zet.data.dto.getprofile.GetProfileResponseDto
-import buy.coke.zet.data.dto.getprofile.PreferredCardCompany
-import buy.coke.zet.data.dto.getprofile.PreferredCommerce
 import buy.coke.zet.data.dto.login.LoginResponseDto
 import buy.coke.zet.data.dto.product.GetProductDetailResponseDto
 import buy.coke.zet.data.dto.product.GetProductRequestDto
@@ -16,8 +14,6 @@ import buy.coke.zet.data.dto.updateprofile.UpdateProfileRequestDto
 import buy.coke.zet.domain.entitiy.contents.GetNoticeResponseEntity
 import buy.coke.zet.domain.entitiy.contents.GetPrivacyPolicyResponseEntity
 import buy.coke.zet.domain.entitiy.contents.GetTermsResponseEntity
-import buy.coke.zet.domain.entitiy.getprofile.CardCompanyEntity
-import buy.coke.zet.domain.entitiy.getprofile.CommerceEntity
 import buy.coke.zet.domain.entitiy.getprofile.GetProfileResponseEntity
 import buy.coke.zet.domain.entitiy.promotion.PromotionItemEntity
 import buy.coke.zet.domain.entitiy.promotion.StorePromotionResponseEntity
@@ -101,26 +97,11 @@ fun GetProductResponseDto.toEntity(): GetProductResponseEntity {
 
 fun GetProfileResponseDto.toEntity(): GetProfileResponseEntity {
     return GetProfileResponseEntity(
-        id = id,
         email = email,
         nickname = nickname,
-        profileComplete = profileComplete,
-        preferredCommerces = preferredCommerces.map { it.toEntity() },
-        preferredCardCompanies = preferredCardCompanies.map { it.toEntity() }
-    )
-}
-
-fun PreferredCommerce.toEntity(): CommerceEntity {
-    return CommerceEntity(
-        id = id,
-        name = name
-    )
-}
-
-fun PreferredCardCompany.toEntity(): CardCompanyEntity {
-    return CardCompanyEntity(
-        id = id,
-        name = name
+        commerceNames = commerceNames,
+        notificationEnabled = notificationEnabled,
+        receiveNotificationAfter8PM = receiveNotificationAfter8PM
     )
 }
 
