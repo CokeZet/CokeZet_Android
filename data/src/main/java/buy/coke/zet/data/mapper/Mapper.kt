@@ -36,7 +36,9 @@ fun UpdateProfileRequestEntity.toDto(): UpdateProfileRequestDto {
     return UpdateProfileRequestDto(
         nickname = this.nickname,
         commerceIds = this.commerceIds,
-        cardCompanyIds = this.cardCompanyIds
+        notificationEnabled = this.notificationEnabled,
+        receiveNotificationAfter8PM = this.receiveNotificationAfter8PM,
+        fcmToken = this.fcmToken
     )
 }
 
