@@ -1,8 +1,8 @@
-package buy.coke.zet.data.dto.getprofile
+package buy.coke.zet.data.dto.updateprofile
 
 import com.google.gson.annotations.SerializedName
 
-data class GetProfileResponseDto(
+data class UpdateProfileResponseDto(
     @SerializedName("email") val email: String,
     @SerializedName("nickname") val nickname: String,
     @SerializedName("commerceNames") val commerceNames: List<String>,

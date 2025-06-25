@@ -7,6 +7,7 @@ import buy.coke.zet.data.mapper.toEntity
 import buy.coke.zet.domain.ServiceResult
 import buy.coke.zet.domain.entitiy.getprofile.GetProfileResponseEntity
 import buy.coke.zet.domain.entitiy.updateprofile.UpdateProfileRequestEntity
+import buy.coke.zet.domain.entitiy.updateprofile.UpdateProfileResponseEntity
 import buy.coke.zet.domain.repository.UserRepository
 import javax.inject.Inject
 
@@ -23,10 +24,10 @@ class UserRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun updateProfile(updateProfile: UpdateProfileRequestEntity): ServiceResult<Unit> {
+    override suspend fun updateProfile(updateProfile: UpdateProfileRequestEntity): ServiceResult<UpdateProfileResponseEntity> {
         val result = userDataSource.updateProfile(updateProfile.toDto())
         return when (result) {
-            is ServiceResult.Success -> ServiceResult.Success(Unit)
+            is ServiceResult.Success -> ServiceResult.Success(result.data.toEntity())
             is ServiceResult.Error -> ServiceResult.Error(result.code, result.message)
             is ServiceResult.NetworkError -> ServiceResult.NetworkError
         }

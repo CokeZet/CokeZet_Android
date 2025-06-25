@@ -1,6 +1,6 @@
-package buy.coke.zet.domain.entitiy.getprofile
+package buy.coke.zet.domain.entitiy.updateprofile
 
-data class GetProfileResponseEntity(
+data class UpdateProfileResponseEntity(
     val email: String? = null,
     val nickname: String? = null,
     val commerceNames: List<String>,
