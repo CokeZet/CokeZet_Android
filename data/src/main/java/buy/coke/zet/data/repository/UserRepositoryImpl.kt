@@ -1,6 +1,7 @@
 package buy.coke.zet.data.repository
 
 import buy.coke.zet.data.datasource.UserDataSource
+import buy.coke.zet.data.dto.delete.DeleteRequestDto
 import buy.coke.zet.data.local.TokenManager
 import buy.coke.zet.data.mapper.toDto
 import buy.coke.zet.data.mapper.toEntity
@@ -15,8 +16,8 @@ class UserRepositoryImpl @Inject constructor(
     private val userDataSource: UserDataSource,
     private val tokenManager: TokenManager
 ) : UserRepository {
-    override suspend fun delete(): ServiceResult<Unit> {
-        val result = userDataSource.delete()
+    override suspend fun delete(revokeToken: String): ServiceResult<Unit> {
+        val result = userDataSource.delete(DeleteRequestDto(revokeToken = revokeToken, socialProvider = USER_PROVIDER_GOOGLE))
         return when(result) {
             is ServiceResult.Success -> ServiceResult.Success(Unit)
             is ServiceResult.Error -> ServiceResult.Error(result.code, result.message)
@@ -56,5 +57,9 @@ class UserRepositoryImpl @Inject constructor(
             is ServiceResult.Error -> ServiceResult.Error(result.code, result.message)
             is ServiceResult.NetworkError -> ServiceResult.NetworkError
         }
+    }
+
+    companion object {
+        private const val USER_PROVIDER_GOOGLE = "GOOGLE"
     }
 }
