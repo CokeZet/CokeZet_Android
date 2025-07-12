@@ -6,7 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import buy.coke.zet.presentation.LoginStatus
+import buy.coke.zet.presentation.model.LoginStatus
 import buy.coke.zet.presentation.R
 import buy.coke.zet.presentation.databinding.ActivityProductListBinding
 import buy.coke.zet.presentation.info.mypage.MyPageActivity

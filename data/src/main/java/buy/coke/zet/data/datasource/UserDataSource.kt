@@ -1,6 +1,7 @@
 package buy.coke.zet.data.datasource
 
 import buy.coke.zet.data.api.UserApiService
+import buy.coke.zet.data.dto.delete.DeleteRequestDto
 import buy.coke.zet.data.dto.getprofile.GetProfileResponseDto
 import buy.coke.zet.data.dto.updateprofile.UpdateProfileRequestDto
 import buy.coke.zet.data.dto.updateprofile.UpdateProfileResponseDto
@@ -11,7 +12,7 @@ import buy.coke.zet.domain.ServiceResult
 import javax.inject.Inject
 
 interface UserDataSource {
-    suspend fun delete(): ServiceResult<Unit>
+    suspend fun delete(request: DeleteRequestDto): ServiceResult<Unit>
     suspend fun updateProfile(updateProfile: UpdateProfileRequestDto): ServiceResult<UpdateProfileResponseDto>
     suspend fun getProfile(): ServiceResult<GetProfileResponseDto>
 }
@@ -19,8 +20,8 @@ interface UserDataSource {
 class UserDataSourceImpl @Inject constructor(
     private val apiService: UserApiService
 ) : UserDataSource {
-    override suspend fun delete(): ServiceResult<Unit> {
-        return safeApiCallAllowingNull { apiService.delete() }.mapToUnit()
+    override suspend fun delete(request: DeleteRequestDto): ServiceResult<Unit> {
+        return safeApiCallAllowingNull { apiService.delete(request) }.mapToUnit()
     }
 
     override suspend fun updateProfile(updateProfile: UpdateProfileRequestDto): ServiceResult<UpdateProfileResponseDto> {
