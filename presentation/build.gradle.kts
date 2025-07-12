@@ -14,6 +14,7 @@ if (localPropertiesFile.exists()) {
 }
 
 val GOOGLE_CLIENT_ID = localProperties.getProperty("GOOGLE_CLIENT_ID", "")
+val GOOGLE_SECRET_PWD = localProperties.getProperty("GOOGLE_SECRET_PWD", "")
 
 android {
     namespace = "buy.coke.zet.presentation"
@@ -26,6 +27,7 @@ android {
         consumerProguardFiles("consumer-rules.pro")
 
         buildConfigField("String", "GOOGLE_CLIENT_ID", "\"$GOOGLE_CLIENT_ID\"")
+        buildConfigField("String", "GOOGLE_SECRET_PWD", "\"$GOOGLE_SECRET_PWD\"")
     }
 
     buildTypes {
@@ -63,6 +65,8 @@ dependencies {
     implementation(libs.identity.googleid)
     implementation(libs.androidx.viewpager2)
     implementation(libs.balloon)
+    implementation(libs.play.services.auth)
+    implementation(libs.okhttp)
 
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.core.ktx)
