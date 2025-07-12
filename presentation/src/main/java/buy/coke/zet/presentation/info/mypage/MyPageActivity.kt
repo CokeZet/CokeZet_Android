@@ -2,9 +2,6 @@ package buy.coke.zet.presentation.info.mypage
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.style.ForegroundColorSpan
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -12,7 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import buy.coke.zet.common.designsystem.dialog.LongDialog
 import buy.coke.zet.domain.usecase.DeleteUseCase
 import buy.coke.zet.domain.usecase.LogoutUseCase
-import buy.coke.zet.presentation.LoginStatus
+import buy.coke.zet.presentation.model.LoginStatus
 import buy.coke.zet.presentation.R
 import buy.coke.zet.presentation.databinding.ActivityMyPageBinding
 import buy.coke.zet.presentation.info.announcement.AnnouncementActivity
@@ -21,7 +18,6 @@ import buy.coke.zet.presentation.info.term.TERM_TITLE
 import buy.coke.zet.presentation.info.term.TermActivity
 import buy.coke.zet.presentation.intro.signup.SignUpActivity
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

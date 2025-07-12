@@ -2,22 +2,19 @@ package buy.coke.zet.presentation.intro.signup
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import buy.coke.zet.domain.ServiceResult
 import buy.coke.zet.domain.usecase.LoginWithGoogleUseCase
-import buy.coke.zet.presentation.LoginStatus
+import buy.coke.zet.presentation.model.LoginStatus
 import buy.coke.zet.presentation.R
 import buy.coke.zet.presentation.databinding.ActivitySignUpBinding
-import buy.coke.zet.presentation.intro.entry.EntryActivity
+import buy.coke.zet.presentation.model.toUserInfo
 import buy.coke.zet.presentation.setting.NicknameSettingActivity
 import buy.coke.zet.presentation.util.GoogleAuthManager
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -40,7 +37,7 @@ class SignUpActivity : AppCompatActivity() {
             GoogleAuthManager.getGoogleToken(this@SignUpActivity)?.let { token ->
                 loginWithGoogleUseCase(token).also { result ->
                     if (result is ServiceResult.Success) {
-                        LoginStatus.userInfo = result.data
+                        LoginStatus.userInfo = result.data.toUserInfo()
                         Toast.makeText(this@SignUpActivity, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
                     }
                     else {
